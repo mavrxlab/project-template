@@ -52,9 +52,8 @@ template as it produces a nice APA-like document.
 2.  Upload the CSV in step 2 of the
     [tenzing](https://rollercoaster.shinyapps.io/tenzing/) Shiny app.
     (You can use the file provided as a demonstration if you like.)
-3.  Choose `Show papaja YAML` in Step 3.
-4.  Replace the `author` and `affiliation` frontmatter in the
-    `draft.Rmd` file with this new YAML.
+3.  Choose the method of getting the author contributions that make
+    sense for your publication outlet.
 
 ## Research Production
 

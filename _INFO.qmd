@@ -11,8 +11,7 @@ A placeholder publication draft can be found in `3-Studies/001-Study_1/`. It is 
 
 1. Update the `contributors_table_template.csv` file in `1-Project_Management/4-Administration/` with relevant authors and contributors.
 1. Upload the CSV in step 2 of the [tenzing](https://rollercoaster.shinyapps.io/tenzing/) Shiny app. (You can use the file provided as a demonstration if you like.)
-1. Choose `Show papaja YAML` in Step 3.
-1. Replace the `author` and `affiliation` frontmatter in the `draft.Rmd` file with this new YAML.
+1. Choose the method of getting the author contributions that make sense for your publication outlet.
 
 ## Research Production
 
