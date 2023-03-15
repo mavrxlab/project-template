@@ -6,7 +6,7 @@
 src="https://img.shields.io/github/last-commit/mavrxlab/project-template.png"
 class="quarto-discovered-preview-image" alt="Last updated" />
 
-<!-- Only edit README.qmd, never README.md! Rendering README.qmd will produce README.md -->
+<!-- Only edit README.qmd, never README.md! Rendering README.qmd will produce README.md. Format: gfm stands for "Github-flavored markdown. -->
 
 ## Project Overview
 
