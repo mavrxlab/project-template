@@ -1,0 +1,23 @@
+---
+title: "README"
+format: gfm
+---
+
+# Project Template
+
+![Last updated](https://img.shields.io/github/last-commit/mavrxlab/project-template)
+
+<!-- Only edit README.qmd, never README.md! Rendering README.qmd will produce README.md -->
+
+## Project Overview
+
+This is a large repository meant to house any number of individual studies and drafts that are all in some way connected. For example, in the `1-Project_Management/2-Finance/` folder, there is a sub-project for developing an NSF grant. As a variety of studies will often come of a single grant, these are held in the `3-Studies` folder.
+
+Note that you're welcome to use a copy of this repository for _each_ individual study if you like. It is meant to be flexible. Not everything need even be used. No grant? Skip the Finance folder, for example.
+
+<!-- 
+# This chunk is informational only and can be removed after forking.
+# It displays the _INFO.qmd file contents in the README.
+-->
+
+{{< include _INFO.qmd >}}

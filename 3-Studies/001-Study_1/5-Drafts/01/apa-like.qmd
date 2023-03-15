@@ -1,0 +1,139 @@
+---
+title: |
+  A Long Title That's Descriptive But Witty
+short-title: Shorttitle
+published: "Under review at TBD"
+correspondence-prefix: "Correspondence concerning this article should be addressed to"
+author:
+  - name: First Last, PhD
+    email: email@domain.tld
+    orcid: 0000-0000-0000-0000
+    title: Professor of Professing
+    affiliations: 
+      - id: 1
+        name: "University of Name"
+        department: "Department of Department"
+        address: 1234 Street St.
+        city: City City
+        region: CA
+        postal-code: 90210
+        country: USA
+    attributes:
+      corresponding: true
+  - name: Another Author, PhD
+    email: 2ndemail@domain.tld
+    orcid: 0000-0000-0000-0001
+    title: Professor of Basket Weaving
+    affiliations: 
+      - id: 1
+        name: "University of Name"
+        department: "Department of Department"
+        address: 1234 Street St.
+        city: City City
+        region: CA
+        postal-code: 90210
+        country: USA
+    attributes:
+      corresponding: false
+
+abstract: |
+  Abstract goes here.
+  
+thanks: |
+  Thanks, folks.
+
+keywords: 
+  - keyword1
+  - keyword2
+
+additional-info: |
+  No known conflict of interest to disclose.
+
+date: last-modified
+
+bibliography: references.bib
+
+editor_options:
+  markdown:
+    references: 
+      location: block
+    canonical: true
+    
+execute:
+    echo: false
+    message: false
+    warning: false
+    
+prefer-html: true
+
+format:
+  hikmah-manuscript-docx: default
+  hikmah-manuscript-pdf: default
+---
+
+```{r}
+#| label: analysis-preferences
+# Seed for random number generation
+set.seed(158)
+```
+
+```{r}
+#| label: sourcing
+#| include: false
+# This presumes you have 00-setup.R set to source all the other
+# scripts. It also presumes you're loading the study.Rproj project
+# in the, for example, /001-Study-1/ folder.
+source(here::here("3-Study", "3-Data_Analysis", "00-setup.R"))
+
+```
+
+```{r}
+# To Dos
+
+```
+
+# Introduction
+
+...
+
+## Lit part 2
+
+## Current Study
+
+...
+
+# Methods {#sec-methods}
+
+...
+
+## Procedure {#sec-procedure}
+
+...
+
+## Participants {#sec-participants}
+
+...
+
+## Materials & Measures {#sec-materials-and-measures}
+
+...
+
+## Data Analysis {#sec-data-analysis}
+
+...
+
+# Results {#sec-results}
+
+...
+
+# Discussion {#sec-discussion}
+
+...
+
+## Limitations and Future Study
+
+...
+
+\newpage
+
+# References {.unnumbered}

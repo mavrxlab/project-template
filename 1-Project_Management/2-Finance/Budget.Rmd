@@ -1,0 +1,87 @@
+---
+title: "Budget Justification"
+date: "\\vspace{-3em}"
+output: 
+  pdf_document:
+   includes:
+    in_header: style/preamble.tex
+   template: null
+   keep_tex: no
+   number_sections: false
+documentclass: style/nsf2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- This is section G. No section numbers or page numbers. Sections with no placeholder text should be left empty. -->
+
+## A. Senior Personnel (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## B. Other Personnel (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## C. Fringe Benefits  (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## D. Equipment (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## E. Travel (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### National Travel
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### Local Travel
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## F. Participant Support Costs (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## G. Other Direct Costs (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 1. Materials and Supplies (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 2. Publications (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 3. Consultant Services (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 4. Computer Services (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 5. Subawards (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### 6. Other (\$0)
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## H. Total Direct Costs:  \$0
+
+## I. Total Indirect Costs: \$0
+
+(Statement about university indirect F&A rate.)
+
+## J. Total Direct and Indirect Costs: \$0
+

@@ -1,0 +1,58 @@
+---
+title: "Proposal Schedule"
+date: "\\vspace{-5em}"
+header-includes:
+  - \setlength{\parindent}{0cm}
+  - \geometry{margin=1in}
+output: 
+  pdf_document:
+    includes:
+      in_header: style/preamble.tex
+    template: null
+    keep_tex: no
+    number_sections: false
+word_document:
+    toc: false
+    number_sections: false
+documentclass: style/nsf2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(lubridate)
+style <- "%Y %B %d"
+
+# Pick your solicitation deadline and replace the date below with that.
+# The format for the deadline is YYYY-MM-DD.
+deadline <- ymd("2023-08-11")
+```
+
+This is a generic schedule for your grant proposal.
+
+Your solicitation deadline is **`r format(deadline, "%A, %B %d, %Y")`**.
+
+| **Step**                                            |    **Deadline**|
+|:----------------------------------------------------|:---------------|
+| Identify NSF Directorate and Division| `r format(ymd(deadline) - weeks(21), format=style)`|
+| Write Project Summary: Overview and Objectives, Intellectual Merit, and Broader Impact sections| `r format(ymd(deadline) - weeks(20), format=style)` |
+| Send Project Summary to Program Director (if they agreed to review it for programmatic relevance)| `r format(ymd(deadline) - weeks(19), format=style)` |
+| Background, Lit Review, Prior NSF Support, Preliminary Studies subsections; References Cited section | `r format(ymd(deadline) - weeks(18), format=style)`|
+| Research Plan: develop subsection for objective 1| `r format(ymd(deadline) - weeks(17), format=style)` |
+| Research Plan: develop subsection for objective 2| `r format(ymd(deadline) - weeks(17), format=style)`|
+| Research Plan: develop subsection for objective 3 (if applicable)| `r format(ymd(deadline) - weeks(17), format=style)` |
+| Pre-submission review by faculty mentor(s) | `r format(ymd(deadline) - weeks(16), format=style)` |
+| Education Plan: develop plans for educational activities | `r format(ymd(deadline) - weeks(15), format=style)` |
+| Broader Impacts section| `r format(ymd(deadline) - weeks(14), format=style)`|
+| Finalize Project Summary; Title; assemble final draft; proof, correct and make final revisions | `r format(ymd(deadline) - weeks(12), format=style)`|
+| Pre-submission review by faculty mentor(s) by: | `r format(ymd(deadline) - weeks(11), format=style)` |
+| Pre-submission review by external reviewer by: | `r format(ymd(deadline) - weeks(11), format=style)` |
+| Budget and Budget Justification| `r format(ymd(deadline) - weeks(10), format=style)` |
+| Prepare Biographical Sketches for all senior personnel | `r format(ymd(deadline) - weeks(9), format=style)` |
+| Facilities, Equipment, and Other Resources ; Current and Pending Support | `r format(ymd(deadline) - weeks(8), format=style)` |
+| Obtain letters of collaboration from any unbudgeted collaborators| `r format(ymd(deadline) - weeks(7), format=style)`|
+| Data Management Plan to University data folks & any solicitation-specific documents (ie Postdoc plan): | `r format(ymd(deadline) - weeks(6), format=style)`|
+| List of Suggested Reviewers or Reviewers Not to Include (optional but strongly recommended by NSF) | `r format(ymd(deadline) - weeks(5), format=style)`|
+| Pre-submission ADR review of the application | `r format(ymd(deadline) - weeks(4), format=style)`|
+| Pre-submission College/Dept review of the application| `r format(ymd(deadline) - weeks(3), format=style)`|
+| Revise draft; send to Sponsored Projects | `r format(ymd(deadline) - weeks(2), format=style)` |
+| Submit application to Research/Grants.gov| `r format(deadline, "%Y %B %d")`|

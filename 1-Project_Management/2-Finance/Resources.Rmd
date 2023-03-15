@@ -1,0 +1,64 @@
+---
+title: "Facilities, Equipment, & Other Resources"
+date: "\\vspace{-3em}"
+output: 
+  pdf_document:
+   includes:
+    in_header: style/preamble.tex
+   template: null
+   keep_tex: no
+   number_sections: false
+documentclass: style/nsf2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## Facilities
+
+<!-- Describe any applicable Laboratory, Clinical, Animal, Computer, and Office facilities/resources. Include square footage, location, and any other important physical aspects. -->
+
+### Laboratory
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### Clinical/Animal
+
+N/A
+
+### Computers
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### Office
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### Major Equipment
+
+<!-- List the most important items available for this project and, as appropriate, identify the location and pertinent capabilities of the items. -->
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## Other Resources
+
+<!-- Provide any information describing the other resources available to the project. Identify support services such as consultant, secretarial, machine shop, and electronics shop, and the extent to which they will be available for the project. Include an explanation of any consortium/contractual arrangements with other organizations. -->
+
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+### Support Staff
+
+Eu nunc risus massa in mauris facilisi nibh pulvinar sapien. Dis viverra ipsum, nulla finibus pharetra, interdum sodales. Nulla nisi nam et fames volutpat sem leo varius urna. Purus inceptos ridiculus maecenas porttitor. Sed eu faucibus eget ut, sed cum, efficitur quisque, et sociosqu finibus. Sit accumsan cursus varius. Cubilia, lorem ac nulla porta aliquam sed pharetra quam aptent gravida. Ut, mauris mi hendrerit quis interdum bibendum cum dapibus. Ante eros mollis tincidunt ante et ut fermentum habitant, nec fusce sociosqu eu ut integer adipiscing.
+
+## Unfunded Collaborators
+
+<!-- Any substantial collaboration with individuals not included in the budget should be described in the Facilities, Equipment and Other Resources section of the proposal (see Chapter II.C.2.i) and documented in a letter of collaboration from each collaborator. Such letters should be provided in the supplementary documentation section of FastLane or Research.gov and follow the format instructions specified in Chapter II.C.2.j. Collaborative activities that are identified in the budget should follow the instructions in Chapter II.D.3. -->
+
+
+## Senior Personnel
+
+<!-- If salary and person months are not being requested for an individual designated as senior personnel, they should be removed from Section A of the budget. Their name(s) will remain on the Cover Sheet and the individual(s) role on the project should be described in this section (see PAPPG Section II.C.2.g.c).  The names of the PI and any Co-PIs will remain on the Cover Sheet even if removed from the budget. -->

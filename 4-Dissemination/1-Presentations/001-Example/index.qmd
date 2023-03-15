@@ -1,0 +1,59 @@
+---
+title: "Example"
+format:
+  revealjs:
+    footer: "Footer text"
+    slide-number: true
+    show-slide-number: print
+    chalkboard:
+      theme: whiteboard
+      boardmarker-width: 5
+    multiplex: true
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+## Tabs
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| output-location: slide
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+

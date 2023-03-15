@@ -1,0 +1,12 @@
+---
+title: "Index"
+author: "Ryan Straight"
+date: "2023-02-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The `Build` tab's `Build Website` button will create all the sections' PDFs in the `\docs` folder. Generally, if you knit one document, the rest will knit, as well.
