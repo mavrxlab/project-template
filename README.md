@@ -1,10 +1,10 @@
-# README
-
 # Project Template
 
-<img
-src="https://img.shields.io/github/last-commit/mavrxlab/project-template.png"
-class="quarto-discovered-preview-image" alt="Last updated" />
+<img src="4-Dissemination/3-Publicity/banner.png"
+class="quarto-discovered-preview-image" />
+
+![Last
+updated](https://img.shields.io/github/last-commit/mavrxlab/project-template.png)
 
 <!-- Only edit README.qmd, never README.md! Rendering README.qmd will produce README.md. Format: gfm stands for "Github-flavored markdown. -->
 

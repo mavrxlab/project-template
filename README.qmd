@@ -1,9 +1,9 @@
 ---
-title: "README"
+title: "Project Template"
 format: gfm
 ---
 
-# Project Template
+![](4-Dissemination/3-Publicity/banner.png)
 
 ![Last updated](https://img.shields.io/github/last-commit/mavrxlab/project-template)
 
