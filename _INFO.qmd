@@ -6,6 +6,10 @@ If you'd rather not use the R-based Quarto ecosystem for writing that's present 
 
 A placeholder publication draft can be found in `3-Studies/001-Study_1/`. It is a Quarto document that uses the [Hikmah Quarto templates](https://github.com/andrewheiss/hikmah-academic-quarto) template as it produces a nice APA-like document.
 
+## Banner image
+
+The banner image shared is one made for the lab using Canva. Whether using one like it or another, you should probably use the `codename` for the project on your banner rather than something else. The `ubuntu` codename style works well with the template.
+
 
 ## Authors
 

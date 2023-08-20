@@ -73,6 +73,13 @@ A placeholder publication draft can be found in
 Quarto templates](https://github.com/andrewheiss/hikmah-academic-quarto)
 template as it produces a nice APA-like document.
 
+## Banner image
+
+The banner image shared is one made for the lab using Canva. Whether
+using one like it or another, you should probably use the `codename` for
+the project on your banner rather than something else. The `ubuntu`
+codename style works well with the template.
+
 ## Authors
 
 1.  Update the `contributors_table_template.csv` file in
