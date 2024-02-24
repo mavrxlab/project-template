@@ -1,0 +1,81 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: index.qmd
+  notebooks:
+    - notebook: README.qmd
+      title: Readme
+    - notebook: preregistration.qmd
+      title: Pre-registration
+  code-links:
+    - text: Cleaning Script
+      icon: file-code
+      href: 3-Data_Analysis/10-munge.R
+      target: _blank
+      
+filters:
+  - acronyms
+
+acronyms:
+  fromfile: ./acronyms.yml
+  include_unused: true
+  sorting: "alphabetical-case-insensitive"
+  loa_title: ''
+  insert_loa: false
+  insert_links: false
+  
+execute:
+  warning: false
+  message: false
+  error: false
+  echo: false
+
+format:
+  html:
+    theme: flatly
+  apaquarto-docx: default
+  apaquarto-pdf:
+    # can be jou (journal), man (manuscript), stu (student), or doc (document)
+    documentmode: man 
+    # can be 10pt, 11pt, or 12pt
+    fontsize: "12pt"
+    # a4 paper if true, letter size if false
+    a4paper: false
+    # suppresses loading of the lmodern font package
+    nolmodern: false
+    # Suppresses loading of the fontenc package
+    nofontenc: false
+    # Suppress the title above the introduction
+    donotrepeattitle: false
+    # In jou mode, use times or pslatex instead of txfonts
+    notxfonts: false
+    # In jou mode, use Computer Modern font instead of times
+    notimes: false
+    # In jou mode, cancels automatic stretching of tables to column width 
+    notab: false
+    # Uses Helvetica font in stu and man mode
+    helv: false
+    # In man and stu mode, neutralizes the \helvetica command
+    nosf: false
+    # In man and stu mode, uses typewriter font
+    tt: false
+    # Puts draft watermark on first page
+    draftfirst: false
+    # Puts draft watermark on all pages
+    draftall: false
+    # Journal title (e.g., American Psychologist)
+    journal: ~
+    # Date, volume, number, pages (e.g., "2024, Vol. 1, No. 1, 1--4")
+    volume: ~
+    # copyright notice (e.g., 2024)
+    copyrightnotice: ~
+    # Additional copyright text (e.g., All rights reserved)
+    copyrighttext: ~
+    course: Introduction to Assessment
+    professor: W. Joel Schneider
+    duedate: 12/22/2024
+    # Hides correspondence text
+    nocorrespondence: false
+    # Numbered Lines
+    numbered-lines: true

@@ -1,0 +1,9 @@
+---
+acronyms:
+  keys:
+  # Define your keys here
+    - shortname: qmd
+      longname: Quarto document
+    - shortname: YAML
+      longname: YAML Aint Markup Language
+---

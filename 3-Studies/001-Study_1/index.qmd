@@ -1,0 +1,347 @@
+---
+title: "Using Quarto to Generate Documents in APA Style (7th Edition)"
+
+# Lines above title in .docx format
+blank-lines-above-title: 2
+
+# If blank, the running header is the title in upper case.
+shorttitle: Template for the apaquarto Extension
+
+# Set names and affiliations.
+# It is nice to specify everyone's orcid, if possible.
+# There can be only one corresponding author, but declaring one is optional.
+author:
+  - name: Ana Fulano
+    corresponding: true
+    orcid: 0000-0000-0000-0000
+    email: sm@example.org
+    url: https://example.org/
+    # Roles are optional (note: The two writing roles have en dashes, not hyphens. You can use their aliases, w)
+    # Select from the CRediT: Contributor Roles Taxonomy https://credit.niso.org/
+    # Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, 
+    # Methodology, Project administration, Resources, Software, Supervision, Validation, 
+    # Visualization, Writing – original draft, Writing – review & editing
+    roles:
+      - conceptualization: lead
+      - Writing - original draft
+    affiliations:
+      - id: id1
+        name: "Ana and Blanca's University"
+        group: Clinical Psychology Program
+        department: Department of Psychology
+        address: 1234 Capital St.
+        city: Albany
+        region: NY
+        postal-code: 12084-1234
+  - name: Carina Mengano
+    orcid: 0000-0000-0000-0001
+    deceased: true
+    roles:
+      - Formal Analysis
+      - Writing
+    affiliations:
+      - name: "Carina's Primary Affiliation"
+      - name: "Carina's Secondary Affiliation"
+
+author-note:
+  blank-lines-above-author-note: 1
+  #status-changes: 
+    # Example: [Author name] is now at [affiliation].
+    #affiliation-change: Ana Fulano is now at X University.
+    # Example: [Author name] is deceased.
+    #deceased: Carina Mengano is deceased.
+  # Disclosures condensed to one paragraph, but you can start a field with two line breaks to break them up: \n\nNew Paragraph
+  #disclosures:
+    # Example: This study was registered at X (Identifier Y).
+    #study-registration: This study was registered at ClinicalTrials.gov (Identifier NTC998877).
+    # Acknowledge and cite data/materials to be shared.
+    #data-sharing: ~
+    # Example: This article is based on data published in [Reference].
+    # Example: This article is based on the dissertation completed by Graham (2018).  
+    #related-report: This article is based on data published in @austenMansfieldPark1990. 
+    # Example: [Author name] has been a paid consultant for Corporation X, which funded this study.
+    #conflict-of-interest: Ana Fulano earns royalties from the sale of Test X, which was used in the study.
+    # Example: This study was supported by Grant [Grant Number] from [Funding Source].
+    #financial-support: This study was supported by Grant ABC123 from Corporation X.
+    # Example: The authors are grateful to [Person] for [Reason].
+    #gratitude: The authors are grateful for the technical assistance of Fernanda Ferenganamono during the initial design and setup of our lab equipment.
+    # Example. Because the authors are equal contributors, order of authorship was determined by a fair coin toss.
+    #authorship-agreements: Because the authors are equal contributors, order of authorship was determined by a fair coin toss.
+abstract: "This document is a template demonstrating the apaquarto format."
+# Put as many keywords at you like, separated by commmas (e.g., [reliability, validity, generalizability])
+keywords: [keyword1, keyword2, keyword3]
+# If true, tables and figures are mingled with the text. If false, figures appear at end of the document (unless pdf is in jou mode)
+floatsintext: true
+bibliography: bibliography.bib
+# Masks references that appear in the masked-citations list
+# Note: masking doesn't work in HTML version!
+mask: true
+masked-citations:
+  - schneider2012cattell
+  - schneider2015intelligence
+
+execute:
+  warning: false
+  message: false
+  error: false
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(conflicted)
+library(tidyverse)
+library(flextable)
+library(ftExtra)
+library(officer)
+library(knitr)
+
+conflicts_prefer(dplyr::filter, .quiet = TRUE)
+conflicts_prefer(flextable::separate_header, .quiet = TRUE)
+
+```
+
+::: {.content-visible when-format="html"}
+::: callout-important
+1. Be sure to check out the README.
+1. This template uses the Quarto [Manuscript](https://quarto.org/docs/manuscripts/) project format. Be sure you're using the `001-Study_1.rproj` project when editing, as everything is based out of this folder when using `here()`. Rename as needed.
+1. This document is APA formatted using the [apaquarto](https://github.com/wjschne/apaquarto) extension, already installed. When building the manuscript, you'll get this HTML version, a Word document (docx), and a PDF. The content of this template file is mostly the boilerplate and instructional content specifically for `apaquarto`.
+1. Masking citations does **not** work in the HTML version!
+:::
+:::
+
+This is my introductory paragraph. The title will be placed above it automatically. *Do not start with an introductory heading* (e.g., "Introduction"). The title acts as your Level 1 heading for the introduction. [This is mostly relevant in the Word and PDF versions, as in the HTML it comes with the frontmatter header.]{.content-visible when-format="html"}
+
+You can add acronyms using the `acronyms` extension and shortcodes. For example, {{{< acr qmd >}}} gives you {{< acr qmd >}}. Then, when you use {{{< acr qmd >}}} subsequent times, it would simply show the acronym, like so: {{< acr qmd >}}. Very convenient. When talking about {{< acr qmd >}} frontmatter, you might say: 
+
+>{{< acr qmd >}} uses {{< acr YAML >}} for frontmatter, metadata,
+>and settings. {{< acr YAML >}} is convenient and human-readable.
+
+:::{.NoIndent}
+And the actual text in the file is:
+:::
+
+```{.markdown .code-overflow-wrap}
+>{{{< acr qmd >}}} uses {{{< acr YAML >}}} for frontmatter, metadata,
+>and settings. {{{< acr YAML >}}} is convenient and human-readable.
+```
+
+:::{.NoIndent}
+[Note that the code is broken up to wrap in PDF as well as HTML.]{.content-visible when-format="pdf"}
+Readers are better able to follow your ideas if you differentiate sections in your introduction with headings. Mostly stick to level 2 headers. Sometimes level 3 headings are needed, though. Be sparing to the point of stinginess with levels 4 and 5.
+:::
+
+All headings should be in title case according to [these rules and exceptions](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case). 
+
+## Level 2 Heading
+
+Subsections of the introduction have level 2 headings. A paragraph after a level 2 Heading is on a new line. Regular paragraphs are indented, flush left, and double-spaced.
+
+You do not need to put text after a heading. You can put a higher-level heading directly underneath if you want.
+
+## A Level 2 Heading Without Text Below It
+
+### Level 3 Heading
+
+Subsections of a level 2 heading are placed under level 3 headings.
+
+### Another Level 3 Heading
+
+#### Level 4 Heading
+
+A level 4 heading should be indented, flush left, bold, title case, and end with a period. A paragraph after a level 4 or 5 heading is on a new line in this markdown document but will appear as if it were in the same paragraph when rendered. You need at least one paragraph after a level 4 or 5 heading. If you forget the period at the end of the level 4 or 5 heading, it will be added automatically. A period will not be added if the heading ends with a question mark or an exclamation point.
+
+Subsequent paragraphs go on their own lines.
+
+##### Level 5 Heading
+
+A level 5 heading should be indented, flush left, bold italic, title case, and end with a period. Notice that there was no period after this level 5 heading in the markdown document, but it does appear in the rendered document.
+
+Subsequent paragraphs go on their own lines.
+
+## How to Cite References
+
+I am going to cite a reference here in square brackets [@CameronTrivedi2013]. This reference was in my bibliography file. 
+
+### Parenthetical References
+
+Here are some variations on parenthetical citations:
+
+-   Page references (or any other suffixes are placed after the reference. If you want a comma, you'll need to insert it yourself: [@CameronTrivedi2013, pp. 35--41]
+
+-   Prefixes (with or without a comma) are placed before the reference: [e.g., @CameronTrivedi2013].
+
+-   2 or more citations separated by a semicolon [@CameronTrivedi2013; @cohen2003applied]. If you need a prefix at the beginning of 2 or more citations, you will have rearrange the citations so that the prefix accompanies the citation that is first alphabetically. That is, [e.g., @CameronTrivedi2013; @cohen2003applied], not [e.g., @cohen2003applied;  @CameronTrivedi2013]
+
+-   Any prefixes or suffixes needing a literal semicolon will confuse Quarto (actually Pandoc). To make it clear that you need to print a semicolon, put a backslash before the semicolon: [FOIL\; @CameronTrivedi2013].
+
+### In-Text references
+
+-   @CameronTrivedi2013 said some interesting things.
+
+-   @cohen2003applied [pp. 101--103] said specific things on specific pages.
+
+-   Place the reference's year by itself with a minus sign: [-@CameronTrivedi2013]
+
+### Masked references
+
+Suppose you want to cite a previous reference of yours, but your anonymity is supposed to be protected in the review process. You can "mask" any citation you wish by setting the `mask` field in the metadata yaml to `true`. Then list all citations that need to be masked in the `masked-citations` field as shown in this template. If the `mask` field is set to `false`, they will print as ususual. Depending if it is an inline or parenthetical citation,  will be listed as "Masked Citations (n.d)" or "(Masked Citations, n.d)". 
+
+I have set two of my publications to be masked. In previous studies, things were asserted  [@schneider2015intelligence]. @schneider2012cattell asserted them emphatically.
+
+You can mix masked and unmasked citations [@cohen2003applied; @schneider2015intelligence].
+
+## Block Quotes and Suppressing Indentation
+
+Sometimes you want to give a longer quote that needs to go in its own paragraph. Block quotes are on their own line starting with the `>` character. For example, Jane Austen's [-@austenMansfieldPark1990] *Mansfield Park* has some memorable insights about the mind:
+
+> If any one faculty of our nature may be called more wonderful than the rest, I do think it is memory. There seems something more speakingly incomprehensible in the powers, the failures, the inequalities of memory, than in any other of our intelligences. The memory is sometimes so retentive, so serviceable, so obedient; at others, so bewildered and so weak; and at others again, so tyrannic, so beyond control! We are, to be sure, a miracle every way; but our powers of recollecting and of forgetting do seem peculiarly past finding out. (p. 163)
+
+:::{.NoIndent}
+If the text after a quote is a new paragraph, you can create it in the usual fashion (i.e., plain text with an empty line between the block text and the new paragraph). However, if the text after a quote is part of the same paragraph, you can suppress the indentation by creating a div with the .NoIndent class. This paragraph is an example of how to do so. 
+:::
+
+## Hypotheses, Aims, and Objectives
+
+The last paragraph of the introduction usually states the specific hypotheses of the study, often in a way that links them to the research design.
+
+# Method
+
+General remarks on method. This paragraph is optional.
+
+Not all papers require each of these sections. Edit them as needed. Consult the [Journal Article Reporting Standards](https://apastyle.apa.org/jars) for what is needed for your type of article.
+
+## Participants
+
+Who are they? How were they recruited? Report criteria for participant inclusion and exclusion. Perhaps some basic demographic stats are in order. A table is a great way to avoid repetition in statistical reporting.
+
+## Measures
+
+This section can also be titled **Materials** or **Apparatus**. Whatever tools, equipment, or measurement devices used in the study should be described.
+
+### Measure A
+
+Describe Measure A.
+
+### Measure B
+
+Describe Measure B.
+
+## Procedure
+
+What did participants do?
+
+How are the data going to be analyzed?
+
+# Results
+
+## Descriptive Statistics
+
+Here we describe the basic characteristics of our primary variables.
+
+## Displaying Figures
+
+Let's make a figure. A reference label for a figure must have the prefix `fig-`, and in a code chunk, the caption must be set with `fig-cap`.
+
+
+```{r}
+#| label: fig-myplot
+#| fig-cap: This is the figure caption.
+#| apa-note: "This is the note below the figure."
+#| fig-height: 4
+ggplot(data.frame(x = c(0, 35)), aes(x)) +
+  stat_function(fun = dchisq, 
+                args = list(df = 10),
+                geom = "area",
+                n = 1000,
+                color = NA,
+                fill = "#41448780") +
+  theme_void(base_size = 18)
+```
+
+To refer to any figure or table, use the `@` symbol followed by the reference label, eg., @fig-myplot. 
+
+## Updated Syntax for Figures and Tables
+
+A previous version of this extension used the `apafg-` prefix for figure chunk labels and `apatb-` prefix for tables. It was always in the plan to use standard Quarto syntax as soon as possible. It is now possible. Replace all instances of `apafg-` with the standard Quarto prefix `fig-`. Likewise, replace the non-standard `apatb-` prefix with the standard Quarto prefix `tbl-`.  
+
+Also replace all text references to figures and tables using standard Quarto syntax. For example, `{apafg-myplot}` should now be `@fig-myplot` instead. 
+
+## Imported Graphics
+
+One way to import an existing graphic as a figure is to use `knitr::include_graphics` in a code chunk. For example, @fig-importedgraphic is an imported image. Note that in apaquarto-pdf documents, we can specify that that a figure or table should span both columns when in journal mode by setting the `apa-twocolumn` chunk option to `true`. For other formats, this distinction does not matter.
+
+```{r fig-importedgraphic}
+#| fig-cap: This is an imported graphic.
+#| apa-twocolumn: true
+#| out-width: 50%
+#| fig-pos: h
+knitr::include_graphics("4-Outputs/sampleimage.png")
+```
+
+## Displaying Tables
+
+We can make a table the same way as a figure. Generating a table that conforms to APA format in all document formats can be tricky. When the table is simple, the `kable` function from knitr works well. Feel free to experiment with different methods, but I have found that David Gohel's [flextable](https://davidgohel.github.io/flextable/) to be the best option when I need something more complex.
+
+```{r tbl-mytable}
+#| tbl-cap: Here is the table caption. 
+#| apa-note: Here is the note below the table.
+#| ft.align: left
+#| apa-twocolumn: true
+tibble(Numbers = seq(1,4), Letters = LETTERS[seq(Numbers)]) |> 
+  flextable() %>%
+  theme_apa() |> 
+  line_spacing(part = "all", space = 1)
+
+```
+
+To refer to this table in text, put the table's reference label in curly braces like so: As seen in @tbl-mytable, the first few numbers and letters of the alphabet are displayed.
+
+In @tbl-mymarkdowntable, there is an example of a plain markdown table with a note below it.
+
+::: {#tbl-mymarkdowntable apa-note="This is a note below the markdown table." apa-twocolumn=true}
+
+
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+
+Table caption of a markdown table
+
+:::
+
+What if you want the tables and figures to be at the end of the document? In the .pdf format, you can set the `floatsintext` option to false. For .html and .docx documents, there is not yet an automatic way to put tables and figures at the end. You can, of course, just put them all at the end, in order. The reference labels will work no matter where they are in the text.
+
+<!-- Add Additional Sections as Needed -->
+
+# Discussion
+
+Describe results in non-statistical terms. <!-- Add sections as needed. -->
+
+## Limitations and Future Directions
+
+Every study has limitations. Based on this study, some additional steps might include...
+
+## Conclusion
+
+Let's sum this up.
+
+\newpage
+
+# References
+
+<!-- References will auto-populate in the refs div below -->
+
+::: {#refs}
+:::
+
+<!-- Delete Appendix if not needed. -->
+\newpage
+
+# Appendix A: List of Acronyms
+
+{{< print-acronyms >}}

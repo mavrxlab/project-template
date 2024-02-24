@@ -1,0 +1,7 @@
+\begin{figure*}[h]
+
+{\caption{{This is an imported graphic.}{\label{fig-importedgraphic}}}}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{4-Outputs/sampleimage.png}
+
+\end{figure*}
