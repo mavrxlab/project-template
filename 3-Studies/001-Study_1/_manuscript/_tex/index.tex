@@ -2,7 +2,16 @@
   man,
   floatsintext,
   longtable,
+  nolmodern,
+  notxfonts,
+  notimes,
+  mask,
   colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{apa7}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
 
 
 \RequirePackage{longtable}
@@ -24,10 +33,17 @@
 	{\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-\usepackage{amsmath}
+
 
 
 \usepackage{longtable, booktabs, multirow, multicol, colortbl, hhline, caption, array, float}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
 
 \usepackage{tcolorbox}
 \tcbuselibrary{listings,theorems, breakable, skins}
@@ -54,7 +70,7 @@
 
 
 \usepackage{hyperref}
-\usepackage{float}
+
 
 
 \usepackage{color}
@@ -161,14 +177,22 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
-\usepackage{times}
-    
 \usepackage[nolongtablepatch]{lineno}
 \linenumbers
 
 
-\title{Using Quarto to Generate Documents in APA Style (7th Edition)}
-\shorttitle{Template for the apaquarto Extension}
+\usepackage{newtx}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+
+
+
+
+\title{APA 7th Edition Template: This is added after the title, no colon
+needed.}
+\shorttitle{\texttt{shorttitle} is actually the running header.}
 
 
 \usepackage{etoolbox}
@@ -180,35 +204,54 @@
 
 
 
+
 \authorsnames[{1},{2,3}]{
-Ana Fulano,Carina Mengano
+Ryan Straight,Second Author
 }
 
+
+
+
 \authorsaffiliations{
-{Department of Psychology, Ana and Blanca's University},{Carina's
-Primary Affiliation},{Carina's Secondary Affiliation}}
+{Cyber, Intel, \& Information Operations, University of Arizona},{Second
+Author's Primarily Affiliation},{Second Author's Secondary Affiliation}}
 
 
 
-\leftheader{Fulano and Mengano}
 
 
 
-\abstract{This document is a template demonstrating the apaquarto
-format.}
+\leftheader{Straight and Author}
+
+
+
+\abstract{This document is an example of using the \texttt{apaquarto}
+extension within the project template. Praesent ornare dolor turpis, sed
+tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique
+sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie.
+Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi
+pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie
+nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue
+justo, at placerat erat posuere at. Ut elementum urna lectus, vitae
+bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id
+maximus. Duis pulvinar facilisis massa, et condimentum est viverra
+congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis
+quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum
+vulputate justo. Nulla facilisi.}
 % 
-\keywords{keyword1, keyword2, keyword3}
+\keywords{APA, project, template, lipsum}
 
-\authornote{\par{\addORCIDlink{Ana
-Fulano}{0000-0000-0000-0000}}\par{\addORCIDlink{Carina
-Mengano}{0000-0000-0000-0001}}
+\authornote{\par{\addORCIDlink{Ryan
+Straight}{0000-0002-6251-5662}}\par{\addORCIDlink{Second
+Author}{0000-0000-0000-0001}}
 \par{ }
-\par{       Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows: Ana
-Fulano:   conceptualization, Writing - original draft; Carina
-Mengano:   Formal Analysis, Writing}
-\par{Correspondence concerning this article should be addressed to Ana
-Fulano, Department of Psychology, Ana and Blanca's University, 1234
-Capital St., Albany, NY 12084-1234, Email: sm@example.org}
+\par{       Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows: Ryan
+Straight:   conceptualization, Writing - original draft; Second
+Author:   Formal Analysis, Writing}
+\par{Correspondence concerning this article should be addressed to Ryan
+Straight, Cyber, Intel, \& Information Operations, University of
+Arizona, 1140 N Colombo Ave., Sierra
+Vista, AZ 85635, Email: ryanstraight@arizona.edu}
 }
 
 
@@ -222,6 +265,10 @@ Capital St., Albany, NY 12084-1234, Email: sm@example.org}
 
 \urlstyle{same}
 
+
+
+
+
 \begin{document}
 \maketitle
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
@@ -233,7 +280,32 @@ Capital St., Albany, NY 12084-1234, Email: sm@example.org}
 This is my introductory paragraph. The title will be placed above it
 automatically. \emph{Do not start with an introductory heading} (e.g.,
 ``Introduction''). The title acts as your Level 1 heading for the
-introduction.
+introduction. You'll see the
+\texttt{\{\{\textless{}\ lipsum\ \textgreater{}\}\}} shortcode used to
+flesh out the document. You can add a number to create multiple
+paragraphs, like \texttt{\{\{\textless{}\ lipsum\ 3\ \textgreater{}\}\}}
+to get three paragraphs. \emph{This requires newer releases of Quarto!}
+
+Duis urna urna, pellentesque eu urna ut, malesuada bibendum dolor.
+Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna
+est accumsan augue, auctor vulputate erat quam quis neque. Nullam
+scelerisque odio vel ultricies facilisis. Ut porta arcu non magna
+sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque
+ac arcu congue, rhoncus mi id, dignissim ligula.
+
+Praesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur
+sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut
+nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id
+pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed
+at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur
+eu. Integer consectetur augue justo, at placerat erat posuere at. Ut
+elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse
+vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et
+condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi
+dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus
+lobortis risus ut, rutrum vulputate justo. Nulla facilisi.
+
+\subsection{Acronyms}\label{acronyms}
 
 You can add acronyms using the \texttt{acronyms} extension and
 shortcodes. For example, \{\{\textless{} acr qmd \textgreater\}\} gives
@@ -243,24 +315,29 @@ simply show the acronym, like so: qmd. Very convenient. When talking
 about qmd frontmatter, you might say:
 
 \begin{quote}
-qmd uses YAML Aint Markup Language (YAML) for frontmatter, metadata, and
-settings. YAML is convenient and human-readable.
+Quarto document (qmd) uses YAML Aint Markup Language (YAML) for
+frontmatter, metadata, and settings. YAML is convenient and
+human-readable.
 \end{quote}
 
 \noindent And the actual text in the file is:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\AttributeTok{\textgreater{}\{\{\textless{} acr qmd \textgreater{}\}\} uses \{\{\textless{} acr YAML \textgreater{}\}\} for frontmatter, metadata,}
-\AttributeTok{\textgreater{}and settings. \{\{\textless{} acr YAML \textgreater{}\}\} is convenient and human{-}readable.}
+\AttributeTok{\textgreater{}\{\{\textless{} acr qmd first\_use=true \textgreater{}\}\} uses \{\{\textless{} acr YAML \textgreater{}\}\} for frontmatter,}
+\AttributeTok{metadata, and settings. \{\{\textless{} acr YAML \textgreater{}\}\} is convenient and human{-}readable.}
 \end{Highlighting}
 \end{Shaded}
 
 \noindent {Note that the code is broken up to wrap in PDF as well as
-HTML.} Readers are better able to follow your ideas if you differentiate
-sections in your introduction with headings. Mostly stick to level 2
-headers. Sometimes level 3 headings are needed, though. Be sparing to
-the point of stinginess with levels 4 and 5.
+HTML.} Since we used the \texttt{qmd} acronym in the paragraph above, we
+needed to add the \texttt{first\_use=true} option to force the full
+acronym usage. You'll also notice the \texttt{\{.NoIndent\}} class
+attached to this paragraph and the line above the code block above. Nice
+little addition. Readers are better able to follow your ideas if you
+differentiate sections in your introduction with headings. Mostly stick
+to level 2 headers. Sometimes level 3 headings are needed, though. Be
+sparing to the point of stinginess with levels 4 and 5.
 
 All headings should be in title case according to
 \href{https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case}{these
@@ -275,12 +352,48 @@ flush left, and double-spaced.
 You do not need to put text after a heading. You can put a higher-level
 heading directly underneath if you want.
 
+Etiam non efficitur urna, quis elementum nisi. Mauris posuere a augue
+vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla
+vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem
+sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit
+fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum
+molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat
+volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit
+mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in
+ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec
+neque. Class aptent taciti sociosqu ad litora torquent per conubia
+nostra, per inceptos himenaeos.
+
+Duis urna urna, pellentesque eu urna ut, malesuada bibendum dolor.
+Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna
+est accumsan augue, auctor vulputate erat quam quis neque. Nullam
+scelerisque odio vel ultricies facilisis. Ut porta arcu non magna
+sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque
+ac arcu congue, rhoncus mi id, dignissim ligula.
+
 \subsection{A Level 2 Heading Without Text Below
 It}\label{a-level-2-heading-without-text-below-it}
 
 \subsubsection{Level 3 Heading}\label{level-3-heading}
 
 Subsections of a level 2 heading are placed under level 3 headings.
+Vestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit
+amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in
+elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor
+ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras
+finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros
+quis lectus lacinia venenatis hendrerit vel ante. Etiam congue quam eget
+velit convallis, eu sagittis orci vestibulum. Vestibulum at massa
+turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue
+rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc
+eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae
+porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique
+vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit
+placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies
+sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id.
+Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris.
+Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien,
+sit amet imperdiet dui molestie ut.
 
 \subsubsection{Another Level 3 Heading}\label{another-level-3-heading}
 
@@ -294,7 +407,23 @@ or 5 heading. If you forget the period at the end of the level 4 or 5
 heading, it will be added automatically. A period will not be added if
 the heading ends with a question mark or an exclamation point.
 
-Subsequent paragraphs go on their own lines.
+Subsequent paragraphs go on their own lines. Etiam non efficitur urna,
+quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus
+erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat
+vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam
+semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum
+ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at
+feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque
+magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor
+eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis,
+fringilla a eleifend maximus, viverra nec neque. Class aptent taciti
+sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Duis urna urna, pellentesque eu urna ut, malesuada bibendum dolor.
+Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna
+est accumsan augue, auctor vulputate erat quam quis neque. Nullam
+scelerisque odio vel ultricies facilisis. Ut porta arcu non magna
+sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque
+ac arcu congue, rhoncus mi id, dignissim ligula.
 
 \subparagraph{Level 5 Heading.}\label{level-5-heading}
 
@@ -303,12 +432,43 @@ case, and end with a period. Notice that there was no period after this
 level 5 heading in the markdown document, but it does appear in the
 rendered document.
 
-Subsequent paragraphs go on their own lines.
+Subsequent paragraphs go on their own lines.Etiam non efficitur urna,
+quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus
+erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat
+vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam
+semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum
+ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at
+feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque
+magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor
+eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis,
+fringilla a eleifend maximus, viverra nec neque. Class aptent taciti
+sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Duis urna urna, pellentesque eu urna ut, malesuada bibendum dolor.
+Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna
+est accumsan augue, auctor vulputate erat quam quis neque. Nullam
+scelerisque odio vel ultricies facilisis. Ut porta arcu non magna
+sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque
+ac arcu congue, rhoncus mi id, dignissim ligula.
 
 \subsection{How to Cite References}\label{how-to-cite-references}
 
 I am going to cite a reference here in square brackets (Cameron \&
-Trivedi, 2013). This reference was in my bibliography file.
+Trivedi, 2013). This reference was in my bibliography file. Etiam quis
+tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et
+magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et,
+sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel
+dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a,
+fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio,
+vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus
+nec leo maximus blandit. Maecenas turpis velit, ultricies non elementum
+vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra,
+finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem
+et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue
+cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna.
+Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut
+ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim
+efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.
 
 \subsubsection{Parenthetical References}\label{parenthetical-references}
 
@@ -360,11 +520,30 @@ ususual. Depending if it is an inline or parenthetical citation, will be
 listed as ``Masked Citations (n.d)'' or ``(Masked Citations, n.d)''.
 
 I have set two of my publications to be masked. In previous studies,
-things were asserted (Masked Citations, n.d.). Masked Citations (n.d.)
+things were asserted (Masked Author, n.d.). Masked Author (n.d.)
 asserted them emphatically.
 
 You can mix masked and unmasked citations (Cohen et al., 2003; Masked
-Citations, n.d.).
+Author, n.d.). Proin sodales neque erat, varius cursus diam tincidunt
+sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem
+ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent
+semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In
+hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum
+id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu
+est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi.
+In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed
+elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at
+tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in
+tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque
+magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula
+ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue
+sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros
+hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non
+tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla.
+Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra
+rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus.
 
 \subsection{Block Quotes and Suppressing
 Indentation}\label{block-quotes-and-suppressing-indentation}
@@ -630,17 +809,84 @@ no matter where they are in the text.
 
 \section{Discussion}\label{discussion}
 
-Describe results in non-statistical terms.
+Describe results in non-statistical terms. Etiam maximus accumsan
+gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum.
+Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa
+interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor
+purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum
+magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt
+ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur
+ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac.
+Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean
+eget enim at diam bibendum tincidunt eu non purus. Nullam id magna
+ultrices, sodales metus viverra, tempus turpis. Duis ornare ex ac
+iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet
+consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis
+risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem
+tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet
+enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat
+eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum
+massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis
+eros eu sagittis. Pellentesque dictum, erat at pellentesque
+sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis.
+Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam
+finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris
+tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi
+nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna
+nisi.
 
 \subsection{Limitations and Future
 Directions}\label{limitations-and-future-directions}
 
 Every study has limitations. Based on this study, some additional steps
-might include\ldots{}
+might include\ldots{} Etiam congue quam eget velit convallis, eu
+sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare
+ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor
+suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus
+volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in
+rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin
+mollis justo id est tempus hendrerit. Praesent suscipit placerat congue.
+Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc
+ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus
+purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam
+sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet
+imperdiet dui molestie ut. Etiam non efficitur urna, quis elementum
+nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex
+iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate.
+Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut
+blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor
+sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla
+ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo
+maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum
+pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a
+eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad
+litora torquent per conubia nostra, per inceptos himenaeos.
 
 \subsection{Conclusion}\label{conclusion}
 
-Let's sum this up.
+Let's sum this up. Nunc ac dignissim magna. Vestibulum vitae egestas
+elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat.
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum
+est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida
+ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam
+vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit
+amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin
+tempor lorem arcu, at condimentum purus volutpat eu. Fusce et
+pellentesque ligula. Pellentesque id tellus at erat luctus fringilla.
+Suspendisse potenti. Etiam maximus accumsan gravida. Maecenas at nunc
+dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in
+nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel,
+pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc.
+Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu
+erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh,
+commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus
+elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra
+urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et
+ultrices posuere cubilia curae; Aenean eget enim at diam bibendum
+tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra,
+tempus turpis.
 
 \newpage
 
@@ -663,7 +909,7 @@ multiple regression/correlation analysis for the behavioral sciences}
 (3rd ed.). Lawrence Erlbaum Associates.
 
 \bibitem[\citeproctext]{ref-maskedreference}
-Masked Citations. (n.d.). \emph{Masked titles}. Masked Sources.
+Masked Author. (n.d.). \emph{Masked Title}.
 
 \end{CSLReferences}
 

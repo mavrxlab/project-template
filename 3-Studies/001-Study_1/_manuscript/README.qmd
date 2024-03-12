@@ -1,7 +1,5 @@
 ---
 title: How this study project works
-format: html
-
 ---
 
 ## Study folder
@@ -14,4 +12,4 @@ Use the `preregistration.qmd` file to build out the preregistration you'll event
 
 ## Acronyms
 
-https://rchaput.github.io/acronyms/getting_started.html
+<https://rchaput.github.io/acronyms/getting_started.html>

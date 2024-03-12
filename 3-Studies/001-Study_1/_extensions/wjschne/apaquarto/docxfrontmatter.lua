@@ -11,6 +11,17 @@ local function ends_with(str, ending)
    return string.sub(str.text, -1) == ending
 end
 
+local function file_exists(name)
+ 
+  local f = io.open(name, 'r')
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
 -- Check if meta is present or if it has length of 0
 local function chkmeta(meta_item)
     ispresent = false
@@ -47,27 +58,6 @@ local function oxfordcommalister(lists)
   end
 
   return result
-end
-
-local get_document_title = function(mytitle, mysubtitle)
-
-      if not mytitle then
-        mytitle = quarto.utils.string_to_inlines("My Title")
-      end
-      
-      if mysubtitle then
-        if not ends_with(mytitle[#mytitle], ":") then
-          mytitle:insert(pandoc.Str(":"))
-        end
-        mytitle:insert(pandoc.Space())
-        mytitle:extend(mysubtitle)
-      end
-
-  
-      local title = pandoc.Header(1, mytitle)
-      title.classes = {"title", "unnumbered", "unlisted"}
-      title.identifier="title"
-      return title
 end
 
 local are_affiliations_different = function(authors)
@@ -162,23 +152,49 @@ return {
            
       local body = List:new{}
       local meta = doc.meta
-      local documenttitle = get_document_title(meta.apatitle, meta.apasubtitle)
+      
+      local documenttitle = ""
+      local intabovetitle = 2
+      local newline = pandoc.LineBreak()
+      if FORMAT:match 'docx' then
+         newline = pandoc.SoftBreak()
+      end
+      
+      if meta.apatitledisplay then
+        if meta["blank-lines-above-title"] and #meta["blank-lines-above-title"] > 0 then
+          local possiblenumber = stringify(meta["blank-lines-above-title"])
+          intabovetitle = math.floor(tonumber(possiblenumber)) or 2
+        end
+        for i=1,intabovetitle do 
+          body:extend({newline})
+        end
+        documenttitle = pandoc.Header(1, meta.apatitledisplay)
+        documenttitle.classes = {"title", "unnumbered", "unlisted"}
+        documenttitle.identifier="title"
+        body:extend({documenttitle})
+      end
+      
+
       
       local byauthor = meta["by-author"]
       local affiliations = meta["affiliations"]
       
       local authornote = meta["author-note"]
       
+      local mask = false
+      
+      if meta["mask"] and stringify(meta["mask"]) == "true" then
+        mask = true
+      end
+      
       
       local affilations_different = are_affiliations_different(byauthor)
       
       local affiliations_str = List()
 
-      local newline = pandoc.LineBreak()
+   
       
-      if FORMAT:match 'docx' then
-         newline = pandoc.SoftBreak()
-      end
+
       
       
       local authordiv = pandoc.Div({
@@ -239,47 +255,64 @@ return {
       
       
       
-      body:extend({documenttitle})
-      body:extend({authordiv})
+
       
-      local authornoteheader = pandoc.Header(1, "Author Note")
+      if not mask then
+      body:extend({authordiv})
+      end
+      
+      local authornoteheadertext = "Author Note"
+      if meta.language and meta.language["title-block-author-note"] then
+        authornoteheadertext = meta.language["title-block-author-note"]
+      end 
+      
+      local authornoteheader = pandoc.Header(1, authornoteheadertext)
       authornoteheader.classes = {"unnumbered", "unlisted", "AuthorNote"}
       authornoteheader.identifier = "author-note"
       
-      local intblank = 1
+      local intabovenote = 2
       
       if authornote then
         if FORMAT:match 'docx' then
           blanklines = authornote["blank-lines-above-author-note"]
-          if blanklines then
-            for i, v in ipairs(blanklines) do
-              intblank = tonumber(v.text)
-            end
+          if authornote["blank-lines-above-author-note"] and #authornote["blank-lines-above-author-note"] > 0 then
+            local possiblenumber = stringify(authornote["blank-lines-above-author-note"])
+            intabovenote = math.floor(tonumber(possiblenumber)) or 2
+          end
+          for i=1,intabovenote do 
+            body:extend({newline})
           end
         end
       end
 
-      for i=1,intblank,1 do 
-        body:extend({newline})
-      end
+
         
-      body:extend({authornoteheader})
-      
+        
+        
+      if not mask then
+        body:extend({authornoteheader})
+      end
       
       local img
       
       for i, a in ipairs(byauthor) do
         
         if a.orcid then
-          img = pandoc.Image("Orcid ID Logo: A green circle with white letters ID", "_extensions/wjschne/apaquarto/ORCID-iD_icon-vector.svg")
+          local orcidfile = "_extensions/wjschne/apaquarto/ORCID-iD_icon-vector.svg"
+          if not file_exists(orcidfile) then
+            orcidfile = "_extensions/apaquarto/ORCID-iD_icon-vector.svg"
+          end 
+          img = pandoc.Image("Orcid ID Logo: A green circle with white letters ID", orcidfile)
           img.attr = pandoc.Attr('orchid', {'img-fluid'},  {width='16px'})
           pp = pandoc.Para(pandoc.Str(""))
           pp.content:extend(a.name.literal)
           pp.content:extend({pandoc.Space(), img})
           pp.content:extend({pandoc.Space(), pandoc.Str("http://orcid.org/")})
           pp.content:extend(a.orcid)
-
-          body:extend({pp})
+          
+          if not mask then
+            body:extend({pp})
+          end
         end 
 
       end
@@ -289,28 +322,32 @@ return {
         if authornote["status-changes"] then
           local second_paragraph = pandoc.Para(pandoc.Str(""))
           
-          second_paragraph = extend_paragraph(second_paragraph, authornote["status-changes"]["affiliation-change"])
-          second_paragraph = extend_paragraph(second_paragraph, authornote["status-changes"].deceased)
-          
-          
+          second_paragraph = extend_paragraph(second_paragraph, authornote["status-changes"]["affiliation-change"] or authornote["affiliation-change"] or meta["affiliation-change"])
+          second_paragraph = extend_paragraph(second_paragraph, authornote["status-changes"].deceased or authornote.deceased or meta.deceased)
+      
+
           if #second_paragraph.content > 1 then
-            body:extend({second_paragraph})
+            if not mask then
+              body:extend({second_paragraph})
+            end
           end
         end
         
         if authornote.disclosures then
           local third_paragraph = pandoc.Para(pandoc.Str(""))
           
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["study-registration"])
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["data-sharing"])
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["related-report"])
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["conflict-of-interest"])
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["financial-support"])
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures.gratitude)
-          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["authorship-agreements"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["study-registration"] or authornote["study-registration"] or meta["study-registration"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["data-sharing"] or authornote["data-sharing"] or meta["data-sharing"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["related-report"] or authornote["related-report"] or meta["related-report"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["conflict-of-interest"] or authornote["conflict-of-interest"] or meta["conflict-of-interest"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["financial-support"] or authornote["financial-support"] or meta["financial-support"])
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures.gratitude or authornote.gratitude or meta.gratitude)
+          third_paragraph = extend_paragraph(third_paragraph, authornote.disclosures["authorship-agreements"] or authornote["authorship-agreements"] or meta["authorship-agreements"])
           
           if #third_paragraph.content > 1 then
-            body:extend({third_paragraph})
+            if not mask then
+              body:extend({third_paragraph})
+            end
           end
         end
       
@@ -349,8 +386,22 @@ return {
         
         
         if #credit_paragraph.content > 1 then
-          credit_paragraph.content:insert(1, pandoc.Str("Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows: "))
-          body:extend({credit_paragraph})
+          
+          local authorroleintroduction = pandoc.Str("Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows:")
+          if meta.language and meta.language["title-block-role-introduction"] then
+            authorroleintroduction = meta.language["title-block-role-introduction"]
+            if type(authorroleintroduction) == "string" then
+              authorroleintroduction = pandoc.Inlines(authorroleintroduction)
+            end
+          end
+          
+          credit_paragraph.content:insert(1, pandoc.Space())
+          for i,j in pairs(authorroleintroduction) do
+            credit_paragraph.content:insert(i, j)
+          end
+          if not mask then
+            body:extend({credit_paragraph})
+          end
         end
       
   
@@ -388,42 +439,69 @@ return {
       
       
         if #corresponding_paragraph.content > 1 then
-          corresponding_paragraph.content:insert(1, pandoc.Str("Correspondence concerning this article should be addressed to "))
-          body:extend({corresponding_paragraph})
+          local correspondencenote = pandoc.Str("Correspondence concerning this article should be addressed to ")
+          if meta.language and meta.language["title-block-correspondence-note"] then
+            correspondencenote = meta.language["title-block-correspondence-note"]
+            if type(correspondencenote) == "string" then
+              correspondencenote = pandoc.Inlines(correspondencenote)
+            end
+          end
+          corresponding_paragraph.content:insert(1, pandoc.Space())
+          for i,j in pairs(correspondencenote) do
+            corresponding_paragraph.content:insert(i, j)
+          end
+          
+          if not mask then
+            body:extend({corresponding_paragraph})
+          end
         end
         
-      if meta.apaabstract or meta.abstract then
-        local abstractheader = pandoc.Header(1, "Abstract")
+      if meta.apaabstract and #meta.apaabstract > 0 then
+        local abstractheadertext = pandoc.Str("Abstract")
+        if meta.language and meta.language["section-title-abstract"] then
+          abstractheadertext = meta.language["section-title-abstract"]
+        end
+        local abstractheader = pandoc.Header(1, abstractheadertext)
         abstractheader.classes = {"unnumbered", "unlisted", "AuthorNote"}
         abstractheader.identifier = "abstract"
         if FORMAT:match 'docx' then
           body:extend({pandoc.RawBlock('openxml', '<w:p><w:r><w:br w:type="page"/></w:r></w:p>')})
         end
+        
         body:extend({abstractheader})
         local abstract_paragraph = pandoc.Para(pandoc.Str(""))
         
         if pandoc.utils.type(meta.apaabstract) == "Inlines" then
           abstract_paragraph.content:extend(meta.apaabstract or meta.abstract)
-          body:extend({abstract_paragraph})
+          local abstractdiv = pandoc.Div(abstract_paragraph)
+          abstractdiv.classes:insert("Abstract")
+          body:extend({abstractdiv})
         end
         
         if pandoc.utils.type(meta.apaabstract) == "Blocks" then
+          local abstractdiv = pandoc.Div({})
           meta.apaabstract:walk {
             LineBlock = function(lb)
               lb:walk {
                 Inlines = function(el)
                     local lbpara = pandoc.Para(el)
-                    body:extend({lbpara})
+                    abstractdiv.content:extend({lbpara})
                 end
               }
             end
           }
+          body:extend({abstractdiv})
         end
 
       end
       
       if meta.keywords then
-        local keywords_paragraph = pandoc.Para({pandoc.Emph(pandoc.Str("Keywords")), pandoc.Str(":")})
+        local keywordsword = pandoc.Str("Keywords")
+        if meta.language and meta.language["title-block-keywords"] then
+          keywordsword = stringify(meta.language["title-block-keywords"])
+        end
+        
+        local keywords_paragraph = pandoc.Para({pandoc.Emph(keywordsword), pandoc.Str(":")})
         for i, k in ipairs(meta.keywords) do
           if i == 1 then
             keywords_paragraph = extend_paragraph(keywords_paragraph, k)
@@ -438,33 +516,32 @@ return {
         if FORMAT:match 'docx' then
           body:extend({pandoc.RawBlock('openxml', '<w:p><w:r><w:br w:type="page"/></w:r></w:p>')})
         end
-  
-      local firstpageheader = documenttitle:clone()
-      firstpageheader.identifier = "firstheader"
-      firstpageheader.classes = {"title"}
-      body:extend({firstpageheader})
-      
-      if meta["shorttitle"] then
-        for i, v in ipairs(meta["shorttitle"]) do
-          if v.t == "Str" then
-            if v.text:match("’") then
-              v.text = v.text:gsub("’","fixcurlyquote")
-
-            end
-            v.text = string.gsub(string.upper(v.text), string.upper("fixcurlyquote"), "’")
-            
-          end
-        end
-        meta.description = meta["shorttitle"]
-      else
-        local myshorttitle = meta["apatitle"]
-        for i, v in ipairs(myshorttitle) do
-          if v.t == "Str" then
-            v.text = string.upper(v.text)
-          end
-        end
-        meta.description = myshorttitle
+        
+      if meta.apatitledisplay then
+        local firstpageheader = documenttitle:clone()
+        firstpageheader.identifier = "firstheader"
+        firstpageheader.classes = {"title"}
+        body:extend({firstpageheader})
       end
+  
+
+      
+      local myshorttitle = meta["apatitle"]
+
+      if meta["shorttitle"] and #meta["shorttitle"] > 0 then
+        myshorttitle = meta["shorttitle"]
+      end
+        
+      for i, v in ipairs(myshorttitle) do
+        if v.t == "Str" then
+          --if v.text:match("’") then
+            --v.text = v.text:gsub("’","fixcurlyquote")
+          --end
+          -- v.text = string.gsub(string.upper(v.text), string.upper("fixcurlyquote"), "’")
+          v.text = pandoc.text.upper(v.text)
+        end
+      end
+      meta.description = myshorttitle
       
       body:extend(doc.blocks)
       return pandoc.Pandoc(body, meta)
