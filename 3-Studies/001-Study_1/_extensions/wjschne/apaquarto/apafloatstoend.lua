@@ -2,14 +2,14 @@ if FORMAT == "latex" then
   return
 end
 Pandoc = function(doc)
-  if doc.meta.floatsintext then
+  if doc.meta.floatsintext and pandoc.utils.stringify(doc.meta.floatsintext) == "true" then
     return
   end
   local tbl = {}
   local fig = {}
   for i = #doc.blocks, 1, -1 do
     
-    if doc.blocks[i].t == "Div" then
+
       if doc.blocks[i].identifier then
         if doc.blocks[i].identifier:find("^tbl%-") then
           if FORMAT == "docx" then
@@ -47,7 +47,7 @@ Pandoc = function(doc)
         end
 
       end
-    end
+
   end
   
   if #tbl > 0 then
