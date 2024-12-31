@@ -51,8 +51,7 @@ project/
 ├── papers/
 │   └── template/
 ├── presentations/
-│   ├── conference-template/
-│   └── media/
+│   └── conference-template/
 └── README.qmd
 ```
 
