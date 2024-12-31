@@ -1,0 +1,19 @@
+---
+title: IRB Protocol Template
+---
+
+# Protocol Title
+
+# Research Team
+
+# Study Purpose
+
+# Methods
+
+# Risks and Benefits
+
+# Data Management
+
+# Informed Consent
+
+# Timeline
