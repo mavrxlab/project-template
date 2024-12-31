@@ -1,0 +1,170 @@
+---
+title: |
+    ![](banner.png)
+subtitle: "**Title**"
+
+title-meta: "Event Name"
+
+pagetitle: "Title"
+     
+author: "<br />Author"
+institute: "Institution"
+
+license: CC-BY
+
+format:
+  revealjs:
+    embed-resources: true
+    multiplex: true
+    link-external-newwindow: true
+    #link-external-icon: true
+    #standalone: true
+    theme: simple
+    #navigation-mode: vertical
+    controls-tutorial: true
+    show-slide-number: print
+    email-obfuscation: javascript
+    output-file: "index"
+    output-ext: "html"
+    
+citation:
+  type: paper-conference
+  container-title: "Proceedings Title"
+  title: "Title Again"
+  author: 
+    - name: Author 1
+      affiliation:
+      - id: id1
+        name: Institution
+  abstract: |
+    Abstract goes here.
+  publisher: "Publisher (Owning organization for conferences)"
+  issued: 2025-11-11
+  volume: 1
+  number: 1
+  doi: "10.23915/reprodocs.00010"
+  url: https://google.com # Link to paper
+  page-first: 1
+  page-last: 11
+
+editor: source
+
+execute: 
+  cache: false
+  echo: false
+  message: false
+  error: false
+
+toc: false
+slide-number: false
+number-sections: false
+logo: "banner.png"
+footer: "Author -- Institution -- email"
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| include: false
+
+# Load required packages
+library(tidyverse)
+library(scales)
+library(janitor)
+
+# Do any data loading or whatnot here
+```
+
+## Introductions {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Names here
+
+:::
+
+::: {.column width="50%"}
+
+Images or QR code here
+
+:::
+
+::::
+
+::: {.notes}
+
+
+
+:::
+
+
+## Slide with small text {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+
+Example column
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: figure-example
+#| fig-width: 6
+#| fig-height: 7
+#| warning: false
+
+hist(mtcars$mpg)
+```
+:::
+:::
+
+::: {.notes}
+
+Slide notes go here.
+
+:::
+
+
+# {#fullslide data-menu-title="Full Slide Break" background-image="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDMybG0zeWNoZmg2cjZxamhiaTAxYmxwa3FlM3BxZ2V6aW9lZjRndyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/e7OR5VUgUpoDjeaSiB/giphy.webp" background-size="contain"}
+
+[**FULL SLIDE BREAK**]{.r-fit-text style="color: white; -webkit-text-stroke: 3px black;"}
+
+::: {.notes}
+This is a full image slide that can be used as a break and other reasons.
+:::
+
+
+
+
+
+## Thank you!
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+End slide
+
+Social media goes here
+
+Other links, too
+
+### Questions?
+:::
+
+::: {.column width="40%"}
+
+Other stuff here.
+
+:::
+
+::::
+
+::: {.notes}
+
+
+
+:::
