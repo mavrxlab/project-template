@@ -24,21 +24,36 @@ This template organizes research projects that may produce multiple papers or pr
 
 ```
 project/
-├── admin/          # Project management & governance
-│   ├── proposals/  # Grant proposals, etc.
-│   └── reports/    # Progress reports
-├── data/           
-│   ├── raw/       # Original, immutable data
-│   └── tidy/      # Processed data (via scripts in analysis/data-prep/)
-├── docs/           # Documentation, IRB, protocols
-├── analysis/      
-│   ├── data-prep/ # Data cleaning/tidying scripts
-│   └── scripts/   # Analysis scripts
-├── papers/         # One folder per manuscript
-│   └── paper-1/
-│       ├── manuscript/
-│       └── figures/
-└── presentations/  # Talks, posters with shared media/
+├── .Rprofile
+├── .lintr
+├── .pre-commit-config.yaml
+├── project.Rproj
+├── R/
+│   ├── functions.R
+│   ├── init-project.R
+│   └── validate-data.R
+├── admin/
+│   ├── grants/
+│   │   ├── template/
+│   │   └── README.md
+│   ├── proposals/
+│   └── reports/
+├── analysis/
+│   ├── data-prep/
+│   ├── scripts/
+│   └── workflow.qmd
+├── data/
+│   ├── raw/
+│   └── tidy/
+├── docs/
+│   ├── CONTRIBUTING.md
+│   └── irb/
+├── papers/
+│   └── template/
+├── presentations/
+│   ├── conference-template/
+│   └── media/
+└── README.qmd
 ```
 
 ## Usage
@@ -51,6 +66,8 @@ project/
 ## Codename
 
 ```{r}
+# Change "seed" text to get codename
+#| eval: false # remove or set to true
 #| echo: true
 library(codename)
 codename(seed = "MA{VR}X Lab Project Template repository", type = "ubuntu")
