@@ -1,12 +1,11 @@
 ---
 title: Paper Title
-format:
-  hikmah-manuscript-pdf:
-    keep-tex: true
+format: typst
 bibliography: references.bib
 ---
 
-```{r setup}
+```{r}
+#| label: setup
 #| include: false
 library(tidyverse)
 library(here)

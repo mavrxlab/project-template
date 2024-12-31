@@ -2,7 +2,8 @@
 title: Project Status Dashboard
 ---
 
-```{r setup}
+```{r}
+#| label: setup
 #| echo: false
 library(tidyverse)
 library(here)

@@ -1,6 +1,6 @@
 ---
 title: NSF Proposal Template
-format: pdf
+format: typst
 ---
 
 # Project Summary
