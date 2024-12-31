@@ -1,1 +1,246 @@
-[Previous content for project_setup.qmd]
+---
+title: "Project Management Plan"
+format: html
+---
+
+## Project Timeline
+
+```{mermaid}
+gantt
+    title Research Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Conceptualization        :2024-01-01, 30d
+    Literature Review        :2024-01-15, 45d
+    Research Design         :2024-02-01, 30d
+    
+    section IRB
+    IRB Preparation        :2024-02-15, 30d
+    IRB Review            :2024-03-15, 45d
+    
+    section Pre-Registration
+    OSF Setup             :2024-03-01, 15d
+    Pre-registration      :2024-03-15, 15d
+    
+    section Implementation
+    Data Collection       :2024-04-01, 90d
+    Analysis             :2024-07-01, 60d
+    
+    section Publication
+    Manuscript Draft      :2024-09-01, 45d
+    Internal Review      :2024-10-15, 30d
+    Journal Submission   :2024-11-15, 1d
+```
+
+## Project Components
+
+### 1. Conceptualization
+
+#### Literature Review 
+
+- Map current research landscape
+- Identify research gaps
+- Document theoretical frameworks
+- Create synthesis matrix
+
+#### Research Questions
+
+- Draft initial research questions
+- Validate with theoretical framework
+- Assess feasibility
+- Define scope and limitations
+
+#### Target Journals
+
+- Select primary and backup journals
+- Review submission guidelines
+- Analyze recent publications
+- Note special requirements
+
+### 2. Project Setup
+
+#### Repository Structure
+
+- Initialize Git repository
+- Set up branch protection
+- Configure CI/CD pipeline
+- Document setup procedures
+
+#### Data Management
+
+- Create data dictionary
+- Define validation rules
+- Set up backup procedures
+- Document data flow
+
+### 3. IRB Process
+
+#### Protocol Development
+
+- Draft research protocol
+- Create consent forms
+- Design data collection instruments
+- Document security measures
+
+#### Submission Process
+
+- Complete IRB application
+- Submit supporting documents
+- Track review process
+- Document modifications
+
+### 4. Pre-registration
+
+#### OSF Setup
+
+- Create project workspace
+- Link GitHub repository
+- Upload protocols
+- Set access permissions
+
+#### Registration
+
+- Document hypotheses
+- Specify analysis plan
+- Define variables
+- Register project timeline
+
+### 5. Publication Process
+
+#### Manuscript Development
+
+- Follow journal guidelines
+- Include required sections
+- Create tables/figures
+- Format references correctly
+
+#### Review Response
+
+- Track reviewer comments
+- Document changes made
+- Maintain version control
+- Archive communications
+
+## Publication Checklist
+
+### Introduction
+
+- [ ] Clear research question explanation (<2 pages)
+- [ ] Gap identification in scholarship
+- [ ] Data/method significance
+- [ ] Research impact statement
+- [ ] Manuscript roadmap
+- [ ] Clear purpose statement
+- [ ] Engaging introduction
+
+### Theoretical Framework
+
+- [ ] Appropriate framework selection
+- [ ] Theory-context connection
+- [ ] Logical flow demonstration
+- [ ] Literature gap identification
+- [ ] Main points summary
+
+### Data & Methods
+
+- [ ] Pre-registration completion
+- [ ] Method justification
+- [ ] Replicability details
+- [ ] Analysis process documentation
+- [ ] Data anonymization
+- [ ] Method consistency check
+
+### Findings
+
+- [ ] Data-based findings
+- [ ] Supporting evidence inclusion
+- [ ] Theory-driven interpretation
+- [ ] Coherent results presentation
+- [ ] Visual representation
+- [ ] Public interest consideration
+
+### Discussion
+
+- [ ] Purpose/RQ revisit
+- [ ] Literature comparison
+- [ ] Theoretical contributions
+- [ ] Practical implications
+- [ ] Future research directions
+
+### Abstract
+
+- [ ] Paper-content alignment
+- [ ] Reviewer pool signaling
+- [ ] Clear writing style
+- [ ] Non-academic accessibility
+
+### Tables & Figures
+
+- [ ] Clear interpretation guidance
+- [ ] Complete explanatory notes
+- [ ] Meaningful titles
+- [ ] Correct numbering
+- [ ] In-text placeholders
+
+### Proofreading
+
+- [ ] Title consistency
+- [ ] Track changes accepted
+- [ ] Comments removed
+- [ ] Spell check complete
+- [ ] Grammar check complete
+- [ ] Term consistency
+- [ ] Remove unnecessary jargon
+
+### References
+- [ ] Citation completeness
+- [ ] Journal-specific formatting
+- [ ] In-text citation format
+- [ ] Page number verification
+- [ ] Volume/issue accuracy
+- [ ] Target journal citations
+
+### Formatting
+
+- [ ] Journal selection
+- [ ] Page numbering
+- [ ] Heading format
+- [ ] Line spacing
+- [ ] Title page setup
+- [ ] Zotero organization
+- [ ] Citation style check
+
+### Cover Letter
+
+- [ ] Editor information accuracy
+- [ ] Letterhead usage
+- [ ] Manuscript title accuracy
+- [ ] Theoretical approach summary
+- [ ] Novelty statement
+- [ ] Journal relevance justification
+
+### Submission Portal
+
+- [ ] Account setup
+- [ ] Figure preparation
+- [ ] Keyword selection
+- [ ] Data availability
+- [ ] Conflict declarations
+- [ ] Funding declarations
+- [ ] Acknowledgments
+- [ ] IRB documentation
+- [ ] Image permissions
+- [ ] Reviewer suggestions
+- [ ] Friendly review consideration
+- [ ] PDF proof verification
+
+### Review Response
+
+- [ ] Review processing time
+- [ ] Deadline tracking
+- [ ] Revision plan
+- [ ] Comprehensive response
+- [ ] Research integrity
+- [ ] Methodological consistency
+- [ ] Professional tone
+- [ ] Constructive approach
