@@ -1,0 +1,24 @@
+---
+title: Paper Title
+format: typst
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+library(here)
+
+source(here('R', 'functions.R'))
+```
+
+## Abstract
+
+## Introduction
+
+## Methods
+
+## Results
+
+## Discussion

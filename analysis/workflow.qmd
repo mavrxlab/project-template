@@ -1,0 +1,22 @@
+---
+title: Analysis Workflow
+---
+
+```{mermaid}
+graph TD
+    A[Raw Data] --> B[Data Cleaning]
+    B --> C[Initial Analysis]
+    C --> D[Results Review]
+    D --> E[Final Analysis]
+    E --> F[Paper Draft]
+```
+
+# Setup
+
+# Data Processing
+
+# Analysis Steps
+
+# Validation
+
+# Output Generation

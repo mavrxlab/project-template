@@ -1,0 +1,18 @@
+---
+title: Project Status Dashboard
+---
+
+```{r}
+#| label: setup
+#| echo: false
+library(tidyverse)
+library(here)
+```
+
+# Timeline
+
+# Milestones
+
+# Risks
+
+# Action Items

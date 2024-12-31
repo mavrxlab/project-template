@@ -1,5 +1,18 @@
 project:
-  title: "project-template-quarto"
+  type: default
+  output-dir: _output
+  execute-dir: project
 
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
 
+engine: knitr
 
+knitr:
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false

@@ -1,0 +1,38 @@
+---
+title: NSF Proposal Template
+format: typst
+---
+
+# Project Summary
+
+## Overview
+
+## Intellectual Merit
+
+## Broader Impacts
+
+# Project Description
+
+## Introduction
+
+## Research Questions
+
+## Background and Significance
+
+## Research Plan
+
+## Timeline
+
+## Expected Outcomes
+
+## Broader Impacts
+
+# References Cited
+
+# Biographical Sketch
+
+# Budget and Budget Justification
+
+# Facilities and Equipment
+
+# Data Management Plan
