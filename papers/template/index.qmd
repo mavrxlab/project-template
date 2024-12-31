@@ -1,0 +1,25 @@
+---
+title: Paper Title
+format:
+  hikmah-manuscript-pdf:
+    keep-tex: true
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(here)
+
+source(here('R', 'functions.R'))
+```
+
+## Abstract
+
+## Introduction
+
+## Methods
+
+## Results
+
+## Discussion
