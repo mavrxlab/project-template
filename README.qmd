@@ -4,21 +4,24 @@ format: gfm
 
 # Project Template
 
-![](presentations/media/banner.png)
-
-![Last updated](https://img.shields.io/github/last-commit/mavrxlab/project-template.png)
-
 ## Project Overview
 
 This template organizes research projects that may produce multiple papers or presentations. It's designed for R/Quarto workflows and uses the `here` package for robust file path handling.
 
-|                    |                                                              |
-|--------------------|--------------------------------------------------------------|
-| **Status**         | Active/Draft/Review                                           |
-| **Internal ID**    | SP-XXX                                                        |
-| **Type**           | Research Project                                              |
-| **Title**          | Your Project Title                                            |
-| **Last Update**    | YYYY-MM-DD                                                    |
+## TODO
+
+1. Review and update remaining QMD files for Quarto syntax
+2. Set up GitHub Actions for automated checks
+3. Create publication tracking system
+4. Add IRB templates and tracking
+5. Integrate OSF pre-registration workflow
+6. Update contributor guidelines
+7. Add example data validation scripts
+8. Create project initialization script
+9. Clean empty/unused directories
+10. Review _quarto.yml for consistency
+11. Create admin/contributors.csv
+12. Verify paper template structure and organization
 
 ## Structure
 
@@ -61,16 +64,6 @@ project/
 2. Use `here::here()` for all file paths
 3. Keep raw data immutable, generate tidy data via scripts
 4. One manuscript per folder in papers/
-
-## Codename
-
-```{r}
-# Change "seed" text to get codename
-#| eval: false # remove or set to true
-#| echo: true
-library(codename)
-codename(seed = "MA{VR}X Lab Project Template repository", type = "ubuntu")
-```
 
 ## Authors
 

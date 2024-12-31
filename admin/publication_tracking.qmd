@@ -1,0 +1,34 @@
+---
+title: "Publication Tracking"
+format: html
+---
+
+## Target Journals
+
+| Journal | Impact Factor | Submission Guidelines | Notes |
+|---------|--------------|----------------------|--------|
+|         |              |                      |        |
+
+## Submission History
+
+| Version | Date | Journal | Status | Notes |
+|---------|------|---------|--------|--------|
+|         |      |         |        |        |
+
+## Review Tracking
+
+### Round 1
+- Submitted: [Date]
+- Decision: [Decision]
+- Reviews received: [Date]
+
+#### Reviewer 1
+- Main points:
+- Required changes:
+- Optional suggestions:
+
+[Continue for additional reviewers/rounds]
+
+## Pre-submission Checklist
+
+[Embedded publication checklist from template]
