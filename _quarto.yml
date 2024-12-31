@@ -9,6 +9,8 @@ format:
     code-fold: true
     code-tools: true
 
+engine: knitr
+
 knitr:
   opts_chunk:
     echo: true
