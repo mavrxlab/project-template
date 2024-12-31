@@ -1,52 +1,61 @@
 ---
-title: "Project Template"
 format: gfm
 ---
 
-![](4-Dissemination/3-Publicity/banner.png)
+# Project Template
 
-![Last updated](https://img.shields.io/github/last-commit/mavrxlab/project-template)
+![](presentations/media/banner.png)
 
-<!-- Only edit README.qmd, never README.md! Rendering README.qmd will produce README.md. Format: gfm stands for "Github-flavored markdown. -->
+![Last updated](https://img.shields.io/github/last-commit/mavrxlab/project-template.png)
 
 ## Project Overview
 
->This is a large repository meant to house any number of individual studies and drafts that are all in some way connected. For example, in the `1-Project_Management/2-Finance/` folder, there is a sub-project for developing an NSF grant. As a variety of studies will often come of a single grant, these are held in the `3-Studies` folder.
->
->Repositories built from this template are *not* meant to be public, as the contents held within are internal and may include information like account numbers, emails, and so on. This is for working in and archiving content.
->
->Note that you're welcome to use a copy of this repository for _each_ individual study if you like. It is meant to be flexible. Not everything need even be used. No grant? Skip the Finance folder, for example.
+This template organizes research projects that may produce multiple papers or presentations. It's designed for R/Quarto workflows and uses the `here` package for robust file path handling.
 
+|                    |                                                              |
+|--------------------|--------------------------------------------------------------|
+| **Status**         | Active/Draft/Review                                           |
+| **Internal ID**    | SP-XXX                                                        |
+| **Type**           | Research Project                                              |
+| **Title**          | Your Project Title                                            |
+| **Last Update**    | YYYY-MM-DD                                                    |
 
-|                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Status**            | (What is the status of the project? Drafting, submitted, R&R, in review, et cetera)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Internal ID**            | (If a project submitted to sponsored projects.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Submission Type**   | (Type of project. Grant, paper, talk, et cetera.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Title**             | (Give your project a title. Note that the repo's codename will be a unique identifier, while the **Title** here is descriptive.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Abstract/Overview** | (An overview of the project. If a paper, could be the abstract. For a grant, could be the executive summary. For a talk, the proposal.) |
-| **Last Update**       | YYYY-MM-DD   |
+## Structure
 
-## `sapphire stoat`
-
-Create a codename for the project and repository. Modeled on Andrew Heiss's projects and the [codename library](http://svmiller.com/codename/). For example, [mountainous-mackerel](https://github.com/andrewheiss/mountainous-mackerel#%EF%B8%8F-note-on-mountainous-mackerel-project-name).
-
-```{r}
-#| eval: false
-#| results: hold
-#| warning: false
-library(codename)
-codename_message()
-#| code name generated by {codename} v.0.5.0
-
-codename(seed = "MA{VR}X Lab Project Template repository", type = "ubuntu")
-#| [1] "sapphire stoat"
+```
+project/
+├── admin/          # Project management & governance
+│   ├── proposals/  # Grant proposals, etc.
+│   └── reports/    # Progress reports
+├── data/           
+│   ├── raw/       # Original, immutable data
+│   └── tidy/      # Processed data (via scripts in analysis/data-prep/)
+├── docs/           # Documentation, IRB, protocols
+├── analysis/      
+│   ├── data-prep/ # Data cleaning/tidying scripts
+│   └── scripts/   # Analysis scripts
+├── papers/         # One folder per manuscript
+│   └── paper-1/
+│       ├── manuscript/
+│       └── figures/
+└── presentations/  # Talks, posters with shared media/
 ```
 
+## Usage
 
-<!-- 
-# This chunk is informational only and can be removed after forking.
-# It displays the _INFO.qmd file contents in the README.
--->
+1. Clone this template
+2. Use `here::here()` for all file paths
+3. Keep raw data immutable, generate tidy data via scripts
+4. One manuscript per folder in papers/
 
-{{< include _INFO.qmd >}}
+## Codename
+
+```{r}
+#| echo: true
+library(codename)
+codename(seed = "MA{VR}X Lab Project Template repository", type = "ubuntu")
+```
+
+## Authors
+
+Update `admin/contributors.csv` with author information.
