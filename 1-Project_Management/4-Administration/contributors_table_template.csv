@@ -1,0 +1,4 @@
+author,email,orcid,contribution_type,contribution_details,acknowledgment,affiliation,role,percent_contribution
+First Last,email@institution.edu,0000-0000-0000-0000,"Conceptualization, Methodology","Study design, Protocol development",NA,Institution Name,Principal Investigator,40
+First2 Last2,email2@institution.edu,0000-0000-0000-0001,"Data Collection, Analysis","Participant recruitment, Statistical analysis",NA,Institution Name,Co-Investigator,35
+First3 Last3,email3@institution.edu,0000-0000-0000-0002,"Writing, Review","Manuscript preparation, Editing",NA,Institution Name,Research Assistant,25
