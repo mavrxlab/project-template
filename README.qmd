@@ -18,20 +18,45 @@ This template organizes research projects that may produce multiple papers or pr
 6. Update contributor guidelines
 7. Add example data validation scripts
 8. Create project initialization script
+9. Clean empty/unused directories
+10. Review _quarto.yml for consistency
+11. Create admin/contributors.csv
+12. Verify paper template structure and organization
 
 ## Structure
 
-[Previous structure documentation]
-
-## Project Management
-
-See `1-Project_Management/project_setup.qmd` for:
-
-- Project timeline
-- IRB process tracking
-- Pre-registration workflow
-- Publication checklist
-- Reviewer feedback tracking
+```
+project/
+├── .Rprofile
+├── .lintr
+├── .pre-commit-config.yaml
+├── project.Rproj
+├── R/
+│   ├── functions.R
+│   ├── init-project.R
+│   └── validate-data.R
+├── admin/
+│   ├── grants/
+│   │   ├── template/
+│   │   └── README.md
+│   ├── proposals/
+│   └── reports/
+├── analysis/
+│   ├── data-prep/
+│   ├── scripts/
+│   └── workflow.qmd
+├── data/
+│   ├── raw/
+│   └── tidy/
+├── docs/
+│   ├── CONTRIBUTING.md
+│   └── irb/
+├── papers/
+│   └── template/
+├── presentations/
+│   └── conference-template/
+└── README.qmd
+```
 
 ## Usage
 
