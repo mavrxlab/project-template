@@ -1,6 +1,11 @@
 ---
 title: IRB Protocol Template
+format: gfm
 ---
+
+::: {.callout}
+Use this for notes prior to completing the provided Word documents.
+:::
 
 # Protocol Title
 
