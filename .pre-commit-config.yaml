@@ -1,10 +1,56 @@
+# Pre-commit hooks for template validation
+# Install with: pip install pre-commit && pre-commit install
+
 repos:
-- repo: https://github.com/lorenzwalthert/precommit
-  rev: v0.3.2
-  hooks:
-  - id: style-files
-    args: [--style_pkg=styler, --style_fun=tidyverse_style]
-  - id: roxygenize
-  - id: spell-check
-  - id: lintr
-  - id: readme-rmd-rendered
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.md$'
+      - id: end-of-file-fixer
+        exclude: '\.md$'
+      - id: check-yaml
+        files: '_quarto\.yml$'
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.3.2
+    hooks:
+      - id: style-files
+        args: [--style_pkg=styler, --style_fun=tidyverse_style]
+        files: '\.R$'
+      - id: lintr
+        files: '\.R$'
+
+  - repo: local
+    hooks:
+      - id: validate-quarto-syntax
+        name: Validate Quarto Syntax
+        entry: tools/hooks/validate-quarto-syntax.R
+        language: script
+        files: '\.qmd$'
+        pass_filenames: true
+        
+      - id: validate-template-structure
+        name: Validate Template Structure
+        entry: tools/hooks/validate-template-structure.R
+        language: script
+        files: '^templates/'
+        pass_filenames: false
+        
+      - id: check-bibliography-format
+        name: Check Bibliography Format
+        entry: tools/hooks/check-bibliography.R
+        language: script
+        files: '\.bib$'
+        pass_filenames: true
+        
+      - id: validate-yaml-headers
+        name: Validate YAML Headers
+        entry: tools/hooks/validate-yaml-headers.R
+        language: script
+        files: '\.qmd$'
+        pass_filenames: true

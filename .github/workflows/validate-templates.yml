@@ -1,0 +1,97 @@
+name: Validate Templates
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.3'
+        
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+        
+    - name: Install R dependencies
+      run: |
+        install.packages(c('fs', 'here', 'cli', 'yaml'), repos = 'https://cloud.r-project.org/')
+      shell: Rscript {0}
+      
+    - name: Run template validation
+      run: |
+        Rscript tools/validate-templates.R
+        
+    - name: Test individual templates
+      run: |
+        # Test each template individually to catch specific issues
+        Rscript -e "source('tools/validate-templates.R'); test_template('simple-paper', tempdir())"
+        Rscript -e "source('tools/validate-templates.R'); test_template('empirical-study', tempdir())"
+        Rscript -e "source('tools/validate-templates.R'); test_template('grant-application', tempdir())"
+        Rscript -e "source('tools/validate-templates.R'); test_template('literature-review', tempdir())"
+        Rscript -e "source('tools/validate-templates.R'); test_template('conference-presentation', tempdir())"
+        
+    - name: Test template chooser
+      run: |
+        # Test the template chooser logic
+        Rscript -e "source('tools/template-chooser.R'); get_template_recommendation(1, 1, 1, 1, 2)"
+        Rscript -e "source('tools/template-chooser.R'); get_template_recommendation(2, 2, 3, 2, 1)"
+        
+    - name: Check file consistency
+      run: |
+        # Check that all templates have required files
+        echo "Checking template consistency..."
+        for template in templates/*/; do
+          echo "Checking $template"
+          if [ ! -f "$template/README.md" ]; then
+            echo "ERROR: $template missing README.md"
+            exit 1
+          fi
+          if [ ! -f "$template/_quarto.yml" ]; then
+            echo "ERROR: $template missing _quarto.yml"
+            exit 1
+          fi
+          if [ ! -f "$template/references.bib" ]; then
+            echo "ERROR: $template missing references.bib"
+            exit 1
+          fi
+        done
+        echo "All templates have required files"
+        
+  quarto-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      
+    - name: Check Quarto files syntax
+      run: |
+        # Check that main .qmd files have valid syntax
+        echo "Checking Quarto file syntax..."
+        find . -name "*.qmd" -exec echo "Checking {}" \; -exec quarto check {} \;
+        
+    - name: Test README rendering
+      run: |
+        # Test that README.qmd renders correctly
+        quarto render README.qmd
+        if [ ! -f "README.md" ]; then
+          echo "ERROR: README.md was not generated"
+          exit 1
+        fi
+        echo "README.qmd renders successfully"

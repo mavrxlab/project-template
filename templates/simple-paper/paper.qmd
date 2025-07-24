@@ -1,0 +1,85 @@
+---
+title: "Your Paper Title Here"
+author: 
+  - name: "Your Name"
+    orcid: "0000-0000-0000-0000"
+    email: "you@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+abstract: |
+  Write your abstract here. Keep it concise and informative, typically 150-250 words depending on journal requirements.
+
+keywords: ["keyword1", "keyword2", "keyword3"]
+date: today
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    code-fold: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+  docx: default
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Source setup script
+source("R/setup.R")
+```
+
+## Introduction
+
+Begin with a compelling opening that introduces your topic and establishes its importance. Clearly state your thesis or main argument early in the introduction.
+
+- Present the problem or question you're addressing
+- Explain why this matters to your field
+- Preview your argument structure
+
+## Literature Review / Background
+
+Engage with existing scholarship relevant to your argument. This is not just a summary but a critical analysis that positions your contribution.
+
+### Key Theoretical Framework
+
+Introduce the main theoretical lens through which you'll analyze your topic [@importantcitation2023].
+
+### Current Debates
+
+Outline the key debates or tensions in the literature that your paper addresses.
+
+## Main Arguments
+
+Present your core arguments with clear logical structure. Use headings to organize major points.
+
+### Argument 1
+
+Develop your first main point with supporting evidence and reasoning.
+
+### Argument 2
+
+Continue with subsequent arguments, building toward your conclusion.
+
+## Implications
+
+Discuss the broader implications of your arguments:
+
+- **Theoretical contributions**: How does this advance our understanding?
+- **Practical implications**: What should practitioners or policymakers know?
+- **Future research**: What questions emerge from your analysis?
+
+## Conclusion
+
+Synthesize your arguments and reinforce your main contributions. Avoid simply repeating what you've already said - instead, elevate the discussion to show the broader significance of your work.
+
+## References
+
+::: {#refs}
+:::
+
+## Appendices {.appendix}
+
+Include any supplementary material that supports but doesn't belong in the main text.

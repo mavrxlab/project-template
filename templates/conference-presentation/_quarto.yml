@@ -1,0 +1,32 @@
+project:
+  type: default
+  output-dir: _output
+
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    transition: slide
+    background-transition: fade
+  beamer:
+    theme: default
+    colortheme: default
+    fonttheme: default
+  pptx:
+    reference-doc: custom-template.pptx
+
+engine: knitr
+execute:
+  echo: false
+  warning: false
+  message: false
+
+knitr:
+  opts_chunk:
+    comment: ""
+    message: false
+    warning: false
+    fig.align: "center"

@@ -1,0 +1,192 @@
+---
+title: "Grant Proposal Title Here"
+author: 
+  - name: "Principal Investigator Name"
+    orcid: "0000-0000-0000-0000"
+    email: "pi@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+
+date: today
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    keep-tex: true
+  docx: default
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(here)
+library(knitr)
+```
+
+## Project Summary
+
+Provide a concise summary of the proposed research project, typically 1 page or less.
+
+### Intellectual Merit
+
+Summarize the intellectual merit of the proposed research.
+
+### Broader Impacts
+
+Describe the broader impacts of the proposed work.
+
+## Project Description
+
+### Background and Rationale
+
+#### Theoretical Foundation
+
+Establish the theoretical background for your proposed research.
+
+#### Current State of Knowledge
+
+Review relevant literature and identify gaps your research will address.
+
+#### Innovation and Significance
+
+Explain what makes your approach novel and why it matters.
+
+### Research Objectives
+
+Clearly state your research objectives:
+
+1. **Objective 1**: [Specific, measurable objective]
+2. **Objective 2**: [Specific, measurable objective]
+3. **Objective 3**: [Specific, measurable objective]
+
+### Research Design and Methods
+
+#### Overall Approach
+
+Describe your methodological approach and research design.
+
+#### Data Collection
+
+Detail your data collection procedures and instruments.
+
+#### Analysis Plan
+
+Outline your analytical approach and statistical methods.
+
+### Timeline
+
+| Year | Activities |
+|------|------------|
+| Year 1 | Initial setup, pilot testing, data collection begins |
+| Year 2 | Full data collection, preliminary analysis |
+| Year 3 | Analysis completion, manuscript preparation, dissemination |
+
+### Expected Outcomes
+
+#### Publications
+
+List expected publications and target journals.
+
+#### Presentations
+
+Describe planned conference presentations.
+
+#### Other Products
+
+Detail other expected outcomes (software, datasets, etc.).
+
+## Personnel and Management Plan
+
+### Principal Investigator Qualifications
+
+Describe PI qualifications and relevant experience.
+
+### Co-Investigator Roles
+
+If applicable, describe co-investigator roles and qualifications.
+
+### Student Training
+
+Describe opportunities for student involvement and training.
+
+## Facilities and Resources
+
+### Institutional Resources
+
+Describe available institutional resources and facilities.
+
+### Equipment Needs
+
+List any specialized equipment requirements.
+
+## Budget Justification
+
+### Personnel Costs
+
+- **Principal Investigator**: [% effort] = $[amount]
+- **Graduate Students**: [number] × $[amount] = $[total]
+- **Undergraduate Students**: [hours] × $[rate] = $[total]
+
+### Equipment and Supplies
+
+- **Computer Equipment**: $[amount]
+- **Software Licenses**: $[amount]
+- **Research Supplies**: $[amount]
+
+### Travel
+
+- **Conference Presentations**: [number] × $[amount] = $[total]
+- **Data Collection Travel**: $[amount]
+
+### Total Project Cost
+
+**Total Requested**: $[total amount] over [number] years
+
+## Evaluation and Assessment
+
+### Success Metrics
+
+Define how project success will be measured.
+
+### Risk Management
+
+Identify potential risks and mitigation strategies.
+
+## Dissemination Plan
+
+### Academic Publications
+
+Target journals and publication timeline.
+
+### Conference Presentations
+
+Planned presentations and venues.
+
+### Public Engagement
+
+Plans for broader public dissemination.
+
+## References
+
+::: {#refs}
+:::
+
+## Appendices {.appendix}
+
+### Appendix A: Detailed Budget
+
+[Include detailed budget spreadsheets]
+
+### Appendix B: Letters of Support
+
+[Include any letters of support or collaboration]
+
+### Appendix C: IRB Documentation
+
+[Include IRB approval or exemption documentation if applicable]

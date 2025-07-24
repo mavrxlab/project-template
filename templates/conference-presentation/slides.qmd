@@ -1,0 +1,162 @@
+---
+title: "Your Presentation Title Here"
+subtitle: "Optional Subtitle"
+author: 
+  - name: "Your Name"
+    orcid: "0000-0000-0000-0000"
+    email: "you@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+date: today
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    logo: "media/logo.png"
+    footer: "Conference Name | Your Name | Date"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/setup.R")
+```
+
+## Introduction
+
+### The Problem
+
+- **Context**: Briefly establish the context
+- **Problem**: What specific problem are you addressing?
+- **Why it matters**: Why should the audience care?
+
+### Research Question
+
+> What is your main research question or objective?
+
+## Background
+
+### Previous Work
+
+- Key findings from existing research
+- Gaps or limitations in current knowledge
+- How your work builds on or challenges existing work
+
+### Theoretical Framework
+
+Brief overview of your analytical approach or theoretical lens.
+
+## Methods {.smaller}
+
+### Study Design
+
+- **Approach**: [Qualitative/Quantitative/Mixed methods]
+- **Data source**: [Surveys/Interviews/Archival/etc.]
+- **Sample**: [Size and characteristics]
+
+### Analysis
+
+- **Analytical approach**: Brief description of methods
+- **Tools**: Software or techniques used
+
+## Results
+
+### Key Finding 1
+
+```{r}
+#| label: plot1
+#| echo: false
+#| fig-cap: "Description of your visualization"
+
+# Your plot code here
+# plot(1:10)
+```
+
+Present your first major finding with supporting evidence.
+
+### Key Finding 2
+
+```{r}
+#| label: plot2
+#| echo: false
+#| fig-cap: "Description of second visualization"
+
+# Your second plot code here
+# plot(1:10, type="l")
+```
+
+Continue with additional key findings.
+
+### Key Finding 3
+
+- **Bullet point summary** of findings that don't need visualizations
+- **Keep it concise** and focus on most important results
+- **Use consistent formatting** throughout
+
+## Discussion
+
+### Implications
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### For Theory
+- How do your findings advance understanding?
+- What new insights emerge?
+:::
+
+::: {.column width="50%"}
+#### For Practice
+- What should practitioners know?
+- How can findings be applied?
+:::
+
+::::
+
+### Limitations
+
+- **Acknowledge key limitations** honestly
+- **Explain how they affect interpretation**
+- **Suggest future research directions**
+
+## Conclusions
+
+### Main Takeaways
+
+::: {.incremental}
+1. **First key conclusion**
+2. **Second key conclusion**  
+3. **Third key conclusion**
+:::
+
+### Future Research
+
+What questions remain and what should be studied next?
+
+## Thank You
+
+### Contact Information
+
+- **Email**: you@university.edu
+- **ORCID**: 0000-0000-0000-0000
+- **Slides**: [Link to slides if available online]
+
+### Questions?
+
+::: {.notes}
+Speaker notes: Prepare for common questions about methodology, implications, and future directions.
+:::
+
+## Appendix: Additional Details {.appendix}
+
+### Detailed Methods
+
+Additional methodological details for interested audience members.
+
+### Full Results
+
+Complete results that didn't fit in main presentation.

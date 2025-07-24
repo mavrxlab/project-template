@@ -1,0 +1,185 @@
+---
+title: "Your Research Study Title Here"
+author: 
+  - name: "Your Name"
+    orcid: "0000-0000-0000-0000"
+    email: "you@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+
+abstract: |
+  Provide a structured abstract including background, methods, results, and conclusions. Typically 150-300 words depending on journal requirements.
+
+keywords: ["keyword1", "keyword2", "keyword3"]
+date: today
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    code-fold: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    keep-tex: true
+  docx: default
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load required packages and functions
+if (file.exists("R/00-setup.R")) {
+  source("R/00-setup.R")
+} else {
+  # Basic setup if numbered scripts don't exist yet
+  library(here)
+  library(knitr)
+}
+```
+
+## Abstract
+
+[Structured abstract will appear here based on YAML metadata]
+
+## Introduction
+
+### Background and Rationale
+
+Establish the theoretical and empirical foundation for your research. Cite relevant literature and identify gaps your study addresses [@importantcitation2023].
+
+### Research Questions and Hypotheses
+
+Clearly state your research questions or hypotheses:
+
+1. **RQ1**: What is the relationship between X and Y?
+2. **H1**: We hypothesize that X will significantly predict Y.
+
+## Methods
+
+### Study Design
+
+Describe your overall research design and approach.
+
+### Participants
+
+```{r}
+#| label: participant-demographics
+#| echo: false
+
+# Code to generate participant demographics table
+# This would typically source from your data analysis scripts
+```
+
+Describe participant recruitment, inclusion/exclusion criteria, and sample characteristics.
+
+### Data Collection
+
+#### Instruments and Measures
+
+Detail the instruments used to collect data, including reliability and validity information.
+
+#### Procedure
+
+Describe the data collection procedures step-by-step.
+
+### Data Analysis Plan
+
+Outline your analytical approach, including:
+
+- Data cleaning and preparation procedures
+- Statistical methods and software used
+- Approaches to handling missing data
+- Multiple comparisons adjustments if applicable
+
+## Results
+
+### Descriptive Statistics
+
+```{r}
+#| label: descriptive-stats
+#| echo: false
+
+# Code to generate descriptive statistics
+# This would source from your analysis scripts
+```
+
+Present key descriptive statistics and sample characteristics.
+
+### Main Analyses
+
+#### Research Question 1
+
+```{r}
+#| label: analysis-rq1
+#| echo: false
+
+# Statistical analysis for RQ1
+```
+
+Present results for your first research question with appropriate statistical tests and effect sizes.
+
+#### Research Question 2
+
+```{r}
+#| label: analysis-rq2
+#| echo: false
+
+# Statistical analysis for RQ2
+```
+
+Continue with additional research questions as appropriate.
+
+### Additional Analyses
+
+Present any supplementary or exploratory analyses.
+
+## Discussion
+
+### Summary of Findings
+
+Summarize your key findings and their alignment with hypotheses.
+
+### Theoretical Implications
+
+Discuss how your findings contribute to theoretical understanding in your field.
+
+### Practical Implications
+
+Describe the practical significance of your results for practitioners, policymakers, or other stakeholders.
+
+### Limitations
+
+Acknowledge study limitations and their potential impact on interpretation:
+
+- **Sample limitations**: Generalizability concerns
+- **Methodological limitations**: Design or measurement constraints  
+- **Statistical limitations**: Power, multiple comparisons, etc.
+
+### Future Research
+
+Suggest directions for future research based on your findings and limitations.
+
+## Conclusions
+
+Provide clear, evidence-based conclusions that directly address your research questions.
+
+## References
+
+::: {#refs}
+:::
+
+## Appendices {.appendix}
+
+### Appendix A: Additional Statistical Output
+
+Include supplementary statistical results that support but don't belong in the main text.
+
+### Appendix B: Instrument Details
+
+Provide additional details about measures and instruments used.

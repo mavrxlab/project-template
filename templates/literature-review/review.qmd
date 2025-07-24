@@ -1,0 +1,163 @@
+---
+title: "Systematic Review Title Here"
+author: 
+  - name: "Your Name"
+    orcid: "0000-0000-0000-0000"
+    email: "you@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+
+abstract: |
+  Provide a structured abstract following journal guidelines. Include background, methods, results, and conclusions.
+
+keywords: ["systematic review", "keyword2", "keyword3"]
+date: today
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+  docx: default
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/setup.R")
+```
+
+## Abstract
+
+[Structured abstract will appear here based on YAML metadata]
+
+## Introduction
+
+### Background and Rationale
+
+Establish the context and importance of your review topic.
+
+### Objectives
+
+Clearly state the research questions or objectives that guided the review.
+
+## Methods
+
+### Protocol Registration
+
+This review protocol was registered with [registry name and number].
+
+### Search Strategy
+
+Describe the comprehensive search strategy including:
+
+- Databases searched
+- Search terms and Boolean logic
+- Date limits and language restrictions
+- Grey literature sources
+
+### Study Selection
+
+#### Inclusion Criteria
+
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+#### Exclusion Criteria
+
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+#### Screening Process
+
+Describe the systematic screening process including reviewer training and inter-rater reliability.
+
+### Data Extraction
+
+Detail the data extraction process and standardized forms used.
+
+### Quality Assessment
+
+Describe the quality assessment tools and procedures used.
+
+## Results
+
+### Search Results
+
+```{r}
+#| label: search-flow
+#| echo: false
+#| eval: false
+
+# PRISMA flow diagram code would go here
+# Consider using the PRISMAstatement package
+```
+
+Provide a narrative description of search results and study selection.
+
+### Study Characteristics
+
+Present characteristics of included studies in summary tables.
+
+### Quality Assessment Results
+
+Summarize quality assessment findings.
+
+### Synthesis of Results
+
+#### [Theme/Outcome 1]
+
+Present findings organized by themes or outcomes.
+
+#### [Theme/Outcome 2]
+
+Continue with additional themes as appropriate.
+
+## Discussion
+
+### Summary of Evidence
+
+Summarize the key findings and their implications.
+
+### Limitations
+
+Acknowledge limitations of the review methodology and included studies.
+
+### Implications
+
+#### For Practice
+
+What do these findings mean for practitioners?
+
+#### For Research
+
+What research gaps remain and what future studies are needed?
+
+## Conclusions
+
+Provide clear, evidence-based conclusions that address the original research questions.
+
+## References
+
+::: {#refs}
+:::
+
+## Appendices {.appendix}
+
+### Appendix A: Search Strategies
+
+Detailed search strategies for each database.
+
+### Appendix B: Excluded Studies
+
+List of studies excluded at full-text stage with reasons.
+
+### Appendix C: Data Extraction Forms
+
+Templates used for data extraction.

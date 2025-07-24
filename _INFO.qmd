@@ -1,50 +1,119 @@
-## Template Information
+---
+title: "Template System Information"
+format: html
+---
 
-Based on the template [Setting up an Organised Folder Structure for Research Projects by Nikola Vukovic](http://www.nikola.me/folder_structure.html) and tweaked  by [Ryan Straight](https://github.com/ryanstraight) with the [MA{VR}X Lab](https://mavrxlab.org) in mind, specifically, as the focus is on using R for data analysis, this template is simple enough to fit most needs and has the media structure necessary for projects within the lab.
+# Modular Academic Research Templates
 
-If you'd rather not use the R-based Quarto ecosystem for writing that's present in the template, that's fine. The folder structure will still serve you well.
+## System Overview
 
-A placeholder publication draft can be found in `3-Studies/001-Study_1/`. It is a Quarto document that uses the [Hikmah Quarto templates](https://github.com/andrewheiss/hikmah-academic-quarto) template as it produces a nice APA-like document.
+This repository provides a **modular template system** that replaces the previous single-template approach with specialized templates for different research needs. Instead of one complex template trying to serve all purposes, you choose the template that matches your specific project type.
 
-## Banner image
+## Template Selection Philosophy
 
-The banner image shared is one made for the lab using Canva. Whether using one like it or another, you should probably use the `codename` for the project on your banner rather than something else. The `ubuntu` codename style works well with the template.
+The system is built around the principle that **different research activities require different infrastructure**:
 
+- **Theory papers** don't need IRB documentation or complex data pipelines
+- **Empirical studies** require comprehensive research infrastructure
+- **Grant applications** need budget and timeline management tools
+- **Literature reviews** benefit from systematic screening and quality assessment tools
+- **Conference presentations** need minimal overhead for quick turnaround
 
-## Authors
+## Available Templates
 
-1. Update the `contributors_table_template.csv` file in `1-Project_Management/4-Administration/` with relevant authors and contributors.
-1. Upload the CSV in step 2 of the [tenzing](https://rollercoaster.shinyapps.io/tenzing/) Shiny app. (You can use the file provided as a demonstration if you like.)
-1. Choose the method of getting the author contributions that make sense for your publication outlet.
+### 📝 simple-paper
+**Target**: Theoretical, conceptual, or commentary work
 
-## Research Production
+**Structure**: Minimal writing-focused template with basic R support and citation management
 
-The resultant publications from this project go in `4-Dissemination/2-Publications/` in subfolders for each individual publication. This should be a considered an archival step.
+**Use cases**: Theory papers, book chapters, commentaries, position papers
 
-## Folder and file structure
+### 🔬 empirical-study
+**Target**: Research involving data collection and statistical analysis
 
-This is the default structure for a project. It's very basic and you should feel welcome to alter it to your liking. There is another README in the `3-Study/2-Content/2-Media/` folder that explains the extensive structure there. This structure is not meant to be in chronological order, just organized.
+**Structure**: Complete research infrastructure with numbered R analysis pipeline (00-99), IRB documentation, data management workflows
 
-1. Project Management
-    1. Proposals (drafting proposal content, letters of support, and so on)
-    1. Finance (notes on seeking funding, copies of grant proposals, etc; contains NSF grant template updated as of 2023 requirements)
-    1. Reports (not papers; project-related reports like status)
-    1. Administration (CRediT author list, publication checklist)
-1. Ethics Governance
-    1. Ethics Approval (IRB protocol, CITI certification)
-    1. Forms (**blank** consent, waiver, etc forms that have been approved by the IRB; completed forms should be stored securely)
-1. Study (`001-Study_1` subfolder contains a template with the following for each different study)
-    1. Input (files/docs used in the experiment itself; survey instrument, anything)
-    1. Content
-        1. Data (raw and tidied data)
-        1. Media (video recordings, audio, screencasts, so on; do **not** include identifiable participant content)
-    1. Data Analysis (eda, munging scripts, transformation, etc)
-    1. Outputs (tables, figures, etc)
-    1. Drafts (One folder for each draft publication; there is a template Quarto file included in folder 01. Rename `01` to the outlet you're targeting with that particular draft.
-1. Dissemination (these folders are *archives* to easily find content derived from this project)
-    1. Presentations (put slide decks and whatnot in here)
-    1. Publications (finished publications in their final form go here, while preprints would stay in the study's `drafts` folder)
-    1. Publicity (any sort of publicity like social media posts, et cetera)
-    
+**Use cases**: Survey studies, experiments, observational research, mixed methods
 
-Note that the Dissemination folder is for *archiving* content. Once something is published or made available, put a copy in the appropriate folder.
+### 💰 grant-application
+**Target**: Funding proposals and multi-year project management
+
+**Structure**: Proposal writing tools, budget tracking, timeline management, compliance documentation
+
+**Use cases**: NSF/NIH proposals, foundation grants, collaborative funding applications
+
+### 📚 literature-review
+**Target**: Systematic reviews and meta-analyses
+
+**Structure**: PRISMA methodology support, citation screening tools, quality assessment frameworks
+
+**Use cases**: Systematic reviews, scoping reviews, meta-analyses
+
+### 🎤 conference-presentation
+**Target**: Standalone presentations and talks
+
+**Structure**: Slide templates, abstract submission support, minimal project overhead
+
+**Use cases**: Conference talks, workshop presentations, invited lectures
+
+## Automation Tools
+
+### Interactive Template Selection
+The `template-chooser.R` tool uses decision logic to recommend templates based on:
+
+- Data collection requirements
+- IRB approval needs  
+- Statistical analysis complexity
+- Project timeline
+- Output goals (paper, grant, presentation, etc.)
+
+### Automated Project Setup
+The `project-initializer.R` tool handles:
+
+- Template copying and customization
+- File placeholder replacement (project names, dates)
+- .Rproj file creation for RStudio integration
+- Git repository initialization with appropriate .gitignore
+- Directory structure creation based on template type
+
+## Shared Infrastructure
+
+All templates can access common resources from `_shared/`:
+
+- **admin/**: Author tracking, publication management
+- **scripts/**: Common R functions and utilities
+- **docs/**: Contribution guidelines, documentation standards
+
+## Migration from Previous Template
+
+The original single template has been **archived** and replaced with this modular system. To migrate existing projects:
+
+1. **Assess project type**: Which template best matches your current work?
+2. **Copy relevant components**: Move content to appropriate new template structure  
+3. **Update file paths**: Ensure `here()` calls work with new organization
+4. **Test builds**: Verify Quarto rendering and R scripts function correctly
+
+## Best Practices
+
+### Template Selection
+- **Start minimal**: Choose the simplest template that meets your needs
+- **Upgrade incrementally**: Easy to add complexity as projects evolve
+- **Mix and match**: Combine elements from multiple templates when appropriate
+
+### Project Organization
+- **Use automation**: Leverage `interactive_setup()` for consistent project initialization
+- **Follow conventions**: Each template has established patterns for file organization
+- **Document customizations**: Record any deviations from standard template structure
+
+## Development History
+
+This modular system was developed to address fragility issues in the original template:
+
+- **Reduced complexity**: Templates only include what's needed for specific project types
+- **Improved reliability**: Consistent patterns across templates with robust path handling
+- **Better usability**: Interactive selection and automated setup reduce setup friction
+- **Clearer documentation**: Template-specific guidance rather than generic instructions
+
+## Credits
+
+Originally inspired by [Nikola Vukovic's folder structure guide](http://www.nikola.me/folder_structure.html), developed by [Ryan Straight](https://github.com/ryanstraight) and the [MA{VR}X Lab](https://mavrxlab.org), and evolved into this modular system based on real-world usage patterns and feedback.

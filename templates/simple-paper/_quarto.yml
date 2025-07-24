@@ -1,0 +1,67 @@
+project:
+  type: default
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    css: styles.css
+  
+  pdf:
+    documentclass: article
+    geometry: 
+      - margin=1in
+    fontsize: 12pt
+    linestretch: 1.5
+    number-sections: true
+    colorlinks: true
+    
+  docx:
+    reference-doc: template.docx
+    number-sections: true
+    
+  # Additional academic formats
+  apa-pdf:
+    format: pdf
+    documentclass: apa7
+    classoption: ["man"]
+    fontsize: 12pt
+    linestretch: 2
+    
+  ieee-pdf:
+    format: pdf
+    template-partials: ["ieee-title.tex"]
+    documentclass: IEEEtran
+    classoption: ["conference"]
+    
+  jats:
+    # Journal Article Tag Suite XML
+    keep-xml: true
+    
+  nature-pdf:
+    format: pdf
+    documentclass: article
+    fontsize: 10pt
+    geometry: margin=0.75in
+    compact-title: true
+
+# Citation settings
+bibliography: references.bib
+csl: assets/apa.csl  # Change to your preferred citation style
+
+# Execution settings
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+
+# Cross-reference settings
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"

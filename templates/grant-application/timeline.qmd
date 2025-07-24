@@ -1,0 +1,331 @@
+---
+title: "Grant Proposal Timeline Planner"
+author: "Your Name"
+date: today
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    output-file: "timeline-planned"
+  pdf:
+    geometry: margin=1in
+    keep-tex: true
+  docx: default
+execute:
+  echo: false
+engine: knitr
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(lubridate)
+library(knitr)
+library(dplyr)
+
+# Set your deadline and funding agency
+# Change these values for your specific grant
+deadline <- ymd("2025-01-15")  # Format: YYYY-MM-DD
+funding_agency <- "NSF"        # Options: "NSF", "NIH", "Generic"
+
+style <- "%Y %B %d"
+```
+
+# Grant Proposal Timeline
+
+**Grant Deadline**: **`r format(deadline, "%A, %B %d, %Y")`**
+
+**Funding Agency**: `r funding_agency`
+
+**Planning Period**: `r format(deadline - weeks(21), style)` to `r format(deadline, style)`
+
+---
+
+## Timeline Overview
+
+This timeline provides a structured approach to grant proposal development, working backwards from your submission deadline. Adjust the activities based on your specific funding agency requirements.
+
+```{r}
+#| label: timeline-data
+#| include: false
+
+# Define timeline templates for different agencies
+get_nsf_timeline <- function(deadline) {
+  data.frame(
+    weeks_before = c(21, 20, 19, 18, 17, 17, 17, 16, 15, 14, 12, 11, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 0),
+    activity = c(
+      "Identify NSF Directorate and Division",
+      "Write Project Summary: Overview, Intellectual Merit, Broader Impact",
+      "Send Project Summary to Program Director (if agreed to review)",
+      "Background, Literature Review, Prior NSF Support, Preliminary Studies",
+      "Research Plan: develop subsection for objective 1",
+      "Research Plan: develop subsection for objective 2", 
+      "Research Plan: develop subsection for objective 3 (if applicable)",
+      "Pre-submission review by faculty mentor(s)",
+      "Education Plan: develop plans for educational activities",
+      "Broader Impacts section",
+      "Finalize Project Summary; Title; assemble final draft",
+      "Pre-submission review by faculty mentor(s)",
+      "Pre-submission review by external reviewer",
+      "Budget and Budget Justification",
+      "Prepare Biographical Sketches for all senior personnel",
+      "Facilities, Equipment, Other Resources; Current and Pending Support",
+      "Obtain letters of collaboration from unbudgeted collaborators",
+      "Data Management Plan & solicitation-specific documents",
+      "List of Suggested Reviewers (optional but recommended)",
+      "Pre-submission ADR review of application",
+      "Pre-submission College/Department review",
+      "Revise draft; send to Sponsored Projects",
+      "Submit application to Research/Grants.gov"
+    ),
+    priority = c("High", "High", "Medium", "High", "High", "High", "Medium", "High", "Medium", "High", "High", "High", "High", "High", "Medium", "Medium", "Medium", "High", "Low", "High", "High", "High", "Critical")
+  ) %>%
+  mutate(
+    deadline_date = deadline - weeks(weeks_before),
+    formatted_date = format(deadline_date, style)
+  )
+}
+
+get_nih_timeline <- function(deadline) {
+  data.frame(
+    weeks_before = c(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 0),
+    activity = c(
+      "Identify appropriate NIH Institute/Center and funding opportunity",
+      "Develop Specific Aims page",
+      "Write Significance and Innovation sections",
+      "Develop Research Strategy: Approach section",
+      "Pre-submission review by faculty mentor(s)",
+      "Write Research Strategy: Expected Outcomes",
+      "Prepare Bibliography and References Cited",
+      "Budget development and justification",
+      "Biographical Sketches for all key personnel",
+      "Resources and Environment; Equipment description",
+      "Human Subjects Research/IRB documentation",
+      "Vertebrate Animals documentation (if applicable)",
+      "Letters of support from collaborators",
+      "Research Plan assembly and formatting check",
+      "Pre-submission institutional review",
+      "Response to institutional feedback",
+      "Final review by external reviewer",
+      "Application assembly in eRA Commons",
+      "Submit to institutional signing official",
+      "Submit application via eRA Commons/Grants.gov"
+    ),
+    priority = c("High", "Critical", "High", "High", "High", "High", "Medium", "High", "Medium", "Medium", "High", "Medium", "Medium", "High", "High", "High", "High", "High", "High", "Critical")
+  ) %>%
+  mutate(
+    deadline_date = deadline - weeks(weeks_before),
+    formatted_date = format(deadline_date, style)
+  )
+}
+
+get_generic_timeline <- function(deadline) {
+  data.frame(
+    weeks_before = c(18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0),
+    activity = c(
+      "Research funding opportunity and requirements",
+      "Develop project concept and specific aims",
+      "Write project description/research plan",
+      "Prepare preliminary budget and justification",
+      "Pre-submission review by colleagues",
+      "Write background and significance sections",
+      "Develop methodology and timeline sections",
+      "Prepare biographical information for team members",
+      "Compile supporting documents and appendices",
+      "Write budget justification and resources section",
+      "Obtain letters of support/collaboration",
+      "Complete institutional requirements documentation",
+      "Assemble complete application package",
+      "Internal institutional review",
+      "Address review feedback and revise",
+      "Final review and proofreading",
+      "Submit to institutional approval process",
+      "Final checks and preparation for submission",
+      "Submit application to funding agency"
+    ),
+    priority = c("High", "Critical", "High", "High", "High", "High", "High", "Medium", "Medium", "High", "Medium", "High", "High", "High", "High", "High", "High", "High", "Critical")
+  ) %>%
+  mutate(
+    deadline_date = deadline - weeks(weeks_before),
+    formatted_date = format(deadline_date, style)
+  )
+}
+
+# Select timeline based on funding agency
+timeline_data <- switch(funding_agency,
+  "NSF" = get_nsf_timeline(deadline),
+  "NIH" = get_nih_timeline(deadline),
+  "Generic" = get_generic_timeline(deadline),
+  get_generic_timeline(deadline)  # Default to generic
+)
+```
+
+## Detailed Timeline
+
+```{r}
+#| label: timeline-table
+#| echo: false
+
+# Create formatted table
+timeline_table <- timeline_data %>%
+  mutate(
+    `Weeks Before` = weeks_before,
+    `Target Date` = formatted_date,
+    `Activity` = activity,
+    `Priority` = priority
+  ) %>%
+  select(`Weeks Before`, `Target Date`, `Activity`, `Priority`)
+
+kable(timeline_table, 
+      caption = paste("Grant Proposal Timeline for", funding_agency, "Submission"),
+      format = "markdown")
+```
+
+## Priority Legend
+
+- **Critical**: Essential milestones that directly impact submission
+- **High**: Important components that require significant time and effort
+- **Medium**: Supporting activities that enhance proposal quality
+- **Low**: Optional activities that may strengthen the proposal
+
+## Milestone Tracking
+
+### Major Milestones
+
+```{r}
+#| label: milestones
+#| echo: false
+
+major_milestones <- timeline_data %>%
+  filter(priority %in% c("Critical", "High")) %>%
+  arrange(deadline_date) %>%
+  head(10)
+
+milestone_table <- major_milestones %>%
+  mutate(
+    `Milestone` = activity,
+    `Target Date` = formatted_date,
+    `Status` = "[ ] Not Started"  # Checkbox for manual tracking
+  ) %>%
+  select(`Target Date`, `Milestone`, `Status`)
+
+kable(milestone_table, 
+      caption = "Key Milestones Checklist",
+      format = "markdown")
+```
+
+## Weekly Progress Tracking
+
+Use this section to track your weekly progress:
+
+### Week of `r format(Sys.Date(), "%B %d, %Y")`
+
+**This Week's Goals:**
+- [ ] Goal 1
+- [ ] Goal 2  
+- [ ] Goal 3
+
+**Completed:**
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
+**Next Week's Priorities:**
+- [ ] Priority 1
+- [ ] Priority 2
+- [ ] Priority 3
+
+## Funding Agency-Specific Notes
+
+### `r if(funding_agency == "NSF") "NSF-Specific Requirements"`
+
+```{r}
+#| label: nsf-notes
+#| echo: false
+#| eval: !expr funding_agency == "NSF"
+
+cat("**NSF-Specific Requirements:**\n")
+cat("- Project Summary: 1 page maximum\n")
+cat("- Project Description: 15 pages maximum\n")
+cat("- Broader Impacts: Integrated throughout or separate section\n")
+cat("- Data Management Plan: 2 pages maximum\n")
+cat("- Biographical Sketch: NSF format, 3 pages maximum per person\n")
+cat("- Budget: Use NSF budget template\n")
+cat("- Letters of Collaboration: Brief, specific format required\n")
+```
+
+### `r if(funding_agency == "NIH") "NIH-Specific Requirements"`
+
+```{r}
+#| label: nih-notes
+#| echo: false
+#| eval: !expr funding_agency == "NIH"
+
+cat("**NIH-Specific Requirements:**\n")
+cat("- Specific Aims: 1 page maximum\n")
+cat("- Research Strategy: 12 pages maximum for R01\n")
+cat("- Human Subjects: Required if applicable\n")
+cat("- Vertebrate Animals: Required if applicable\n")
+cat("- Biographical Sketch: NIH format, 5 pages maximum\n")
+cat("- Budget: Use NIH budget forms\n")
+cat("- Letters of Support: Detailed collaboration descriptions\n")
+```
+
+## Budget Planning Timeline
+
+```{r}
+#| label: budget-timeline
+#| echo: false
+
+budget_timeline <- data.frame(
+  weeks_before = c(12, 10, 8, 6, 4, 2),
+  activity = c(
+    "Initial budget estimates and personnel calculations",
+    "Detailed budget development with institutional rates",
+    "Budget justification writing",
+    "Budget review with sponsored projects office",
+    "Budget revisions and final calculations",
+    "Final budget submission preparation"
+  ),
+  deadline_date = deadline - weeks(c(12, 10, 8, 6, 4, 2))
+) %>%
+  mutate(formatted_date = format(deadline_date, style))
+
+budget_table <- budget_timeline %>%
+  mutate(
+    `Target Date` = formatted_date,
+    `Budget Activity` = activity
+  ) %>%
+  select(`Target Date`, `Budget Activity`)
+
+kable(budget_table,
+      caption = "Budget Development Timeline",
+      format = "markdown")
+```
+
+## Resources and Contacts
+
+### Institutional Support
+
+- **Sponsored Projects Office**: [Contact information]
+- **Research Development Office**: [Contact information]  
+- **Budget/Finance Office**: [Contact information]
+- **IRB Office**: [Contact information]
+
+### External Resources
+
+- **Program Officer**: [Name and contact if identified]
+- **External Reviewers**: [List potential reviewers]
+- **Collaborators**: [Key collaboration contacts]
+
+## Notes and Modifications
+
+Use this space to document any changes to the timeline or special considerations for your proposal:
+
+---
+
+**Timeline Generated**: `r format(Sys.Date(), "%B %d, %Y")`
+
+**Next Review Date**: ________________
+
+**Status**: ⚪ Planning ⚪ In Progress ⚪ Under Review ⚪ Submitted

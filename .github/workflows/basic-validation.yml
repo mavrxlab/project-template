@@ -1,0 +1,140 @@
+name: Basic Template Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  basic-validation:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        r-version: ['4.2', '4.3']
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: ${{ matrix.r-version }}
+        
+    - name: Install R dependencies (Unix)
+      if: runner.os != 'Windows'
+      run: |
+        install.packages(c('fs', 'here', 'cli', 'yaml'), repos = 'https://cloud.r-project.org/')
+      shell: Rscript {0}
+      
+    - name: Install R dependencies (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        install.packages(c('fs', 'here', 'cli', 'yaml'), repos = 'https://cloud.r-project.org/')
+      shell: Rscript {0}
+      
+    - name: Run template validation
+      run: |
+        Rscript tools/validate-templates.R
+        
+    - name: Test template chooser logic
+      run: |
+        Rscript -e "
+        source('tools/template-chooser.R')
+        # Test different scenarios
+        scenarios <- list(
+          c(1, 1, 1, 1, 2),  # Data collection + IRB -> empirical-study
+          c(2, 2, 3, 2, 1),  # No data, theoretical -> simple-paper
+          c(1, 1, 1, 4, 3),  # Grant application
+          c(2, 2, 1, 3, 2),  # Literature review
+          c(2, 2, 3, 5, 1)   # Conference presentation
+        )
+        for (scenario in scenarios) {
+          result <- get_template_recommendation(scenario[1], scenario[2], scenario[3], scenario[4], scenario[5])
+          cat('Scenario:', paste(scenario, collapse=','), '-> Template:', result\$template, '\n')
+        }
+        "
+        
+  file-structure-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check required files exist
+      run: |
+        echo "Checking project structure..."
+        
+        # Check main files
+        required_files=(
+          "README.qmd"
+          "TODO.qmd"
+          "_INFO.qmd"
+          "CLAUDE.md"
+          "tools/project-initializer.R"
+          "tools/template-chooser.R"
+          "tools/validate-templates.R"
+          "_shared/docs/CONTRIBUTING.md"
+        )
+        
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "ERROR: Required file missing: $file"
+            exit 1
+          fi
+        done
+        
+        # Check template structure
+        templates=(
+          "simple-paper"
+          "empirical-study"
+          "grant-application"
+          "literature-review"
+          "conference-presentation"
+        )
+        
+        for template in "${templates[@]}"; do
+          template_dir="templates/$template"
+          if [ ! -d "$template_dir" ]; then
+            echo "ERROR: Template directory missing: $template_dir"
+            exit 1
+          fi
+          
+          # Check required template files
+          required_template_files=(
+            "README.md"
+            "_quarto.yml"
+            "references.bib"
+          )
+          
+          for file in "${required_template_files[@]}"; do
+            if [ ! -f "$template_dir/$file" ]; then
+              echo "ERROR: Template file missing: $template_dir/$file"
+              exit 1
+            fi
+          done
+          
+          echo "✓ Template $template structure OK"
+        done
+        
+        echo "All required files and templates present!"
+        
+    - name: Check for broken links in documentation
+      run: |
+        echo "Checking for obvious documentation issues..."
+        
+        # Check for TODO markers that might indicate incomplete work
+        if grep -r "TODO\|FIXME\|XXX" templates/ --exclude-dir=.git; then
+          echo "WARNING: Found TODO/FIXME markers in templates"
+        fi
+        
+        # Check that README files mention the template name
+        for template in templates/*/; do
+          template_name=$(basename "$template")
+          if ! grep -i "$template_name" "$template/README.md" > /dev/null; then
+            echo "WARNING: $template/README.md may not mention template name"
+          fi
+        done

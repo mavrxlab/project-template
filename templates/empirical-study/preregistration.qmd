@@ -1,0 +1,321 @@
+---
+title: "Pre-registration: Your Study Title Here"
+author: 
+  - name: "Your Name"
+    orcid: "0000-0000-0000-0000"
+    email: "you@university.edu"
+    affiliations:
+      - name: "Your Institution"
+        department: "Your Department"
+
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+  docx: default
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(here)
+library(knitr)
+```
+
+# Pre-registration Template
+
+This document serves as a pre-registration for your research study. Pre-registration helps ensure transparency and reduces the risk of questionable research practices by documenting your research plan before data collection begins.
+
+**Registration platforms**: Consider registering this pre-registration on:
+
+- [Open Science Framework (OSF)](https://osf.io/)
+- [AsPredicted](https://aspredicted.org/)
+- [ClinicalTrials.gov](https://clinicaltrials.gov/) (for clinical studies)
+
+## Study Information
+
+### Study Title
+
+**Full Title**: [Provide the complete title of your study]
+
+**Working Title/Acronym**: [Shorter version or acronym if applicable]
+
+### Authors and Affiliations
+
+**Principal Investigator**: [Name, Institution, Email]
+
+**Co-investigators**: [List all team members with their roles]
+
+### Institutional Review Board (IRB)
+
+**IRB Institution**: [Name of institution providing ethical approval]
+
+**IRB Protocol Number**: [If already obtained, otherwise "Pending"]
+
+**IRB Approval Date**: [Date of approval, otherwise "Pending"]
+
+## Research Questions and Hypotheses
+
+### Primary Research Question(s)
+
+1. **RQ1**: [State your primary research question clearly]
+2. **RQ2**: [Additional research questions if applicable]
+
+### Hypotheses
+
+#### Primary Hypothesis
+
+**H1**: [State your primary hypothesis with predicted direction of effect]
+
+- **Rationale**: [Brief justification based on theory/prior research]
+
+#### Secondary Hypotheses
+
+**H2**: [Additional hypotheses if applicable]
+
+**H3**: [Additional hypotheses if applicable]
+
+### Exploratory Analyses
+
+[Describe any exploratory analyses you plan to conduct that are not directly related to your primary hypotheses]
+
+## Background and Rationale
+
+### Theoretical Background
+
+[Provide theoretical foundation for your study]
+
+### Literature Review Summary
+
+[Summarize key relevant findings from existing literature]
+
+### Study Rationale
+
+[Explain why this study is needed and what gap it fills]
+
+## Method
+
+### Study Design
+
+**Design Type**: [e.g., Cross-sectional survey, Experimental, Longitudinal, etc.]
+
+**Data Collection Period**: [Planned start and end dates]
+
+### Participants
+
+#### Target Population
+
+[Describe the population you want to generalize to]
+
+#### Sampling Frame
+
+[Describe the population from which you will actually sample]
+
+#### Sampling Method
+
+[Describe your sampling approach: random, convenience, stratified, etc.]
+
+#### Inclusion Criteria
+
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+#### Exclusion Criteria
+
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+#### Sample Size
+
+**Target Sample Size**: [Number of participants]
+
+**Power Analysis**: 
+- **Effect size**: [Expected effect size based on literature]
+- **Power**: [Desired statistical power, typically .80 or .90]
+- **Alpha**: [Significance level, typically .05]
+- **Analysis**: [Brief description of power analysis conducted]
+
+### Procedure
+
+#### Recruitment
+
+[Describe how participants will be recruited]
+
+#### Data Collection Protocol
+
+[Step-by-step description of what participants will do]
+
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+#### Timeline
+
+[Estimated duration of participation for each participant]
+
+### Measures
+
+#### Primary Outcome Variable(s)
+
+**Variable 1**: [Name and brief description]
+- **Measurement**: [How it will be measured]
+- **Scale**: [Type of scale, range, reliability if known]
+
+#### Secondary Outcome Variables
+
+**Variable 2**: [Name and brief description]
+- **Measurement**: [How it will be measured]
+- **Scale**: [Type of scale, range, reliability if known]
+
+#### Predictor/Independent Variables
+
+**Variable 3**: [Name and brief description]
+- **Measurement**: [How it will be measured]
+- **Levels/Categories**: [If categorical, list levels]
+
+#### Control Variables
+
+**Variable 4**: [Name and brief description]
+- **Rationale**: [Why this variable needs to be controlled]
+
+## Analysis Plan
+
+### Data Preparation
+
+#### Data Cleaning
+
+[Describe planned data cleaning procedures]
+
+#### Missing Data
+
+**Expected missingness**: [How much missing data do you expect and why?]
+
+**Missing data handling**: [How will you handle missing data? Listwise deletion, imputation, etc.]
+
+#### Outliers
+
+**Outlier definition**: [How will you identify outliers?]
+
+**Outlier handling**: [What will you do with outliers?]
+
+### Primary Analyses
+
+#### Statistical Approach
+
+**Analysis 1** (for primary hypothesis):
+- **Statistical test**: [e.g., t-test, ANOVA, regression, SEM]
+- **Variables**: [Which variables will be included]
+- **Model specification**: [Detailed model if complex]
+
+#### Assumptions
+
+[List statistical assumptions and how you will test them]
+
+#### Multiple Comparisons
+
+[If applicable, how will you handle multiple comparisons?]
+
+### Secondary Analyses
+
+[Describe planned analyses for secondary hypotheses]
+
+### Exploratory Analyses
+
+[Describe any additional analyses you might conduct]
+
+### Sensitivity Analyses
+
+[Describe any robustness checks you plan to conduct]
+
+## Deviations and Contingencies
+
+### Anticipated Problems
+
+**Problem 1**: [Potential issue that might arise]
+- **Solution**: [How you will address it]
+
+**Problem 2**: [Another potential issue]
+- **Solution**: [How you will address it]
+
+### Criteria for Stopping Data Collection
+
+[Under what circumstances would you stop data collection early?]
+
+### Deviation Documentation
+
+[Commit to documenting any deviations from this pre-registration]
+
+## Data Management
+
+### Data Storage
+
+[Where and how will data be stored securely?]
+
+### Data Sharing
+
+**Data sharing plan**: [Will data be made publicly available? When? Where?]
+
+**Participant consent**: [Do participants consent to data sharing?]
+
+### Code Availability
+
+[Will analysis code be made available? Where?]
+
+## Ethics and Open Science
+
+### Ethical Considerations
+
+[Any special ethical considerations for this study]
+
+### Conflicts of Interest
+
+[Any potential conflicts of interest]
+
+### Funding
+
+**Funding source**: [Source of funding if applicable]
+
+**Role of funder**: [What role does funder play in study design/analysis?]
+
+## Timeline
+
+| Phase | Start Date | End Date | Description |
+|-------|------------|----------|-------------|
+| Pre-registration | [Date] | [Date] | Complete and submit pre-registration |
+| IRB approval | [Date] | [Date] | Obtain ethical approval |
+| Pilot testing | [Date] | [Date] | Test procedures and measures |
+| Data collection | [Date] | [Date] | Recruit participants and collect data |
+| Data analysis | [Date] | [Date] | Clean data and conduct analyses |
+| Write-up | [Date] | [Date] | Prepare manuscript |
+| Submission | [Date] | [Date] | Submit to journal |
+
+## References
+
+::: {#refs}
+:::
+
+---
+
+**Pre-registration Checklist**:
+
+- [ ] Research questions clearly stated
+- [ ] Hypotheses specified with predicted directions
+- [ ] Sample size justified with power analysis
+- [ ] Data collection procedure detailed
+- [ ] All measures described
+- [ ] Analysis plan specified
+- [ ] Missing data plan described
+- [ ] Submitted to pre-registration platform
+- [ ] Pre-registration link added to final manuscript
+
+**Signature**: _________________________ **Date**: _____________
+
+**Note**: This pre-registration should be completed before beginning data collection. Any deviations from this plan should be clearly documented and justified in the final research report.

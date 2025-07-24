@@ -1,81 +1,224 @@
 
 
-# Project Template
+# Academic Research Templates
 
-![](presentations/media/banner.png)
+[![CI
+Status](https://github.com/your-org/project-template/workflows/validate-templates/badge.svg)](https://github.com/your-org/project-template/actions)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
-![Last
-updated](https://img.shields.io/github/last-commit/mavrxlab/project-template.png)
+**Professional, ready-to-use templates for academic research projects.**
+Streamline your research workflow with specialized templates for papers,
+studies, grants, reviews, and presentations.
 
-## Project Overview
+## 🚀 Quick Start
 
-This template organizes research projects that may produce multiple
-papers or presentations. It’s designed for R/Quarto workflows and uses
-the `here` package for robust file path handling.
+**Get up and running in under 2 minutes:**
 
-|                 |                     |
-|-----------------|---------------------|
-| **Status**      | Active/Draft/Review |
-| **Internal ID** | SP-XXX              |
-| **Type**        | Research Project    |
-| **Title**       | Your Project Title  |
-| **Last Update** | YYYY-MM-DD          |
+1.  **Install R and required packages:**
 
-## Structure
+    ``` r
+    install.packages(c("here", "fs", "cli", "yaml"))
+    ```
 
-    project/
-    ├── .Rprofile
-    ├── .lintr
-    ├── .pre-commit-config.yaml
-    ├── project.Rproj
-    ├── R/
-    │   ├── functions.R
-    │   ├── init-project.R
-    │   └── validate-data.R
-    ├── admin/
-    │   ├── grants/
-    │   │   ├── template/
-    │   │   └── README.md
-    │   ├── proposals/
-    │   └── reports/
-    ├── analysis/
-    │   ├── data-prep/
-    │   ├── scripts/
-    │   └── workflow.qmd
-    ├── data/
-    │   ├── raw/
-    │   └── tidy/
-    ├── docs/
-    │   ├── CONTRIBUTING.md
-    │   └── irb/
-    ├── papers/
-    │   └── template/
-    ├── presentations/
-    │   ├── conference-template/
-    │   └── media/
-    └── README.qmd
+2.  **Choose your approach:**
 
-## Usage
+    **🎯 Interactive (Recommended):**
 
-1.  Clone this template
-2.  Use `here::here()` for all file paths
-3.  Keep raw data immutable, generate tidy data via scripts
-4.  One manuscript per folder in papers/
+    ``` r
+    source("tools/template-chooser.R")
+    template_chooser()  # Guided template selection
 
-## Codename
+    source("tools/project-initializer.R") 
+    interactive_setup()  # Automated project creation
+    ```
+
+    **⚡ Quick Setup:**
+
+    ``` r
+    source("tools/project-initializer.R")
+    initialize_project("my-project", "simple-paper")
+    ```
+
+    **📁 Manual:**
+
+    ``` bash
+    cp -r templates/simple-paper/ ../my-new-project/
+    ```
+
+3.  **Start your research!** 🎉
+
+## Available Templates
+
+| Template | Best For | Key Features |
+|----|----|----|
+| **📝 simple-paper** | Theory papers, commentaries, book chapters | Minimal structure, no IRB overhead, focused on writing |
+| **🔬 empirical-study** | Data collection and analysis projects | Complete research lifecycle, IRB docs, R analysis pipeline |
+| **💰 grant-application** | Funding proposals and project management | Interactive timeline planner, multi-agency support (NSF/NIH) |
+| **📚 literature-review** | Systematic reviews and meta-analyses | PRISMA methodology, citation management, quality assessment |
+| **🎤 conference-presentation** | Standalone presentations and talks | Slide templates, abstract support, quick turnaround |
+
+## Requirements
+
+**Software:** - R (≥ 4.0.0) - Quarto (≥ 1.2.0) - Git (for version
+control)
+
+**R Packages:**
 
 ``` r
-# Change "seed" text to get codename
-#| eval: false # remove or set to true
-#| echo: true
-library(codename)
-codename(seed = "MA{VR}X Lab Project Template repository", type = "ubuntu")
+install.packages(c("here", "fs", "cli", "yaml", "lubridate", "knitr", "dplyr"))
 ```
 
-    Warning in char2seed(seed): probable complete loss of accuracy in modulus
+## Key Features
 
-    [1] "sapphire stoat"
+- **🎯 Template specialization**: Right tool for each research type
+- **⚡ Interactive setup**: Guided project initialization
+- **📁 Modular design**: Use only what you need
+- **🔄 Automated workflows**: Streamlined research processes
+- **📊 Multi-format output**: HTML, PDF, DOCX support
+- **🤝 Collaboration ready**: Git integration and shared components
 
-## Authors
+## Usage Examples
 
-Update `admin/contributors.csv` with author information.
+### Quick Paper Setup
+
+``` r
+# Initialize a simple theory paper
+source("tools/project-initializer.R")
+initialize_project("my-theory-paper", "simple-paper")
+
+# Start writing immediately
+cd ../my-theory-paper
+quarto preview paper.qmd
+```
+
+### Empirical Study Workflow
+
+``` r
+# Create comprehensive research project
+initialize_project("cognition-study", "empirical-study")
+
+# Run analysis pipeline
+Rscript R/00-build.R
+
+# Generate reports
+quarto render
+```
+
+### Grant Proposal Timeline
+
+``` r
+# Set up grant application
+initialize_project("nsf-proposal", "grant-application")
+
+# Generate interactive timeline
+quarto render timeline.qmd
+```
+
+## Template Details
+
+### 📝 Simple Paper
+
+- **Structure**: Minimal, writing-focused
+- **Use cases**: Theory papers, commentaries, book chapters
+- **Output**: PDF, DOCX, HTML
+- **Setup time**: \< 5 minutes
+
+### 🔬 Empirical Study
+
+- **Structure**: Complete research lifecycle
+- **Use cases**: Data collection, analysis, reporting
+- **Features**: IRB docs, R pipeline (10 scripts), data management
+- **Setup time**: 10-15 minutes
+
+### 💰 Grant Application
+
+- **Structure**: Proposal development and management
+- **Use cases**: NSF, NIH, foundation grants
+- **Features**: Interactive timeline, budget tracking, compliance
+- **Setup time**: 15-20 minutes
+
+### 📚 Literature Review
+
+- **Structure**: Systematic review methodology
+- **Use cases**: Meta-analyses, scoping reviews
+- **Features**: PRISMA workflow, citation screening
+- **Setup time**: 10-15 minutes
+
+### 🎤 Conference Presentation
+
+- **Structure**: Presentation development
+- **Use cases**: Conference talks, academic presentations
+- **Features**: Slide templates, abstract support
+- **Setup time**: \< 5 minutes
+
+## Advanced Usage
+
+### Custom Template Combinations
+
+Mix elements from multiple templates:
+
+``` bash
+# Start with simple-paper, add empirical components
+cp -r templates/simple-paper/ ../my-mixed-project/
+cp templates/empirical-study/R/ ../my-mixed-project/
+```
+
+### Shared Resources
+
+All templates access shared components in `_shared/`: - **admin/**:
+Author tracking, publication management - **scripts/**: Common R
+functions and utilities  
+- **docs/**: Guidelines and documentation standards
+
+### Automation Tools
+
+- **template-chooser.R**: Interactive template selection
+- **project-initializer.R**: Automated project setup
+- **validate-templates.R**: Quality assurance testing
+
+## Best Practices
+
+- **Start minimal**: Choose the simplest template that meets your needs
+- **Use version control**: Initialize Git repositories for all projects
+- **Document decisions**: Keep clear records of methodological choices
+- **Plan for reproducibility**: Structure files for easy sharing
+- **Collaborate consistently**: Use same templates across team projects
+
+## Contributing
+
+1.  Fork the repository
+2.  Create feature branch: `git checkout -b improve-template`
+3.  Make changes and test thoroughly
+4.  Submit pull request with clear documentation
+
+See `_shared/docs/CONTRIBUTING.md` for detailed guidelines.
+
+## Support
+
+### Documentation
+
+- Template-specific READMEs with setup instructions
+- General guidance in `_shared/docs/`
+- Automation help in `tools/` directory
+
+### Troubleshooting
+
+- **Path issues**: Use `here()` for file references
+- **Missing packages**: Check template README for requirements
+- **Quarto errors**: Verify `_quarto.yml` configuration
+
+### Getting Help
+
+- Open GitHub issues for bugs or feature requests
+- Check template documentation first
+- Review existing projects for examples
+
+## License
+
+MIT License - see [LICENSE.md](LICENSE.md) for details.
+
+------------------------------------------------------------------------
+
+**Professional academic research templates** - streamline your workflow
+with specialized, tested templates for every research type.

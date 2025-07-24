@@ -1,0 +1,66 @@
+project:
+  type: default
+  output-dir: _output
+  execute-dir: project
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    theme: default
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    keep-tex: true
+  docx:
+    reference-doc: custom-reference.docx
+
+# Citation settings
+bibliography: references.bib
+csl: assets/apa.csl
+
+# Additional academic formats
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    theme: default
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    keep-tex: true
+  docx:
+    reference-doc: custom-reference.docx
+  # Journal-specific formats
+  apa-pdf:
+    format: pdf
+    documentclass: apa7
+    classoption: ["man"]
+    linestretch: 2
+    fontsize: 12pt
+  jama-pdf:
+    format: pdf
+    documentclass: article
+    fontsize: 10pt
+    geometry: margin=0.75in
+    csl: assets/jama.csl
+
+engine: knitr
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+
+knitr:
+  opts_chunk:
+    comment: ""
+    message: false
+    warning: false
+    fig.align: "center"
+    fig.width: 8
+    fig.height: 6
