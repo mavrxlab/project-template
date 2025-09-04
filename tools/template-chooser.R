@@ -72,7 +72,7 @@ template_chooser <- function() {
   cli_h3("Next steps:")
   cli_ol(c(
     paste("Copy the recommended template: cp -r templates/", recommendation$template, "/ your-project-name/", sep = ""),
-    "Review the template README.md for specific setup instructions",
+    "Review the template _README-template.qmd for specific setup instructions",
     "Customize the template based on your specific needs",
     "Consider combining elements from multiple templates if needed"
   ))

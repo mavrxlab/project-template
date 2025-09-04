@@ -1,0 +1,205 @@
+
+---
+format: gfm
+---
+
+# Your Project Title Here
+
+**Principal Investigator:** [Your Name Here]  
+**Institution:** [Your Institution]  
+**Funding Agency:** [NSF/NIH/Foundation Name]  
+**Program:** [Specific program or solicitation]  
+**Proposal ID:** [If assigned]  
+**Submission Date:** YYYY-MM-DD  
+**Status:** [Planning/Draft/Submitted/Under Review/Awarded/Declined]
+
+## Project Summary
+
+[Brief overview of research goals, methodology, and expected outcomes]
+
+## Funding Details
+
+- **Requested Amount:** $[Amount]
+- **Project Period:** [Start date] to [End date]
+- **Funding Mechanism:** [R01/R21/NSF CAREER/etc.]
+- **Co-PIs:** [List co-investigators]
+
+## Project Structure
+
+```
+├── proposal.qmd             # Main proposal document
+├── timeline.qmd             # Project timeline and milestones
+├── references.bib           # Bibliography
+├── budget/                  # Budget documentation
+│   ├── budget-summary.xlsx  # High-level budget
+│   ├── personnel-costs.xlsx # Salary and benefits
+│   └── justification.qmd    # Budget narrative
+├── admin/
+│   ├── biosketches/         # PI and co-PI CVs
+│   ├── letters-support/     # Collaborator letters
+│   └── institutional/       # Facilities, equipment
+└── supplementary/
+    ├── data-management.qmd  # Data management plan
+    ├── broader-impacts.qmd  # Broader impacts statement
+    └── prior-work.qmd       # Results from prior support
+```
+
+## Building the Proposal
+
+### Full Proposal
+```bash
+# Render complete proposal
+quarto render proposal.qmd
+
+# Generate timeline
+quarto render timeline.qmd
+
+# Create budget narrative
+quarto render budget/justification.qmd
+```
+
+### Individual Sections
+```bash
+# Specific sections
+quarto render supplementary/data-management.qmd
+quarto render supplementary/broader-impacts.qmd
+```
+
+## Research Plan
+
+### Specific Aims
+1. **Aim 1:** [Primary research objective]
+2. **Aim 2:** [Secondary objective]
+3. **Aim 3:** [Additional objective if applicable]
+
+### Innovation
+[Key innovative aspects of the proposed research]
+
+### Significance
+[Importance and potential impact of the work]
+
+### Approach
+[Overview of methodology and experimental design]
+
+## Timeline and Milestones
+
+### Year 1
+- [Quarter 1]: [Major milestone]
+- [Quarter 2]: [Major milestone]
+- [Quarter 3]: [Major milestone]
+- [Quarter 4]: [Major milestone]
+
+### Year 2-N
+[Continue timeline structure]
+
+## Budget Summary
+
+| Category | Year 1 | Year 2 | Year 3 | Total |
+|----------|--------|--------|--------|-------|
+| Personnel | $[Amount] | $[Amount] | $[Amount] | $[Amount] |
+| Equipment | $[Amount] | $[Amount] | $[Amount] | $[Amount] |
+| Supplies | $[Amount] | $[Amount] | $[Amount] | $[Amount] |
+| Travel | $[Amount] | $[Amount] | $[Amount] | $[Amount] |
+| Other | $[Amount] | $[Amount] | $[Amount] | $[Amount] |
+| **Total** | **$[Amount]** | **$[Amount]** | **$[Amount]** | **$[Amount]** |
+
+## Team
+
+### Principal Investigator
+**[Name]** - [Title, Institution]
+- **Expertise:** [Key qualifications]
+- **Role:** [Specific responsibilities]
+
+### Co-Investigators
+**[Name]** - [Title, Institution]
+- **Expertise:** [Key qualifications]
+- **Role:** [Specific responsibilities]
+
+### Collaborators
+- **[Institution/Name]** - [Role in project]
+
+## Deliverables
+
+### Research Products
+- [Number] peer-reviewed publications
+- [Number] conference presentations
+- [Number] graduate student dissertations
+- Software/datasets for community use
+
+### Training and Education
+- [Number] graduate students trained
+- [Number] undergraduate researchers
+- Curriculum development activities
+
+### Broader Impacts
+- [Community outreach activities]
+- [Educational initiatives]
+- [Policy implications]
+
+## Submission Requirements
+
+### Agency-Specific Documents
+- [List required forms, page limits, formatting requirements]
+
+### Deadline Information
+- **Letter of Intent:** [Date if applicable]
+- **Full Proposal:** [Date]
+- **Review Timeline:** [Expected review period]
+- **Award Notification:** [Expected date]
+
+## Prior Submissions
+
+### Related Previous Proposals
+- [Previous proposal ID]: [Brief description, outcome]
+
+### Overlap Statement
+[Description of any overlap with current or pending proposals]
+
+## Risk Management
+
+### Potential Challenges
+1. [Risk]: [Mitigation strategy]
+2. [Risk]: [Mitigation strategy]
+
+### Alternative Approaches
+[Backup plans for major methodological components]
+
+## Post-Award Planning
+
+### Administrative Setup
+- [Budget management procedures]
+- [Reporting schedule]
+- [Personnel hiring timeline]
+
+### Research Infrastructure
+- [Equipment procurement]
+- [Space allocation]
+- [IRB/IACUC approvals needed]
+
+## Requirements
+
+### Software
+- **Quarto** (≥ 1.2.0) for document generation
+- **R** (≥ 4.0.0) for timeline and budget analysis
+- **Excel/LibreOffice** for budget spreadsheets
+
+### Institution Requirements
+- [Institutional review processes]
+- [Required approvals]
+- [Submission procedures]
+
+## License
+
+This proposal template and associated materials are licensed under [License Type].
+
+## Contact
+
+**Primary Contact:** [email]  
+**Institutional Affiliation:** [department, university]  
+**ORCID:** [ORCID ID]
+
+For questions about proposal development or collaboration opportunities, please contact the PI.
+
+---
+
+*Generated from grant-application template*

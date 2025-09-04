@@ -1,0 +1,195 @@
+---
+format: gfm
+output-file: README
+---
+
+# Literature Review Template
+
+For systematic reviews, scoping reviews, and meta-analyses following established methodological frameworks.
+
+## When to Use This Template
+
+- **Systematic reviews**: Comprehensive evidence synthesis with quality assessment
+- **Scoping reviews**: Mapping literature and identifying knowledge gaps
+- **Meta-analyses**: Quantitative synthesis of study results
+- **Rapid reviews**: Accelerated evidence synthesis for urgent questions
+- **Umbrella reviews**: Reviews of systematic reviews
+
+## What's Included
+
+```
+literature-review/
+├── review.qmd                  # Main review manuscript
+├── protocol/
+│   └── review-protocol.qmd     # Detailed protocol
+├── search-strategy/
+│   ├── search-terms.qmd        # Search term development
+│   └── database-searches.qmd   # Database-specific strategies
+├── screening/
+│   ├── title-abstract.csv      # Title/abstract screening results
+│   ├── full-text.csv          # Full-text screening results
+│   └── screening-forms.qmd     # Screening criteria and forms
+├── data-extraction/
+│   ├── extraction-form.qmd     # Data extraction template
+│   ├── extracted-data.csv      # Main data extraction
+│   └── quality-assessment.csv  # Quality/risk of bias assessment
+├── analysis/
+│   ├── descriptive-analysis.R  # Study characteristics
+│   ├── meta-analysis.R         # Quantitative synthesis
+│   └── narrative-synthesis.R   # Qualitative synthesis
+├── figures/
+│   ├── prisma-flowchart.png    # PRISMA flow diagram
+│   └── forest-plots/          # Meta-analysis plots
+├── supplementary/
+│   ├── excluded-studies.csv    # Studies excluded at full-text
+│   └── search-results/         # Raw database search results
+└── assets/                     # Citation styles, templates
+```
+
+## Setup Instructions
+
+1. **Copy template**: `cp -r templates/literature-review/ your-review-name/`
+2. **Develop protocol**: Complete detailed protocol before searching
+3. **Register protocol**: Submit to PROSPERO or OSF
+4. **Set up search**: Plan database searches and terms
+5. **Prepare screening**: Set up tools (Covidence, Rayyan, etc.)
+
+## Review Methodology
+
+### Protocol Development
+1. **Research question**: PICO/PCC framework
+2. **Inclusion criteria**: Clear, specific, and measurable
+3. **Search strategy**: Comprehensive database coverage
+4. **Screening process**: Two-reviewer approach with conflict resolution
+
+### Search and Screening
+1. **Database searches**: Multiple sources (PubMed, Scopus, etc.)
+2. **Grey literature**: Theses, reports, conference proceedings
+3. **Hand searching**: Reference lists and key journals
+4. **Screening workflow**: Title/abstract → full-text → final inclusion
+
+### Data Extraction and Analysis
+1. **Standardized forms**: Consistent data extraction
+2. **Quality assessment**: Appropriate tools (Newcastle-Ottawa, Cochrane ROB)
+3. **Data synthesis**: Narrative or quantitative meta-analysis
+4. **GRADE assessment**: Quality of evidence evaluation
+
+## Key Features
+
+### PRISMA Compliance
+- **Flow diagram**: Automated PRISMA flowchart generation
+- **Checklist**: PRISMA 2020 item compliance
+- **Registration**: Protocol registration workflows
+- **Reporting**: Standardized result presentation
+
+### Screening Management
+- **Dual screening**: Two-reviewer workflow support
+- **Conflict resolution**: Systematic disagreement handling
+- **Progress tracking**: Screening completion monitoring
+- **Inter-rater reliability**: Kappa calculation and reporting
+
+### Meta-Analysis Tools
+- **Forest plots**: Automated visualization generation
+- **Heterogeneity assessment**: I², tau², Q-test calculations
+- **Subgroup analysis**: Pre-planned subgroup investigations
+- **Sensitivity analysis**: Robustness testing protocols
+
+## Common Customizations
+
+### Review Types
+- **Intervention reviews**: Treatment effect evaluation
+- **Diagnostic accuracy**: Test performance assessment
+- **Prognostic reviews**: Risk factor identification
+- **Qualitative synthesis**: Thematic analysis of qualitative studies
+
+### Search Strategies
+- **Medical databases**: PubMed, EMBASE, Cochrane Library
+- **Multidisciplinary**: Scopus, Web of Science, PsycINFO
+- **Grey literature**: OpenGrey, ProQuest, government databases
+- **Hand searching**: Key journals and reference lists
+
+### Analysis Approaches
+- **Random-effects**: Standard meta-analysis model
+- **Fixed-effects**: Low heterogeneity situations
+- **Network meta-analysis**: Multiple intervention comparisons
+- **Individual patient data**: Participant-level analysis
+
+## Quality Assurance
+
+### Methodological Rigor
+- **Protocol registration**: PROSPERO, OSF, or journal registration
+- **Dual screening**: Independent reviewer assessment
+- **Data extraction**: Standardized forms and training
+- **Quality assessment**: Validated critical appraisal tools
+
+### Reporting Standards
+- **PRISMA compliance**: Complete checklist adherence
+- **Search documentation**: Reproducible search strategies
+- **Study selection**: Clear inclusion/exclusion documentation
+- **Risk of bias**: Systematic quality assessment
+
+### Review Management
+- **Version control**: Protocol and analysis tracking
+- **Team coordination**: Clear role assignments
+- **Timeline management**: Milestone tracking and deadlines
+- **Conflict of interest**: Declaration and management
+
+## Tips for Success
+
+### Planning Phase
+- **Clear question**: Well-defined, answerable research question
+- **Realistic scope**: Manageable timeline and resources
+- **Team expertise**: Diverse skills (content, methods, statistics)
+- **Protocol registration**: Public commitment to methodology
+
+### Execution Phase
+- **Systematic searching**: Comprehensive, reproducible strategy
+- **Consistent screening**: Reliable inclusion/exclusion decisions
+- **Quality extraction**: Accurate, complete data capture
+- **Rigorous analysis**: Appropriate statistical methods
+
+### Reporting Phase
+- **Clear writing**: Accessible to target audience
+- **Complete reporting**: Full methodology and results
+- **Limitations discussion**: Honest assessment of constraints
+- **Implications**: Clear practical applications
+
+## Common Challenges
+
+### Search and Screening
+- **Search sensitivity**: Balancing comprehensiveness with precision
+- **Grey literature**: Accessing unpublished studies
+- **Screening reliability**: Achieving acceptable inter-rater agreement
+- **Language barriers**: Non-English literature inclusion
+
+### Data Extraction
+- **Missing data**: Contacting authors for additional information
+- **Heterogeneous reporting**: Standardizing diverse study formats
+- **Quality assessment**: Consistent application of criteria
+- **Data transformation**: Converting results to common metrics
+
+### Analysis and Synthesis
+- **Heterogeneity**: Deciding on pooling appropriateness
+- **Publication bias**: Assessing and adjusting for bias
+- **Subgroup analysis**: Avoiding data dredging
+- **Certainty assessment**: GRADE evaluation challenges
+
+## Requirements
+
+### Software
+- **R** (≥ 4.0.0) with packages: `metafor`, `meta`, `robvis`
+- **Quarto** (≥ 1.2.0) for document generation
+- **Reference management**: Zotero, Mendeley, or EndNote
+- **Review software**: Covidence, Rayyan, or DistillerSR
+
+### Methodological Resources
+- **PRISMA guidelines**: Latest reporting standards
+- **Cochrane Handbook**: Systematic review methodology
+- **Quality assessment tools**: Validated critical appraisal instruments
+- **Statistical guidance**: Meta-analysis best practices
+
+### Registration Platforms
+- **PROSPERO**: International systematic review registry
+- **Open Science Framework**: Protocol and data sharing
+- **Journal registration**: Some journals offer protocol registration
+- **Institutional repositories**: Local protocol storage

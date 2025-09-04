@@ -7,7 +7,12 @@
       "Bash(rm:*)",
       "Bash(touch:*)",
       "Bash(chmod:*)",
-      "Bash(quarto render:*)"
+      "Bash(quarto render:*)",
+      "Bash(for dir in */)",
+      "Bash(do mv \"$dir/README.md\" \"$dir/TEMPLATE-README.md\")",
+      "Bash(done)",
+      "Bash(cp:*)",
+      "Bash(sed:*)"
     ],
     "deny": []
   }

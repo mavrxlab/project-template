@@ -1,0 +1,257 @@
+
+---
+format: gfm
+---
+
+# Your Project Title Here
+
+**Authors:** [Lead Author, Co-authors]  
+**Institution:** [Your Institution]  
+**Review Type:** [Systematic Review/Scoping Review/Meta-Analysis]  
+**Registration:** [PROSPERO ID if applicable]  
+**Date:** YYYY-MM-DD  
+**Status:** [Protocol/Screening/Data Extraction/Analysis/Writing/Under Review/Published]
+
+## Abstract
+
+[Brief summary of review objectives, methodology, key findings, and implications]
+
+## Review Overview
+
+### Review Question(s)
+**Primary Question:** [Main research question following PICO/PCC framework]
+
+**Secondary Questions:**
+1. [Secondary question 1]
+2. [Secondary question 2]
+
+### Objectives
+- [Primary objective]
+- [Secondary objectives]
+
+## Methodology
+
+### Framework
+- **Guidelines:** [PRISMA 2020/PRISMA-ScR/Cochrane Handbook]
+- **Registration:** [PROSPERO/Open Science Framework]
+- **Protocol:** Available in `protocol/review-protocol.qmd`
+
+### Search Strategy
+- **Databases:** [PubMed, Scopus, Web of Science, etc.]
+- **Date Range:** [Start date] to [End date]
+- **Language:** [English only/Multiple languages]
+- **Search Terms:** See `search-strategy/search-terms.qmd`
+
+### Inclusion/Exclusion Criteria
+
+**Inclusion:**
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+**Exclusion:**
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+## Project Structure
+
+```
+├── review.qmd                  # Main review manuscript
+├── protocol/
+│   └── review-protocol.qmd     # Detailed protocol
+├── search-strategy/
+│   ├── search-terms.qmd        # Search term development
+│   └── database-searches.qmd   # Database-specific strategies
+├── screening/
+│   ├── title-abstract.csv      # Title/abstract screening results
+│   ├── full-text.csv          # Full-text screening results
+│   └── screening-forms.qmd     # Screening criteria and forms
+├── data-extraction/
+│   ├── extraction-form.qmd     # Data extraction template
+│   ├── extracted-data.csv      # Main data extraction
+│   └── quality-assessment.csv  # Quality/risk of bias assessment
+├── analysis/
+│   ├── descriptive-analysis.R  # Study characteristics
+│   ├── meta-analysis.R         # Quantitative synthesis (if applicable)
+│   └── narrative-synthesis.R   # Qualitative synthesis
+├── figures/
+│   ├── prisma-flowchart.png    # PRISMA flow diagram
+│   ├── study-characteristics/  # Descriptive figures
+│   └── forest-plots/          # Meta-analysis plots (if applicable)
+└── supplementary/
+    ├── excluded-studies.csv    # Studies excluded at full-text
+    ├── search-results/         # Raw database search results
+    └── additional-materials/   # Supporting documents
+```
+
+## Running the Review
+
+### Complete Review Build
+```bash
+# Generate main review document
+quarto render review.qmd
+
+# Build all supplementary materials
+quarto render protocol/review-protocol.qmd
+quarto render search-strategy/search-terms.qmd
+```
+
+### Analysis Pipeline
+```bash
+# Run analysis scripts
+Rscript analysis/descriptive-analysis.R
+Rscript analysis/narrative-synthesis.R
+
+# Meta-analysis (if applicable)
+Rscript analysis/meta-analysis.R
+```
+
+## Search and Screening Results
+
+### Search Results
+- **Total Records Identified:** [Number]
+- **After Deduplication:** [Number]
+- **Title/Abstract Screening:** [Number included]
+- **Full-Text Screening:** [Number included]
+- **Final Included Studies:** [Number]
+
+### Study Characteristics
+[Summary of included studies - update after data extraction]
+
+### Geographic Distribution
+- [Country/region breakdown]
+
+### Publication Years
+- Range: [Earliest] to [Latest]
+- Peak publication period: [Years]
+
+## Data Extraction
+
+### Study-Level Data
+- Study design and methodology
+- Participant characteristics
+- Intervention/exposure details
+- Outcome measures
+- Key findings
+
+### Quality Assessment
+- **Tool Used:** [Newcastle-Ottawa Scale/Cochrane Risk of Bias/JBI Critical Appraisal]
+- **Assessment Results:** [Summary of quality ratings]
+
+## Analysis and Synthesis
+
+### Narrative Synthesis
+[Approach to qualitative synthesis of findings]
+
+### Meta-Analysis (if applicable)
+- **Statistical Method:** [Random/fixed effects model]
+- **Software:** [R/RevMan/Stata]
+- **Heterogeneity Assessment:** [I², tau², Q-test]
+
+### Subgroup Analyses
+[Planned subgroup analyses]
+
+### Sensitivity Analyses
+[Planned sensitivity analyses]
+
+## Key Findings
+
+### Main Results
+[Summary of primary findings - update after analysis]
+
+### Secondary Findings
+[Summary of secondary analyses]
+
+### Quality of Evidence
+[GRADE assessment or similar quality evaluation]
+
+## Limitations
+
+- [Limitation 1]
+- [Limitation 2]
+- [Limitation 3]
+
+## Implications
+
+### Research Implications
+[Implications for future research]
+
+### Practice Implications
+[Implications for clinical practice/policy]
+
+### Policy Implications
+[Relevant policy considerations]
+
+## Team Roles
+
+### Review Team
+- **[Name]** - Lead reviewer, search strategy, screening, data extraction
+- **[Name]** - Second reviewer, screening, quality assessment
+- **[Name]** - Third reviewer, conflict resolution
+- **[Name]** - Statistical analysis consultant
+
+### Screening Agreement
+- **Title/Abstract Screening:** [Kappa coefficient or % agreement]
+- **Full-Text Screening:** [Agreement statistics]
+- **Data Extraction:** [Inter-rater reliability measures]
+
+## Timeline
+
+- **[Date]:** Protocol development and registration
+- **[Date]:** Search strategy finalized
+- **[Date]:** Database searches completed
+- **[Date]:** Title/abstract screening completed
+- **[Date]:** Full-text screening completed
+- **[Date]:** Data extraction completed
+- **[Date]:** Quality assessment completed
+- **[Date]:** Analysis completed
+- **[Date]:** Manuscript draft completed
+- **[Date]:** Submitted for peer review
+
+## Publication Plan
+
+### Target Journals
+1. [Primary target journal]
+2. [Secondary options]
+
+### Conference Presentations
+- [Conference name, date, presentation type]
+
+## Requirements
+
+### Software
+- **R** (≥ 4.0.0) with packages: `metafor`, `tidyverse`, `knitr`
+- **Quarto** (≥ 1.2.0) for document generation
+- **Reference Management:** Zotero, Mendeley, or EndNote
+
+### Review Management Tools
+- [Covidence/Rayyan/DistillerSR for screening]
+- [Data extraction tool if used]
+
+## Data Sharing
+
+- **Protocol:** Available at [registration platform]
+- **Search Results:** [Availability statement]
+- **Extracted Data:** [Data sharing plan]
+- **Analysis Code:** Available in project repository
+
+## Funding
+
+This review was supported by [funding source, grant number if applicable].
+
+## Conflicts of Interest
+
+[Declaration of any conflicts of interest]
+
+## Contact
+
+**Corresponding Author:** [email]  
+**Institution:** [department, university]  
+**ORCID:** [ORCID ID]
+
+For questions about this review or to suggest additional studies, please contact the corresponding author.
+
+---
+
+*Generated from literature-review template*

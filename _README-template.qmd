@@ -1,0 +1,314 @@
+---
+format:
+  gfm:
+    output-file: README
+---
+
+# Academic Research Templates
+
+[![CI Status](https://img.shields.io/github/actions/workflow/status/mavrxlab/project-template/validate-templates.yml?branch=main&label=CI&logo=github)](https://github.com/mavrxlab/project-template/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+
+**Professional, ready-to-use templates that eliminate the friction of starting academic research projects.** Whether you're writing a theoretical paper, conducting an empirical study, applying for grants, or presenting at conferences, these templates provide the structure and automation you need to focus on your research, not project setup.
+
+## How This Repository Works
+
+This isn't just a collection of templates—it's a complete project initialization system designed for the realities of academic research. Here's the story:
+
+**The Problem**: Every time you start a new research project, you face the same tedious setup: creating directory structures, configuring Quarto files, setting up citation management, organizing IRB documentation, planning analysis pipelines, and ensuring everything works together. This overhead can take hours or days before you even begin the actual research.
+
+**The Solution**: This repository provides **specialized templates** that handle all the setup automatically. Each template is designed for a specific type of academic work, with the right files, folder structure, and automation already configured. You answer a few questions, run a single command, and get a complete, working research project ready for your content.
+
+**The Magic**: The system doesn't just copy files—it intelligently customizes everything for your specific project. It updates titles, dates, and configurations; sets up proper README files; initializes git repositories; downloads citation styles; and even validates everything is working correctly.
+
+### How Templates Are Organized
+
+Instead of one-size-fits-all, we provide **five specialized templates**:
+
+- **📝 simple-paper**: For theoretical work, commentaries, and conceptual papers where you need clean writing tools without research overhead
+- **🔬 empirical-study**: For data collection projects with complete research infrastructure including IRB documentation, analysis pipelines, and reporting workflows  
+- **💰 grant-application**: For funding proposals with timeline management, budget tracking, and multi-agency support
+- **📚 literature-review**: For systematic reviews and meta-analyses with PRISMA methodology and citation management
+- **🎤 conference-presentation**: For talks and presentations with slide templates and rapid turnaround support
+
+Each template includes not just files, but **intelligent automation**. The empirical-study template sets up a complete R analysis pipeline with numbered scripts that run in sequence. The grant-application template includes interactive timeline generation. The literature-review template provides PRISMA-compliant workflows and screening management.
+
+## 🚀 Getting Started (2-Minute Setup)
+
+### Prerequisites
+```r
+# Install required R packages
+install.packages(c("here", "fs", "cli", "yaml", "lubridate"))
+```
+
+### The Streamlined Workflow
+
+We've designed this to be as simple as possible. The system combines template selection and project creation into a single, guided experience:
+
+**Step 1: Interactive Setup (Recommended)**
+```r
+# This combines template selection AND project creation
+source("tools/project-initializer.R")
+interactive_setup()
+```
+
+This single command:
+1. **Asks about your project** (research type, data collection, timeline, etc.)
+2. **Recommends the best template** based on your answers
+3. **Creates your project** with customized files and structure
+4. **Sets up everything** (git, citations, directories, R project file)
+5. **Validates the setup** to ensure everything works
+
+**Step 2: Direct Creation (If You Know What You Want)**
+```r
+# Skip the questions if you already know your template
+source("tools/project-initializer.R")
+initialize_project("my-project-name", "simple-paper")
+```
+
+**Step 3: Start Your Research**
+```bash
+# Navigate to your new project
+cd ../my-project-name
+
+# Open in RStudio (finds the .Rproj file automatically)
+open my-project-name.Rproj
+
+# Or start writing immediately
+quarto preview paper.qmd  # (or manuscript.qmd, slides.qmd, etc.)
+```
+
+### What Happens During Setup
+
+The initialization process is designed to eliminate all the tedious setup work:
+
+1. **Template Selection**: The system analyzes your needs and recommends the right template
+2. **File Customization**: All placeholder text gets replaced with your actual project details
+3. **Citation Management**: Academic citation styles (APA, IEEE, Nature, etc.) are automatically downloaded
+4. **Directory Creation**: Proper folder structure for your research type (data/, figures/, admin/, etc.)
+5. **Git Integration**: Repository initialization with appropriate .gitignore patterns
+6. **Validation**: Everything is tested to ensure it works before you start
+
+## Template Showcase
+
+### 📝 Simple Paper Template
+**Perfect for**: Theory papers, commentaries, book chapters, position pieces
+
+```r
+initialize_project("theory-paper", "simple-paper")
+```
+
+**What you get**:
+- Clean writing environment with `paper.qmd`
+- Pre-configured citation management
+- Multiple output formats (PDF, HTML, DOCX)
+- Minimal overhead—just focus on writing
+
+**Workflow**: Write → Cite → Render → Submit
+
+### 🔬 Empirical Study Template  
+**Perfect for**: Data collection studies, experiments, survey research
+
+```r
+initialize_project("cognition-study", "empirical-study")
+```
+
+**What you get**:
+- Complete research infrastructure with `manuscript.qmd` and `preregistration.qmd`
+- **10-script R analysis pipeline** (00-setup.R through 99-build.R)
+- IRB documentation templates and data management plans
+- Automated figure and table generation
+- Data security and privacy protection
+
+**Workflow**: Plan → Collect → Analyze → Report → Publish
+
+The analysis pipeline runs with a single command: `Rscript R/99-build.R`
+
+### 💰 Grant Application Template
+**Perfect for**: NSF, NIH, foundation grants, fellowship applications
+
+```r
+initialize_project("nsf-proposal", "grant-application")
+```
+
+**What you get**:
+- Structured proposal development with `proposal.qmd`
+- **Interactive timeline generation** with `timeline.qmd`
+- Budget tracking and justification templates
+- Multi-agency compliance (NSF/NIH formats)
+- Collaboration and letter management
+
+**Workflow**: Plan → Write → Budget → Review → Submit
+
+### 📚 Literature Review Template
+**Perfect for**: Systematic reviews, meta-analyses, scoping reviews
+
+```r
+initialize_project("education-review", "literature-review")
+```
+
+**What you get**:
+- **PRISMA-compliant methodology** with automated flow diagrams
+- Search strategy development and documentation
+- Dual screening workflows with conflict resolution
+- Meta-analysis tools and forest plot generation
+- Quality assessment and GRADE evaluation
+
+**Workflow**: Protocol → Search → Screen → Extract → Analyze → Report
+
+### 🎤 Conference Presentation Template
+**Perfect for**: Conference talks, posters, invited lectures
+
+```r
+initialize_project("conference-talk", "conference-presentation")
+```
+
+**What you get**:
+- **Multiple slide formats** (RevealJS, PDF, PowerPoint)
+- Abstract development with `abstract.qmd`
+- Professional formatting with institutional branding
+- Interactive elements and live code integration
+- Handout and supplementary material support
+
+**Workflow**: Abstract → Slides → Practice → Present → Share
+
+## Advanced Features
+
+### Citation Management System
+All templates include automatic citation style management using the authoritative [Zotero Style Repository](https://www.zotero.org/styles):
+
+```r
+# Download/update citation styles for all templates
+source("tools/download-citation-styles.R")
+```
+
+This downloads current versions of common styles:
+- **APA** (Psychology, Education)
+- **IEEE** (Engineering, Computer Science) 
+- **Nature, Science** (Natural Sciences)
+- **Chicago** (History, Literature)
+- **MLA** (Humanities)
+- **PLOS ONE** (Open Science)
+
+**Need a different style?** Browse thousands more at https://www.zotero.org/styles
+
+### Template Validation
+Ensure everything works correctly:
+
+```r
+# Test all templates
+source("tools/validate-templates.R")
+validate_all_templates()
+
+# Test specific template
+test_template("simple-paper", tempdir())
+```
+
+### Combining Templates
+Need elements from multiple templates? No problem:
+
+```bash
+# Start with simple paper structure
+initialize_project("mixed-project", "simple-paper")
+
+# Add empirical study components
+cp -r templates/empirical-study/R/ ../mixed-project/
+cp templates/empirical-study/admin/ ../mixed-project/
+```
+
+### Shared Resources
+All templates access common resources in `_shared/`:
+- **admin/**: Author tracking, publication management workflows
+- **scripts/**: Reusable R functions and utilities
+- **docs/**: Documentation standards and contribution guidelines
+
+## Real-World Usage Examples
+
+### Scenario 1: Quick Theory Paper
+```r
+# Friday afternoon: need to write a commentary by Monday
+interactive_setup()  # Choose simple-paper template
+# → Creates clean writing environment
+# → Start writing immediately in paper.qmd
+# → Render to PDF when ready: quarto render paper.qmd
+```
+
+### Scenario 2: Multi-Year Empirical Study
+```r
+# Planning a 2-year data collection study
+interactive_setup()  # Choose empirical-study template
+# → Gets IRB documentation templates
+# → Sets up complete analysis pipeline
+# → Creates data management and security protocols
+# → Run analysis when data ready: Rscript R/99-build.R
+```
+
+### Scenario 3: Grant Proposal Under Deadline
+```r
+# NSF proposal due in 3 weeks
+interactive_setup()  # Choose grant-application template
+# → Structured proposal with timeline management
+# → Budget templates and justification frameworks
+# → Collaboration and compliance documentation
+# → Generate timeline: quarto render timeline.qmd
+```
+
+### Scenario 4: Conference Presentation Pipeline
+```r
+# Accepted talk at major conference in 6 weeks
+interactive_setup()  # Choose conference-presentation template
+# → Professional slide templates with branding
+# → Abstract refinement tools
+# → Multiple output formats for different needs
+# → Practice mode: quarto preview slides.qmd
+```
+
+## Quality Assurance
+
+### Automated Testing
+Every template is continuously validated:
+- **Structure verification**: All required files and directories present
+- **Rendering tests**: Quarto documents compile correctly
+- **Integration testing**: R scripts run without errors
+- **Cross-platform compatibility**: Works on Windows, macOS, Linux
+
+### Template Requirements
+- **R** (≥ 4.0.0) - Statistical computing and automation
+- **Quarto** (≥ 1.2.0) - Document generation and publishing
+- **Git** - Version control and collaboration
+- **Modern web browser** - For HTML previews and interactive elements
+
+### Best Practices Integration
+Templates incorporate academic best practices:
+- **Reproducible research**: Version control, documented workflows
+- **Open science**: Proper data management, sharing protocols  
+- **Collaboration**: Team-friendly structures, clear documentation
+- **Ethics compliance**: IRB templates, privacy protection
+- **Publication ready**: Professional formatting, citation management
+
+## Support and Community
+
+### Getting Help
+- **Template-specific guidance**: Each template includes detailed README with setup instructions
+- **General documentation**: Comprehensive guides in `_shared/docs/`
+- **Troubleshooting**: Common issues and solutions documented
+- **Community support**: GitHub issues for questions and feature requests
+
+### Contributing
+This is an open-source project that benefits from community input:
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b improve-template`
+3. **Make** your changes and test thoroughly
+4. **Submit** a pull request with clear documentation
+
+See `_shared/docs/CONTRIBUTING.md` for detailed contribution guidelines.
+
+### License and Usage
+MIT License - use freely for academic and commercial projects. See [LICENSE.md](LICENSE.md) for complete terms.
+
+---
+
+**Ready to eliminate research project setup friction?** Choose your template and start your research in minutes, not hours.
+
+*Professional academic research templates - because your time should be spent on research, not setup.*

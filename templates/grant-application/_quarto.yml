@@ -13,6 +13,11 @@ format:
     keep-tex: true
   docx: default
 
+# Citation settings
+bibliography: references.bib
+# Use live Zotero Style Repository (with local backup)
+csl: https://www.zotero.org/styles/apa  # Fallback: assets/apa.csl
+
 engine: knitr
 execute:
   echo: false

@@ -1,0 +1,237 @@
+
+---
+format: gfm
+---
+
+# Your Project Title Here
+
+**Presenter:** [Your Name Here]  
+**Co-authors:** [List co-authors if applicable]  
+**Conference:** [Conference Name]  
+**Date:** YYYY-MM-DD  
+**Location:** [City, State/Country]  
+**Presentation Type:** [Oral Presentation/Poster/Symposium/Workshop]
+
+## Abstract
+
+[Conference abstract - typically 250-500 words depending on conference requirements]
+
+## Presentation Overview
+
+### Conference Details
+- **Conference:** [Full conference name]
+- **Session:** [Session title/track]
+- **Time Slot:** [Date and time]
+- **Duration:** [Presentation length]
+- **Format:** [In-person/Virtual/Hybrid]
+
+### Key Points
+1. [Main message/finding]
+2. [Supporting point]
+3. [Supporting point]
+4. [Conclusion/implications]
+
+## Project Structure
+
+```
+├── slides.qmd                 # Main presentation slides
+├── abstract.qmd              # Conference abstract
+├── assets/
+│   ├── figures/              # Figures and charts
+│   ├── images/               # Photos and graphics
+│   └── logos/                # Institutional logos
+├── handouts/
+│   ├── summary.qmd           # One-page summary
+│   └── references.qmd        # Extended bibliography
+└── supplementary/
+    ├── full-paper.qmd        # Complete research paper (if available)
+    ├── appendices.qmd        # Additional analyses
+    └── data-tables.qmd       # Detailed data tables
+```
+
+## Building the Presentation
+
+### Create Slides
+```bash
+# Generate presentation slides
+quarto render slides.qmd
+
+# Create handout materials
+quarto render handouts/summary.qmd
+```
+
+### Output Formats
+- **HTML:** Interactive slides with transitions
+- **PDF:** Printable slides for backup
+- **PPTX:** PowerPoint format for editing
+
+```bash
+# Specific formats
+quarto render slides.qmd --to revealjs
+quarto render slides.qmd --to pdf
+quarto render slides.qmd --to pptx
+```
+
+## Research Background
+
+### Research Question
+[Primary research question being addressed]
+
+### Methodology
+- **Study Design:** [Brief description]
+- **Sample:** [Participant/data characteristics]
+- **Analysis:** [Key analytical approaches]
+
+### Key Findings
+1. [Primary finding]
+2. [Secondary finding]
+3. [Additional result]
+
+## Conference Submission
+
+### Abstract Submission
+- **Deadline:** [Date]
+- **Word Limit:** [Number] words
+- **Keywords:** [List keywords]
+- **Submission Status:** [Accepted/Under Review/Submitted]
+
+### Presentation Requirements
+- **Time Limit:** [Minutes]
+- **Slide Limit:** [Number if applicable]
+- **File Format:** [Required submission format]
+- **A/V Needs:** [Equipment requirements]
+
+## Audience and Context
+
+### Target Audience
+- [Primary audience: researchers/practitioners/students]
+- [Background knowledge level]
+- [Expected audience size]
+
+### Conference Theme
+[How presentation fits with conference theme/track]
+
+### Related Sessions
+[Other relevant presentations or sessions at conference]
+
+## Presentation Strategy
+
+### Opening
+[How you plan to engage the audience]
+
+### Key Messages
+1. [Message 1]: [Supporting evidence]
+2. [Message 2]: [Supporting evidence]
+3. [Message 3]: [Supporting evidence]
+
+### Visual Strategy
+- [Use of figures/charts]
+- [Slide design approach]
+- [Interactive elements]
+
+### Conclusion
+[Key takeaways for audience]
+
+## Follow-up Materials
+
+### Networking
+- **Contact Information:** [Professional email, social media]
+- **Business Cards:** [Design and content]
+- **QR Code:** [Link to materials or contact info]
+
+### Additional Resources
+- **Full Paper:** [Link or availability]
+- **Datasets:** [If sharing data]
+- **Code Repository:** [GitHub/other repository]
+- **Collaboration Opportunities:** [Future work possibilities]
+
+## Timeline
+
+- **[Date]:** Abstract submitted
+- **[Date]:** Acceptance notification
+- **[Date]:** Registration deadline
+- **[Date]:** Slide preparation begins
+- **[Date]:** Practice presentations
+- **[Date]:** Final slides completed
+- **[Date]:** Conference travel
+- **[Date]:** Presentation date
+
+## Logistics
+
+### Travel and Accommodation
+- **Transportation:** [Flight/driving details]
+- **Hotel:** [Accommodation information]
+- **Conference Venue:** [Location and directions]
+
+### Technical Requirements
+- **Equipment Needs:** [Laptop, adapter, backup drives]
+- **Internet:** [Requirements for live demos]
+- **Backup Plans:** [PDF slides, printed materials]
+
+## Post-Conference
+
+### Follow-up Actions
+- [ ] Send thank you emails to new contacts
+- [ ] Share presentation materials as promised
+- [ ] Update CV with presentation details
+- [ ] Submit extended abstract/paper if invited
+- [ ] Plan follow-up collaborations
+
+### Documentation
+- **Attendance:** [Number of attendees]
+- **Questions Asked:** [Key questions from audience]
+- **Feedback Received:** [Formal/informal feedback]
+- **Networking Results:** [New contacts, collaboration opportunities]
+
+## Related Work
+
+### Previous Presentations
+- [Conference, date]: [Title, outcome]
+
+### Upcoming Presentations
+- [Planned future presentations of this work]
+
+### Publications
+- [Related papers published or in preparation]
+
+## Team Contributions
+
+### Presentation Team
+- **[Name]** - [Role: presenter, co-author, data analysis]
+- **[Name]** - [Specific contributions]
+
+### Acknowledgments
+- [Funding sources]
+- [Collaborators not listed as authors]
+- [Research support staff]
+
+## Requirements
+
+### Software
+- **Quarto** (≥ 1.2.0) for slide generation
+- **R** (≥ 4.0.0) if including live code/data
+- **Presentation Software:** [PowerPoint/Keynote backup]
+
+### Assets
+- High-resolution figures and images
+- Institutional logos and branding
+- Professional headshot (if needed)
+
+## License and Sharing
+
+- **Slides:** [CC license or copyright statement]
+- **Images:** [Attribution requirements]
+- **Data:** [Sharing permissions]
+
+## Contact
+
+**Presenter:** [email]  
+**Institution:** [department, university]  
+**ORCID:** [ORCID ID]  
+**Twitter/Social:** [@handle]
+
+For questions about this research or to request presentation materials, please contact the presenter.
+
+---
+
+*Generated from conference-presentation template*

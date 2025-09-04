@@ -1,0 +1,100 @@
+---
+format: gfm
+---
+
+# Your Project Title Here
+
+**Author:** [Your Name Here]  
+**Date:** YYYY-MM-DD  
+**Status:** [Draft/In Progress/Under Review/Published]
+
+## Abstract
+
+[Brief summary of your paper's main argument, contribution, and conclusions]
+
+## Project Overview
+
+This project develops [theoretical framework/argument/analysis] around [topic area]. The work contributes to [field/literature] by [specific contribution].
+
+## Structure
+
+- **Main manuscript:** `paper.qmd`
+- **Bibliography:** `references.bib`
+- **Figures/media:** `media/` directory
+
+## Building the Document
+
+### Quick Start
+```bash
+quarto render paper.qmd
+```
+
+### Output Formats
+- **PDF:** Academic submission format
+- **HTML:** Web-friendly version with interactive elements
+- **DOCX:** Microsoft Word format for collaboration
+
+### Custom Rendering
+```bash
+# Specific format
+quarto render paper.qmd --to pdf
+quarto render paper.qmd --to html
+quarto render paper.qmd --to docx
+
+# With custom options
+quarto render paper.qmd --to pdf --bibliography-style=apa
+```
+
+## Citation Management
+
+Add new references to `references.bib` using standard BibTeX format:
+
+```bibtex
+@article{author2024,
+  title={Article Title},
+  author={Author, First and Author, Second},
+  journal={Journal Name},
+  year={2024},
+  volume={1},
+  pages={1--20}
+}
+```
+
+Cite in text using: `@author2024` or `[@author2024]`
+
+## Requirements
+
+- **R** (≥ 4.0.0)
+- **Quarto** (≥ 1.2.0)
+- **R packages:** See `R/setup.R` for required packages
+
+## Development Notes
+
+### Project Timeline
+- [Date]: Project initiated
+- [Date]: Literature review completed
+- [Date]: First draft completed
+- [Date]: Revisions based on feedback
+- [Date]: Submitted for review
+
+### Key Arguments
+1. [Main thesis/argument]
+2. [Supporting point]
+3. [Supporting point]
+
+### Future Directions
+- [Potential extensions]
+- [Related projects]
+- [Collaboration opportunities]
+
+## License
+
+[Specify license or copyright information]
+
+## Contact
+
+For questions about this project, contact [email] or [institutional affiliation].
+
+---
+
+*Generated from simple-paper template*

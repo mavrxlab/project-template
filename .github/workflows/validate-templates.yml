@@ -55,8 +55,12 @@ jobs:
         echo "Checking template consistency..."
         for template in templates/*/; do
           echo "Checking $template"
-          if [ ! -f "$template/README.md" ]; then
-            echo "ERROR: $template missing README.md"
+          if [ ! -f "$template/_README-template.qmd" ]; then
+            echo "ERROR: $template missing _README-template.qmd"
+            exit 1
+          fi
+          if [ ! -f "$template/README.qmd" ]; then
+            echo "ERROR: $template missing README.qmd"
             exit 1
           fi
           if [ ! -f "$template/_quarto.yml" ]; then

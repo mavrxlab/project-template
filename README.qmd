@@ -2,202 +2,271 @@
 format: gfm
 ---
 
-# Academic Research Templates
+# Your Project Title Here
 
-[![CI Status](https://github.com/your-org/project-template/workflows/validate-templates/badge.svg)](https://github.com/your-org/project-template/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+**Principal Investigator:** [Your Name Here]  
+**Institution:** [Your Institution]  
+**Project Type:** [Research Project/Academic Work/etc.]  
+**Date:** YYYY-MM-DD  
+**Status:** [Planning/Active/Completed]
 
-**Professional, ready-to-use templates for academic research projects.** Streamline your research workflow with specialized templates for papers, studies, grants, reviews, and presentations.
+## Project Overview
 
-## 🚀 Quick Start
+This project [brief description of your research/academic work]. The work aims to [primary objective] and contributes to [field/discipline] by [specific contribution].
 
-**Get up and running in under 2 minutes:**
+## Project Structure
 
-1. **Install R and required packages:**
-   ```r
-   install.packages(c("here", "fs", "cli", "yaml"))
-   ```
+This repository contains multiple components organized by research theme:
 
-2. **Choose your approach:**
+```
+├── 01-POSTHUMAN-CYBERSECURITY/     # Critical posthuman approaches to cybersecurity
+├── 02-EDUCATIONAL-RESOURCES/       # Immersive cybersecurity educational content  
+├── 03-ETHICS-PHILOSOPHY/          # Philosophical dimensions of emerging technologies
+├── 04-REVIEWS-META-ANALYSIS/      # Systematic reviews of cybersecurity education
+├── 05-ARCHIVE/                    # Completed projects and templates
+├── _INDEX/                        # Navigation and cross-reference system
+└── templates/                     # Project template system
+```
 
-   **🎯 Interactive (Recommended):**
-   ```r
-   source("tools/template-chooser.R")
-   template_chooser()  # Guided template selection
-   
-   source("tools/project-initializer.R") 
-   interactive_setup()  # Automated project creation
-   ```
+## Getting Started
 
-   **⚡ Quick Setup:**
-   ```r
-   source("tools/project-initializer.R")
-   initialize_project("my-project", "simple-paper")
-   ```
+### For Individual Projects
+Choose the appropriate template from the `templates/` directory:
 
-   **📁 Manual:**
-   ```bash
-   cp -r templates/simple-paper/ ../my-new-project/
-   ```
+- **simple-paper**: Theory papers, commentaries, book chapters
+- **empirical-study**: Data collection and analysis projects
+- **grant-application**: Funding proposals and project management
+- **literature-review**: Systematic reviews and meta-analyses
+- **conference-presentation**: Presentations and talks
 
-3. **Start your research!** 🎉
+### For Multi-Project Research
+Use this entire repository structure for comprehensive research programs spanning multiple related projects.
 
-## Available Templates
+## Essential Commands
 
-| Template | Best For | Key Features |
-|----------|----------|-------------|
-| **📝 simple-paper** | Theory papers, commentaries, book chapters | Minimal structure, no IRB overhead, focused on writing |
-| **🔬 empirical-study** | Data collection and analysis projects | Complete research lifecycle, IRB docs, R analysis pipeline |
-| **💰 grant-application** | Funding proposals and project management | Interactive timeline planner, multi-agency support (NSF/NIH) |
-| **📚 literature-review** | Systematic reviews and meta-analyses | PRISMA methodology, citation management, quality assessment |
-| **🎤 conference-presentation** | Standalone presentations and talks | Slide templates, abstract support, quick turnaround |
+### Project Management
+```bash
+# Navigate to specific theme
+cd 01-POSTHUMAN-CYBERSECURITY/
+
+# Initialize new project from template
+source("tools/template-chooser.R")
+template_chooser()  # Interactive selection
+
+source("tools/project-initializer.R")
+initialize_project("project-name", "template-type")
+```
+
+### Document Generation
+```bash
+# Render individual projects
+quarto render project.qmd
+
+# Render entire theme
+quarto render
+
+# Preview with live reload
+quarto preview
+```
+
+### Analysis Workflows
+```bash
+# For projects with R analysis
+Rscript src/000-build.R        # Complete pipeline
+Rscript R/99-build.R          # Alternative structure
+```
+
+## Research Themes
+
+### 01-POSTHUMAN-CYBERSECURITY
+Critical posthuman approaches to cybersecurity education and practice. Includes NICE Framework analysis, K-12 workforce development, and core theoretical work.
+
+**Key Projects:**
+- lipstick-lungfish: NICE Framework posthuman analysis
+- nice-k12-workforce-framework-analysis: K-12 extension research
+- grave-grouse: Core posthuman cybersecurity theory
+
+### 02-EDUCATIONAL-RESOURCES
+Development of immersive cybersecurity educational content and Open Educational Resources.
+
+**Key Projects:**
+- sweltering-seahorse: "Cyber Dimensions" textbook (Published 2024)
+- cyber-dimensions-oer: OER toolkit for case studies
+- chocolate-cephalopod: Instructional design and assessment
+
+### 03-ETHICS-PHILOSOPHY
+Philosophical dimensions of emerging technologies using postphenomenological and critical theory approaches.
+
+**Key Projects:**
+- tech-ethics-chapter: Cyber ethics book chapter
+- amber-decryption: Postphenomenological methodology
+
+### 04-REVIEWS-META-ANALYSIS
+Systematic reviews and meta-analyses of cybersecurity education research.
+
+**Key Projects:**
+- hurtful-hummingbird: Multiple systematic review studies
+- scopingreview: Standalone scoping review project
+
+## Template System
+
+This repository includes a comprehensive template system for academic research:
+
+### Available Templates
+Each template is specialized for specific research types with automated setup, proper file structure, and integrated workflows.
+
+### Template Selection
+Use the interactive chooser to find the right template:
+```r
+source("tools/template-chooser.R")
+template_chooser()
+```
+
+### Project Initialization
+Automated setup with customization:
+```r
+source("tools/project-initializer.R")
+interactive_setup()
+```
 
 ## Requirements
 
-**Software:**
-- R (≥ 4.0.0)
-- Quarto (≥ 1.2.0)
-- Git (for version control)
+### Software
+- **R** (≥ 4.0.0) with RStudio recommended
+- **Quarto** (≥ 1.2.0) for document generation
+- **Git** for version control
+- **pandoc** (usually included with RStudio/Quarto)
 
-**R Packages:**
+### R Packages
+Core packages for multi-project management:
 ```r
-install.packages(c("here", "fs", "cli", "yaml", "lubridate", "knitr", "dplyr"))
+install.packages(c(
+  "here", "fs", "cli", "yaml",           # Project management
+  "tidyverse", "knitr", "rmarkdown",     # Data and documents
+  "targets", "renv",                     # Reproducibility
+  "quarto"                              # Publishing
+))
 ```
 
-## Key Features
+## Development Workflow
 
-- **🎯 Template specialization**: Right tool for each research type
-- **⚡ Interactive setup**: Guided project initialization
-- **📁 Modular design**: Use only what you need
-- **🔄 Automated workflows**: Streamlined research processes
-- **📊 Multi-format output**: HTML, PDF, DOCX support
-- **🤝 Collaboration ready**: Git integration and shared components
+### Starting New Work
+1. **Assess scope**: Determine if work fits existing themes or needs new structure
+2. **Choose approach**: Individual project template vs. integrated theme work
+3. **Set up environment**: Initialize R project and git repository
+4. **Plan structure**: Organize files according to project type
 
-## Usage Examples
+### Cross-Project Integration
+- **Shared resources**: Use `_shared/` components across projects
+- **Theme coordination**: Maintain connections between related work
+- **Master index**: Update `_INDEX/MASTER-PROJECT-INDEX.md` for discoverability
 
-### Quick Paper Setup
-```r
-# Initialize a simple theory paper
-source("tools/project-initializer.R")
-initialize_project("my-theory-paper", "simple-paper")
+### Quality Assurance
+- **Version control**: Commit source files regularly
+- **Documentation**: Maintain clear README files and code comments
+- **Reproducibility**: Ensure others can run your analyses
+- **Validation**: Use automated testing where appropriate
 
-# Start writing immediately
-cd ../my-theory-paper
-quarto preview paper.qmd
-```
+## Data Management
 
-### Empirical Study Workflow
-```r
-# Create comprehensive research project
-initialize_project("cognition-study", "empirical-study")
+### File Organization
+- **Source files**: `.qmd`, `.R`, `.yml` files under version control
+- **Generated content**: Rendered outputs may be committed depending on project
+- **Data files**: Follow project-specific data management plans
+- **Sensitive information**: Use `.gitignore` and secure storage practices
 
-# Run analysis pipeline
-Rscript R/00-build.R
+### Reproducibility
+- **Environment management**: Use `renv` for package management
+- **Path handling**: Use `here()` package for reliable file paths
+- **Documentation**: Clear instructions for running analyses
+- **Dependencies**: Explicit specification of software requirements
 
-# Generate reports
-quarto render
-```
+## Collaboration
 
-### Grant Proposal Timeline
-```r
-# Set up grant application
-initialize_project("nsf-proposal", "grant-application")
+### Team Coordination
+- **Clear roles**: Define responsibilities for multi-author projects
+- **Communication**: Regular meetings and status updates
+- **File access**: Appropriate permissions and sharing protocols
+- **Integration**: Coordination across theme boundaries
 
-# Generate interactive timeline
-quarto render timeline.qmd
-```
+### External Partnerships
+- **Institutional collaboration**: Multi-university projects
+- **Industry connections**: Applied research partnerships
+- **International work**: Cross-border research initiatives
+- **Community engagement**: Open science and public scholarship
 
-## Template Details
+## Publication and Dissemination
 
-### 📝 Simple Paper
-- **Structure**: Minimal, writing-focused
-- **Use cases**: Theory papers, commentaries, book chapters
-- **Output**: PDF, DOCX, HTML
-- **Setup time**: < 5 minutes
+### Academic Outputs
+- **Journal articles**: Peer-reviewed publications from individual projects
+- **Conference presentations**: Talks and posters from research themes
+- **Book chapters**: Theoretical and applied contributions
+- **Grant applications**: Funding for continued work
 
-### 🔬 Empirical Study
-- **Structure**: Complete research lifecycle
-- **Use cases**: Data collection, analysis, reporting
-- **Features**: IRB docs, R pipeline (10 scripts), data management
-- **Setup time**: 10-15 minutes
+### Open Science
+- **Code sharing**: GitHub repositories for reproducible research
+- **Data sharing**: Appropriate platforms for research data
+- **Preprints**: Early sharing of findings
+- **Educational resources**: OER development and sharing
 
-### 💰 Grant Application
-- **Structure**: Proposal development and management
-- **Use cases**: NSF, NIH, foundation grants
-- **Features**: Interactive timeline, budget tracking, compliance
-- **Setup time**: 15-20 minutes
+## Timeline and Milestones
 
-### 📚 Literature Review
-- **Structure**: Systematic review methodology
-- **Use cases**: Meta-analyses, scoping reviews
-- **Features**: PRISMA workflow, citation screening
-- **Setup time**: 10-15 minutes
+### Project Development
+- **[Date]**: Repository initialized with template system
+- **[Date]**: Major themes established and organized
+- **[Date]**: First integrated publications completed
+- **[Date]**: Template system made publicly available
 
-### 🎤 Conference Presentation
-- **Structure**: Presentation development
-- **Use cases**: Conference talks, academic presentations
-- **Features**: Slide templates, abstract support
-- **Setup time**: < 5 minutes
+### Ongoing Work
+- **Active projects**: [List current active work]
+- **Planned initiatives**: [Upcoming projects and collaborations]
+- **Long-term goals**: [Strategic research directions]
 
-## Advanced Usage
+## Funding and Support
 
-### Custom Template Combinations
-Mix elements from multiple templates:
-```bash
-# Start with simple-paper, add empirical components
-cp -r templates/simple-paper/ ../my-mixed-project/
-cp templates/empirical-study/R/ ../my-mixed-project/
-```
+This work has been supported by:
+- [Funding source 1, grant number]
+- [Funding source 2, grant number]
+- [Institutional support]
 
-### Shared Resources
-All templates access shared components in `_shared/`:
-- **admin/**: Author tracking, publication management
-- **scripts/**: Common R functions and utilities  
-- **docs/**: Guidelines and documentation standards
+## Team and Contributors
 
-### Automation Tools
-- **template-chooser.R**: Interactive template selection
-- **project-initializer.R**: Automated project setup
-- **validate-templates.R**: Quality assurance testing
+### Principal Investigator
+**[Your Name]** - [Title, Institution]
+- **ORCID**: [ORCID ID]
+- **Email**: [Contact email]
+- **Role**: [Primary responsibilities]
 
-## Best Practices
+### Collaborators
+- **[Name]** - [Institution, Role]
+- **[Name]** - [Institution, Role]
 
-- **Start minimal**: Choose the simplest template that meets your needs
-- **Use version control**: Initialize Git repositories for all projects
-- **Document decisions**: Keep clear records of methodological choices
-- **Plan for reproducibility**: Structure files for easy sharing
-- **Collaborate consistently**: Use same templates across team projects
+### Acknowledgments
+- [Research assistants, technical support]
+- [Institutional resources and facilities]
+- [Community contributors and feedback]
 
-## Contributing
+## License and Usage
 
-1. Fork the repository
-2. Create feature branch: `git checkout -b improve-template`
-3. Make changes and test thoroughly
-4. Submit pull request with clear documentation
+### Code and Templates
+This template system and associated code is licensed under [MIT/GPL/etc.].
 
-See `_shared/docs/CONTRIBUTING.md` for detailed guidelines.
+### Research Content
+Individual projects may have different licensing terms. See project-specific README files for details.
 
-## Support
+### Citation
+If you use this template system or research approach, please cite:
+[Standard citation format for the work]
 
-### Documentation
-- Template-specific READMEs with setup instructions
-- General guidance in `_shared/docs/`
-- Automation help in `tools/` directory
+## Contact
 
-### Troubleshooting
-- **Path issues**: Use `here()` for file references
-- **Missing packages**: Check template README for requirements
-- **Quarto errors**: Verify `_quarto.yml` configuration
+**Primary Contact:** [email]  
+**Institution:** [department, university]  
+**ORCID:** [ORCID ID]  
+**Website:** [personal/project website]
 
-### Getting Help
-- Open GitHub issues for bugs or feature requests
-- Check template documentation first
-- Review existing projects for examples
-
-## License
-
-MIT License - see [LICENSE.md](LICENSE.md) for details.
+For questions about specific research themes, collaboration opportunities, or template usage, please contact the principal investigator.
 
 ---
 
-**Professional academic research templates** - streamline your workflow with specialized, tested templates for every research type.
+*Academic Research Repository - Multi-Project Template System*

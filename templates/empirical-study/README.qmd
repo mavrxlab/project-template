@@ -1,0 +1,174 @@
+---
+format: gfm
+---
+
+# Your Project Title Here
+
+**Principal Investigator:** [Your Name Here]  
+**Institution:** [Your Institution]  
+**IRB Protocol:** [IRB Number if applicable]  
+**Date:** YYYY-MM-DD  
+**Status:** [Planning/Data Collection/Analysis/Writing/Under Review/Published]
+
+## Abstract
+
+[Brief summary of research question, methodology, key findings, and implications]
+
+## Research Overview
+
+### Research Question(s)
+1. [Primary research question]
+2. [Secondary research questions]
+
+### Hypotheses
+1. [H1: Primary hypothesis]
+2. [H2: Secondary hypotheses]
+
+### Methodology
+- **Design:** [Experimental/Quasi-experimental/Observational/etc.]
+- **Participants:** [Target population, sample size, recruitment]
+- **Measures:** [Key instruments and variables]
+- **Analysis Plan:** [Statistical approaches]
+
+## Project Structure
+
+```
+├── manuscript.qmd           # Main research paper
+├── preregistration.qmd      # Pre-registration document
+├── R/                       # Analysis scripts
+│   ├── 00-setup.R          # Environment setup
+│   ├── 10-data-import.R    # Data loading and initial processing
+│   ├── 20-data-cleaning.R  # Data cleaning and validation
+│   ├── 30-descriptives.R   # Descriptive statistics
+│   ├── 40-analysis.R       # Primary statistical analysis
+│   ├── 50-visualization.R  # Figure generation
+│   └── 99-build.R          # Master build script
+├── data/
+│   ├── raw/                # Original, immutable data
+│   └── processed/          # Cleaned, analysis-ready data
+├── instruments/            # Data collection materials
+├── outputs/                # Generated figures, tables, reports
+└── admin/                  # IRB, consent forms, correspondence
+```
+
+## Running the Analysis
+
+### Full Analysis Pipeline
+```bash
+# Run complete analysis
+Rscript R/99-build.R
+
+# Generate manuscript
+quarto render manuscript.qmd
+```
+
+### Individual Analysis Steps
+```bash
+# Setup environment
+Rscript R/00-setup.R
+
+# Process data
+Rscript R/10-data-import.R
+Rscript R/20-data-cleaning.R
+
+# Analyze data
+Rscript R/30-descriptives.R
+Rscript R/40-analysis.R
+Rscript R/50-visualization.R
+```
+
+## Data Management
+
+### Data Collection
+- **Raw data location:** `data/raw/`
+- **Data collection period:** [Start date] to [End date]
+- **Sample size:** [Target N] ([Actual N] collected)
+
+### Data Processing
+- **Cleaning procedures:** See `R/20-data-cleaning.R`
+- **Exclusion criteria:** [List criteria and sample sizes]
+- **Missing data handling:** [Strategy for missing data]
+
+### Data Security
+- Raw data files are `.gitignore`d for privacy
+- All identifying information removed in processed data
+- See `admin/data-management-plan.qmd` for complete procedures
+
+## Analysis Results
+
+### Descriptive Statistics
+[Summary of participant characteristics, variable distributions]
+
+### Primary Analyses
+[Brief summary of main findings - update after analysis]
+
+### Secondary Analyses
+[Summary of additional analyses]
+
+## Requirements
+
+### Software
+- **R** (≥ 4.0.0)
+- **Quarto** (≥ 1.2.0)
+- **Git** (for version control)
+
+### R Packages
+See `R/00-setup.R` for complete list. Key packages:
+- `tidyverse` - Data manipulation and visualization
+- `psych` - Psychometric analysis
+- `lavaan` - Structural equation modeling (if applicable)
+- `knitr` - Report generation
+
+## Ethics and Compliance
+
+- **IRB Approval:** [Institution] IRB Protocol [Number]
+- **Consent Process:** [Description of informed consent]
+- **Data Storage:** [Description of secure data handling]
+- **Sharing Plan:** [Data/code sharing intentions]
+
+## Timeline
+
+- **[Date]:** IRB submission
+- **[Date]:** IRB approval received
+- **[Date]:** Data collection began
+- **[Date]:** Data collection completed
+- **[Date]:** Analysis completed
+- **[Date]:** Manuscript draft completed
+- **[Date]:** Submitted for peer review
+
+## Publications and Presentations
+
+### Target Journals
+1. [Primary target journal]
+2. [Secondary options]
+
+### Conference Presentations
+- [Conference name, date, presentation type]
+
+## Team Members
+
+- **[Name]** - Principal Investigator
+- **[Name]** - Co-Investigator
+- **[Name]** - Research Assistant
+- **[Name]** - Statistical Consultant
+
+## Funding
+
+This research was supported by [funding source, grant number].
+
+## License and Sharing
+
+- **Code:** [MIT/GPL/etc. - specify license]
+- **Data:** [Available upon request/Open access/Restricted - specify conditions]
+- **Pre-registration:** [Link to pre-registration if applicable]
+
+## Contact
+
+For questions about this research, contact:
+- **Primary:** [email]
+- **Institution:** [department, university]
+- **ORCID:** [ORCID ID]
+
+---
+
+*Generated from empirical-study template*

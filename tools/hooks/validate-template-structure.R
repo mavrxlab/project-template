@@ -56,10 +56,10 @@ for (template in expected_templates) {
     }
   }
   
-  # Check README.md mentions template name
-  readme_path <- file.path(template_dir, "README.md")
-  if (file.exists(readme_path)) {
-    readme_content <- readLines(readme_path, warn = FALSE)
+  # Check _README-template.qmd mentions template name
+  readme_template_path <- file.path(template_dir, "_README-template.qmd")
+  if (file.exists(readme_template_path)) {
+    readme_content <- readLines(readme_template_path, warn = FALSE)
     readme_text <- paste(readme_content, collapse = " ")
     
     # Convert template name to different cases for checking
@@ -71,7 +71,7 @@ for (template in expected_templates) {
     )
     
     if (!any(sapply(template_variants, function(variant) grepl(variant, readme_text, ignore.case = TRUE)))) {
-      cat("WARNING:", template, "README.md may not mention template name\n")
+      cat("WARNING:", template, "_README-template.qmd may not mention template name\n")
     }
   }
   

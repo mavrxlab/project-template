@@ -90,7 +90,8 @@ test_template <- function(template_name, base_dir) {
     
   }, error = function(e) {
     result$success <- FALSE
-    result$error <- as.character(e)
+    result$error <- paste("Error:", e$message)
+    cli_alert_danger(paste("  ERROR:", e$message))
   }, finally = {
     # Clean up test directory
     if (dir.exists(test_path)) {

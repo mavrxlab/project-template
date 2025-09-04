@@ -23,34 +23,36 @@ format:
     reference-doc: template.docx
     number-sections: true
     
-  # Additional academic formats
-  apa-pdf:
+  # Academic-style formats (basic versions)
+  # For full APA compliance, consider: https://github.com/wjschne/apaquarto
+  apa-style:
     format: pdf
-    documentclass: apa7
-    classoption: ["man"]
+    documentclass: article
     fontsize: 12pt
     linestretch: 2
+    geometry: margin=1in
+    csl: https://www.zotero.org/styles/apa
     
-  ieee-pdf:
-    format: pdf
-    template-partials: ["ieee-title.tex"]
-    documentclass: IEEEtran
-    classoption: ["conference"]
-    
-  jats:
-    # Journal Article Tag Suite XML
-    keep-xml: true
-    
-  nature-pdf:
+  # For full IEEE compliance, consider: https://github.com/Mellich/quarto-ieee  
+  ieee-style:
     format: pdf
     documentclass: article
     fontsize: 10pt
     geometry: margin=0.75in
-    compact-title: true
+    columns: 2
+    csl: https://www.zotero.org/styles/ieee
+    
+  nature-style:
+    format: pdf
+    documentclass: article
+    fontsize: 10pt
+    geometry: margin=0.75in
+    csl: https://www.zotero.org/styles/nature
 
 # Citation settings
 bibliography: references.bib
-csl: assets/apa.csl  # Change to your preferred citation style
+# Use live Zotero Style Repository (with local backup)
+csl: https://www.zotero.org/styles/apa  # Fallback: assets/apa.csl
 
 # Execution settings
 execute:

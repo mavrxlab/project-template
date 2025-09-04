@@ -105,7 +105,8 @@ jobs:
           
           # Check required template files
           required_template_files=(
-            "README.md"
+            "_README-template.qmd"
+            "README.qmd"
             "_quarto.yml"
             "references.bib"
           )
@@ -131,10 +132,10 @@ jobs:
           echo "WARNING: Found TODO/FIXME markers in templates"
         fi
         
-        # Check that README files mention the template name
+        # Check that _README-template files mention the template name
         for template in templates/*/; do
           template_name=$(basename "$template")
-          if ! grep -i "$template_name" "$template/README.md" > /dev/null; then
-            echo "WARNING: $template/README.md may not mention template name"
+          if ! grep -i "$template_name" "$template/_README-template.qmd" > /dev/null; then
+            echo "WARNING: $template/_README-template.qmd may not mention template name"
           fi
         done

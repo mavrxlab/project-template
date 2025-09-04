@@ -5,15 +5,16 @@
 
 library(here)
 
-# Common citation styles and their URLs
+# Common citation styles from Zotero Style Repository
+# Browse more styles at: https://www.zotero.org/styles
 citation_styles <- list(
-  "apa.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl",
-  "ieee.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/ieee.csl", 
-  "chicago-author-date.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl",
-  "nature.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/nature.csl",
-  "science.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/science.csl",
-  "plos-one.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/plos.csl",
-  "mla.csl" = "https://raw.githubusercontent.com/citation-style-language/styles/master/modern-language-association.csl"
+  "apa.csl" = "https://www.zotero.org/styles/apa",
+  "ieee.csl" = "https://www.zotero.org/styles/ieee", 
+  "chicago-author-date.csl" = "https://www.zotero.org/styles/chicago-author-date",
+  "nature.csl" = "https://www.zotero.org/styles/nature",
+  "science.csl" = "https://www.zotero.org/styles/science",
+  "plos-one.csl" = "https://www.zotero.org/styles/plos",
+  "mla.csl" = "https://www.zotero.org/styles/modern-language-association"
 )
 
 # Templates that need citation styles
@@ -37,15 +38,21 @@ for (template in templates_with_citations) {
     output_file <- file.path(assets_dir, style_name)
     
     tryCatch({
-      download.file(style_url, output_file, quiet = TRUE)
+      download.file(style_url, output_file, quiet = TRUE, mode = "wb")
       cat("✓ Downloaded", style_name, "for", template, "\n")
     }, error = function(e) {
       cat("✗ Failed to download", style_name, "for", template, ":", e$message, "\n")
+      cat("  You can manually download from:", style_url, "\n")
     })
   }
 }
 
 cat("\nCitation style download complete!\n")
-cat("Usage in _quarto.yml:\n")
+cat("\nUsage in _quarto.yml:\n")
 cat("bibliography: references.bib\n")
 cat("csl: assets/apa.csl  # or other style\n")
+cat("\nBrowse thousands more styles at: https://www.zotero.org/styles\n")
+cat("To add a new style:\n")
+cat("1. Find the style at zotero.org/styles\n")
+cat("2. Download the .csl file to your assets/ directory\n")
+cat("3. Reference it in your _quarto.yml file\n")

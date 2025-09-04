@@ -1,0 +1,160 @@
+---
+format: gfm
+output-file: README
+---
+
+# Grant Application Template
+
+For funding proposals and project management across multiple agencies (NSF, NIH, foundations).
+
+## When to Use This Template
+
+- **Research proposals**: NSF, NIH, and foundation grant applications
+- **Fellowship applications**: Individual researcher funding
+- **Equipment grants**: Instrumentation and infrastructure requests
+- **Training grants**: Educational program funding
+- **Collaborative projects**: Multi-institution proposals
+
+## What's Included
+
+```
+grant-application/
+├── proposal.qmd               # Main proposal document
+├── timeline.qmd              # Project timeline and milestones
+├── references.bib            # Bibliography
+├── budget/
+│   ├── budget-summary.xlsx   # High-level budget
+│   ├── personnel-costs.xlsx  # Salary and benefits
+│   └── justification.qmd     # Budget narrative
+├── admin/
+│   ├── biosketches/          # PI and co-PI CVs
+│   ├── letters-support/      # Collaborator letters
+│   └── institutional/        # Facilities, equipment
+├── supplementary/
+│   ├── data-management.qmd   # Data management plan
+│   ├── broader-impacts.qmd   # Broader impacts statement
+│   └── prior-work.qmd       # Results from prior support
+└── assets/                   # Citation styles, templates
+```
+
+## Setup Instructions
+
+1. **Copy template**: `cp -r templates/grant-application/ your-proposal-name/`
+2. **Configure proposal**: Edit `proposal.qmd` with your project details
+3. **Set up timeline**: Complete interactive `timeline.qmd`
+4. **Prepare budget**: Use Excel templates in `budget/`
+5. **Gather documents**: Collect CVs, letters, institutional forms
+
+## Proposal Development Workflow
+
+### Planning Phase
+1. **Agency research**: Review funder priorities and requirements
+2. **Team assembly**: Identify collaborators and roles
+3. **Preliminary budget**: Estimate costs and timeline
+4. **Pre-proposal**: Submit letter of intent if required
+
+### Writing Phase
+1. **Draft sections**: Work on proposal components
+2. **Budget development**: Detailed cost calculation
+3. **Supporting documents**: Gather required supplementary materials
+4. **Internal review**: Institution pre-submission process
+
+### Submission Phase
+1. **Final assembly**: Compile all components
+2. **Format compliance**: Check page limits, fonts, margins
+3. **System submission**: Upload to agency portal
+4. **Confirmation**: Verify successful submission
+
+## Key Features
+
+### Multi-Agency Support
+- **NSF format**: Standard NSF proposal structure
+- **NIH compliance**: R01, R21, and other mechanisms
+- **Foundation grants**: Private foundation requirements
+- **International**: Fulbright, Marie Curie, and others
+
+### Interactive Timeline
+- **Gantt charts**: Visual project timeline
+- **Milestone tracking**: Key deliverables and deadlines
+- **Risk assessment**: Potential delays and mitigation
+- **Resource allocation**: Personnel and equipment scheduling
+
+### Budget Management
+- **Automated calculations**: Personnel costs with benefits
+- **Multi-year budgets**: Inflation and escalation factors
+- **Cost-sharing**: Institutional match requirements
+- **Indirect costs**: F&A rate application
+
+## Common Customizations
+
+### Proposal Types
+- **Basic research**: Fundamental scientific investigation
+- **Applied research**: Problem-solving and development
+- **Education grants**: Curriculum and training programs
+- **Infrastructure**: Equipment and facility requests
+
+### Agency Requirements
+- **Page limits**: Automatic formatting for different agencies
+- **Citation styles**: Agency-specific bibliography formats
+- **Review criteria**: Tailored to funder priorities
+- **Compliance**: Data sharing, human subjects, etc.
+
+### Collaboration Models
+- **Single PI**: Individual investigator projects
+- **Multi-PI**: Shared leadership structure
+- **Consortiums**: Large multi-institution efforts
+- **International**: Cross-border partnerships
+
+## Tips for Success
+
+### Competitive Strategies
+- **Significance**: Clear importance and impact
+- **Innovation**: Novel approaches and methods
+- **Feasibility**: Realistic timeline and resources
+- **Team expertise**: Strong investigator qualifications
+
+### Common Pitfalls
+- **Overly ambitious**: Unrealistic scope for timeline/budget
+- **Poor writing**: Unclear or jargon-heavy prose
+- **Weak evaluation**: Insufficient assessment plan
+- **Missing pieces**: Incomplete supporting documents
+
+### Review Process
+- **Study section**: Understand review panel composition
+- **Scoring**: Know evaluation criteria and weighting
+- **Feedback**: Use reviewer comments for improvement
+- **Resubmission**: Strategic revision for next cycle
+
+## Post-Award Planning
+
+### Administrative Setup
+- **Budget management**: Financial tracking systems
+- **Personnel hiring**: Recruitment and onboarding
+- **Space allocation**: Laboratory and office needs
+- **Equipment procurement**: Purchasing and installation
+
+### Compliance Requirements
+- **Progress reports**: Annual and final reporting
+- **Financial reporting**: Expenditure documentation
+- **Human subjects**: IRB approval and monitoring
+- **Data management**: Storage and sharing protocols
+
+## Requirements
+
+### Software
+- **Quarto** (≥ 1.2.0) for document generation
+- **R** (≥ 4.0.0) for timeline and budget analysis
+- **Excel/LibreOffice** for budget spreadsheets
+- **Reference manager**: Zotero, Mendeley, or EndNote
+
+### Institutional Support
+- **Sponsored programs office**: Pre-award assistance
+- **Budget development**: Financial planning support
+- **Compliance office**: Regulatory guidance
+- **Research administration**: Post-award management
+
+### Agency Resources
+- **Program officers**: Direct contact with funders
+- **Solicitation documents**: Current funding announcements
+- **Review panels**: Understanding evaluation process
+- **Success stories**: Examples of funded proposals

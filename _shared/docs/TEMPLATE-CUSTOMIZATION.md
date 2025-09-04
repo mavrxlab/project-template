@@ -317,7 +317,8 @@ test_template("new-template", tempdir())
 mkdir templates/meta-analysis
 
 # Core files
-touch templates/meta-analysis/README.md
+touch templates/meta-analysis/README.qmd
+touch templates/meta-analysis/_README-template.qmd
 touch templates/meta-analysis/meta-analysis.qmd
 touch templates/meta-analysis/references.bib
 touch templates/meta-analysis/_quarto.yml

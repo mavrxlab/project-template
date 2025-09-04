@@ -1,3 +1,8 @@
+---
+format: gfm
+output-file: README
+---
+
 # Simple Paper Template
 
 For theoretical, conceptual, or commentary papers that don't require data collection or complex analysis.

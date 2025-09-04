@@ -1,0 +1,158 @@
+---
+format: gfm
+output-file: README
+---
+
+# Empirical Study Template
+
+For data collection and analysis projects requiring IRB approval and comprehensive research infrastructure.
+
+## When to Use This Template
+
+- **Experimental studies**: Controlled experiments with data collection
+- **Survey research**: Large-scale questionnaire or interview studies
+- **Observational studies**: Systematic data collection without manipulation
+- **Mixed-methods projects**: Studies combining quantitative and qualitative approaches
+- **Longitudinal research**: Multi-timepoint data collection projects
+
+## What's Included
+
+```
+empirical-study/
+├── manuscript.qmd             # Main research paper
+├── preregistration.qmd        # Pre-registration document
+├── R/                         # Analysis pipeline
+│   ├── 00-setup.R            # Environment and package setup
+│   ├── 10-data-import.R      # Data loading
+│   ├── 20-data-cleaning.R    # Data cleaning and validation
+│   ├── 30-descriptives.R     # Descriptive statistics
+│   ├── 40-analysis.R         # Primary analysis
+│   ├── 50-visualization.R    # Figure generation
+│   ├── osf-integration.R     # Open Science Framework tools
+│   └── 99-build.R           # Master build script
+├── data/
+│   ├── raw/                  # Original data (gitignored)
+│   └── processed/            # Clean analysis-ready data
+├── instruments/              # Survey forms, interview guides
+├── outputs/                  # Generated figures, tables, reports
+├── admin/                    # IRB docs, consent forms
+└── assets/                   # Citation styles, templates
+```
+
+## Setup Instructions
+
+1. **Copy template**: `cp -r templates/empirical-study/ your-study-name/`
+2. **IRB preparation**: Complete forms in `admin/` directory
+3. **Configure analysis**: Update `R/00-setup.R` with your packages
+4. **Set up data structure**: Plan your `data/` organization
+5. **Pre-registration**: Complete `preregistration.qmd` before data collection
+
+## Research Workflow
+
+### Pre-Data Collection
+1. **IRB approval**: Submit institutional review board application
+2. **Pre-registration**: Document hypotheses and analysis plan
+3. **Pilot testing**: Test instruments and procedures
+4. **Power analysis**: Determine adequate sample size
+
+### Data Collection
+1. **Instrument deployment**: Use materials in `instruments/`
+2. **Data monitoring**: Regular quality checks during collection
+3. **Participant tracking**: Maintain enrollment and retention records
+4. **Data security**: Follow protocols in `admin/data-management-plan.qmd`
+
+### Analysis and Reporting
+1. **Run pipeline**: Execute `Rscript R/99-build.R`
+2. **Generate figures**: Review outputs in `outputs/`
+3. **Write manuscript**: Complete `manuscript.qmd`
+4. **Reproducibility check**: Verify full pipeline runs clean
+
+## Key Features
+
+### Automated Analysis Pipeline
+- **Numbered scripts**: Clear execution order (00, 10, 20, etc.)
+- **Master build**: Single command runs entire analysis
+- **Error handling**: Robust data validation and cleaning
+- **Reproducibility**: Version-controlled analysis code
+
+### IRB and Ethics Support
+- **Template forms**: Common IRB documentation
+- **Consent management**: Informed consent templates
+- **Data security**: Privacy-protecting procedures
+- **Sharing protocols**: Plans for data and code sharing
+
+### Pre-registration Integration
+- **Hypothesis documentation**: Structured pre-registration
+- **Analysis planning**: Detailed statistical approach
+- **Open science**: Links to OSF, GitHub, and other platforms
+- **Transparency**: Clear reporting of deviations from plan
+
+## Common Customizations
+
+### Statistical Approaches
+- **Basic statistics**: t-tests, ANOVA, correlation
+- **Regression models**: Linear, logistic, multilevel
+- **Structural equation modeling**: Using `lavaan`
+- **Machine learning**: Classification and prediction models
+
+### Data Types
+- **Survey data**: Likert scales, demographics, psychometrics
+- **Behavioral data**: Reaction times, accuracy measures
+- **Physiological data**: EEG, fMRI, heart rate
+- **Text data**: Qualitative responses, social media
+
+### Output Formats
+- **Academic journals**: APA, IEEE, Nature styles
+- **Thesis chapters**: University-specific formatting
+- **Reports**: Government, industry, or funder reports
+- **Presentations**: Conference slides and posters
+
+## Tips for Success
+
+### Project Management
+- **Version control**: Commit frequently with clear messages
+- **Documentation**: Comment your code and document decisions
+- **Backup strategy**: Multiple copies of irreplaceable data
+- **Timeline tracking**: Monitor progress against milestones
+
+### Data Quality
+- **Validation rules**: Check data integrity at each step
+- **Missing data**: Plan handling strategy in advance
+- **Outlier detection**: Systematic approach to extreme values
+- **Reproducibility**: Others should be able to run your code
+
+### Collaboration
+- **Clear roles**: Define team member responsibilities
+- **Communication**: Regular meetings and status updates
+- **File organization**: Consistent naming and structure
+- **Access control**: Appropriate permissions for sensitive data
+
+## Extending the Template
+
+If your project needs additional components:
+- **Grant funding**: Add elements from `grant-application` template
+- **Literature review**: Incorporate `literature-review` components
+- **Presentations**: Use `conference-presentation` for dissemination
+- **Theory development**: Add `simple-paper` elements for conceptual work
+
+## Requirements
+
+### Software
+- **R** (≥ 4.0.0) with RStudio recommended
+- **Quarto** (≥ 1.2.0) for document generation
+- **Git** for version control
+- **Statistical software**: Additional tools as needed (SPSS, SAS, etc.)
+
+### R Packages
+Core packages installed via `R/00-setup.R`:
+- `tidyverse` - Data manipulation and visualization
+- `psych` - Psychometric analysis and reliability
+- `here` - File path management
+- `knitr` - Report generation
+- Plus study-specific packages
+
+### Institutional Requirements
+- IRB approval for human subjects research
+- Data storage compliance (HIPAA, FERPA, etc.)
+- Institutional data sharing policies
+- Computing resource access if needed

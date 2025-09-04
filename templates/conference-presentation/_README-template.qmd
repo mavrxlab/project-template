@@ -1,0 +1,218 @@
+---
+format: gfm
+output-file: README
+---
+
+# Conference Presentation Template
+
+For conference talks, poster presentations, and academic presentations with quick turnaround requirements.
+
+## When to Use This Template
+
+- **Conference presentations**: Academic conference talks and oral presentations
+- **Poster presentations**: Scientific poster sessions and displays
+- **Workshop presentations**: Interactive educational presentations
+- **Symposium talks**: Focused presentations within themed sessions
+- **Invited lectures**: Keynote and guest presentations
+
+## What's Included
+
+```
+conference-presentation/
+├── slides.qmd                 # Main presentation slides
+├── abstract.qmd              # Conference abstract
+├── assets/
+│   ├── figures/              # Figures and charts
+│   ├── images/               # Photos and graphics
+│   └── logos/                # Institutional logos
+├── handouts/
+│   ├── summary.qmd           # One-page summary
+│   └── references.qmd        # Extended bibliography
+├── supplementary/
+│   ├── full-paper.qmd        # Complete research paper (if available)
+│   ├── appendices.qmd        # Additional analyses
+│   └── data-tables.qmd       # Detailed data tables
+└── references.bib            # Bibliography
+```
+
+## Setup Instructions
+
+1. **Copy template**: `cp -r templates/conference-presentation/ your-presentation-name/`
+2. **Update abstract**: Edit `abstract.qmd` with conference requirements
+3. **Develop slides**: Create presentation in `slides.qmd`
+4. **Add assets**: Include figures, images, and institutional logos
+5. **Prepare handouts**: Create summary materials for audience
+
+## Presentation Development
+
+### Planning Phase
+1. **Audience analysis**: Understand conference attendee background
+2. **Time management**: Plan content for allocated presentation time
+3. **Key messages**: Identify 3-5 main takeaways
+4. **Visual strategy**: Plan figure and slide design approach
+
+### Content Development
+1. **Narrative structure**: Clear beginning, middle, and end
+2. **Evidence integration**: Support claims with data and citations
+3. **Visual design**: Consistent formatting and branding
+4. **Interactive elements**: Engagement strategies for audience
+
+### Delivery Preparation
+1. **Practice sessions**: Rehearse timing and transitions
+2. **Technical setup**: Test equipment and backup plans
+3. **Q&A preparation**: Anticipate questions and prepare responses
+4. **Materials preparation**: Handouts, business cards, follow-up info
+
+## Key Features
+
+### Multiple Output Formats
+- **RevealJS slides**: Interactive HTML presentations
+- **PDF slides**: Printable backup format
+- **PowerPoint**: Editable PPTX for collaboration
+- **Handout versions**: Audience take-away materials
+
+### Presentation Tools
+- **Live code**: Executable R code within presentations
+- **Interactive plots**: Dynamic visualizations
+- **Video embedding**: Multimedia content integration
+- **Progressive disclosure**: Incremental slide reveals
+
+### Professional Formatting
+- **Institution branding**: Logo and color scheme integration
+- **Citation management**: Automated bibliography generation
+- **Figure numbering**: Consistent cross-referencing
+- **Template consistency**: Unified design across slides
+
+## Common Customizations
+
+### Presentation Types
+- **Research presentations**: Data-driven scientific talks
+- **Method presentations**: Technique and approach demonstrations
+- **Review presentations**: Literature synthesis and analysis
+- **Position presentations**: Argument and perspective pieces
+
+### Visual Styles
+- **Academic formal**: Traditional conference presentation style
+- **Modern minimal**: Clean, contemporary design approach
+- **Branded institutional**: University or organization themes
+- **Interactive engaging**: High audience participation formats
+
+### Technical Features
+- **Animation sequences**: Slide transition and build effects
+- **Code highlighting**: Syntax highlighting for programming content
+- **Mathematical notation**: LaTeX math rendering
+- **Multi-language support**: International character sets
+
+## Tips for Success
+
+### Content Strategy
+- **Clear focus**: Single main message per slide
+- **Evidence-based**: Support claims with data and citations
+- **Audience-appropriate**: Match complexity to audience background
+- **Time-conscious**: Plan content for available time slot
+
+### Visual Design
+- **Consistent formatting**: Uniform fonts, colors, and spacing
+- **High-quality figures**: Clear, readable visualizations
+- **Minimal text**: Bullet points rather than paragraphs
+- **Professional appearance**: Polished, conference-ready design
+
+### Delivery Excellence
+- **Practice timing**: Rehearse to fit time constraints
+- **Backup plans**: Multiple format options and technical backups
+- **Engagement strategies**: Questions, polls, interactive elements
+- **Professional materials**: Business cards, handouts, contact info
+
+## Presentation Formats
+
+### Oral Presentations
+- **Standard talks**: 15-20 minute conference presentations
+- **Lightning talks**: 5-minute rapid-fire presentations
+- **Keynote lectures**: 45-60 minute featured presentations
+- **Panel discussions**: Multi-speaker collaborative formats
+
+### Poster Presentations
+- **Traditional posters**: Static display with presenter interaction
+- **Digital posters**: Electronic display formats
+- **Interactive posters**: QR codes and digital engagement
+- **Poster competitions**: Award-focused presentation strategies
+
+### Virtual Presentations
+- **Live streaming**: Real-time online presentation delivery
+- **Pre-recorded**: Prepared video presentation formats
+- **Hybrid events**: Combined in-person and virtual attendance
+- **Interactive webinars**: Online audience engagement tools
+
+## Post-Presentation Activities
+
+### Follow-up Materials
+- **Slide sharing**: Making presentations available online
+- **Contact information**: Professional networking facilitation
+- **Collaboration opportunities**: Research partnership development
+- **Publication planning**: Converting presentations to papers
+
+### Networking Integration
+- **Social media**: Conference hashtag and online engagement
+- **Professional contacts**: Business card and contact management
+- **Research connections**: Identifying collaboration opportunities
+- **Future presentations**: Building on conference success
+
+### Documentation
+- **Presentation archive**: Systematic storage and organization
+- **Audience feedback**: Collection and analysis of responses
+- **Performance evaluation**: Self-assessment and improvement planning
+- **Impact tracking**: Citation and reference monitoring
+
+## Common Challenges
+
+### Technical Issues
+- **Equipment compatibility**: Ensuring presentation runs on conference systems
+- **File format problems**: Managing different software requirements
+- **Internet connectivity**: Backup plans for online content
+- **Time constraints**: Fitting content into allocated slots
+
+### Content Development
+- **Audience diversity**: Presenting to mixed-background audiences
+- **Complex topics**: Simplifying technical content appropriately
+- **Data visualization**: Creating clear, impactful figures
+- **Story structure**: Maintaining narrative flow and coherence
+
+### Delivery Concerns
+- **Nerves management**: Confidence building and anxiety reduction
+- **Time management**: Staying within presentation time limits
+- **Audience engagement**: Maintaining attention and participation
+- **Q&A handling**: Responding effectively to questions
+
+## Requirements
+
+### Software
+- **Quarto** (≥ 1.2.0) for slide generation
+- **R** (≥ 4.0.0) if including live code or data analysis
+- **Web browser**: For RevealJS presentation viewing
+- **PDF viewer**: For backup slide formats
+
+### Presentation Equipment
+- **Laptop**: Primary presentation device
+- **Adapters**: HDMI, USB-C, VGA connections
+- **Backup storage**: USB drives with multiple formats
+- **Pointer/clicker**: Wireless presentation remote
+
+### Conference Requirements
+- **Abstract submission**: Following conference guidelines and deadlines
+- **Registration**: Conference attendance and presentation registration
+- **Travel arrangements**: Transportation and accommodation planning
+- **Professional materials**: Business cards, handouts, promotional items
+
+## Resources and Support
+
+### Presentation Skills
+- **Training workshops**: Public speaking and presentation skills
+- **Practice opportunities**: Local presentation groups and societies
+- **Feedback systems**: Peer review and critique processes
+- **Professional development**: Communication skills enhancement
+
+### Technical Support
+- **Template customization**: Institutional branding and style guides
+- **Software tutorials**: Quarto and presentation tool training
+- **Troubleshooting guides**: Common technical problem solutions
+- **Equipment rental**: Conference presentation technology access

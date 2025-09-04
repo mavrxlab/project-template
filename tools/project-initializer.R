@@ -75,8 +75,9 @@ initialize_project <- function(project_name, template_type, project_path = NULL)
   cli_ol(c(
     paste("Navigate to your project: cd", project_path),
     "Open the .Rproj file in RStudio",
-    "Read the README.md for template-specific instructions",
-    "Customize the template files for your specific project",
+    "Read _README-template.qmd for template-specific instructions",
+    "Customize README.qmd with your project details",
+    "Customize other template files for your specific project",
     "Begin your research work!"
   ))
   
@@ -116,7 +117,7 @@ copy_shared_components <- function(shared_path, project_path, template_type) {
 customize_project_files <- function(project_path, project_name, template_type) {
   
   # Update project name in key files
-  update_files <- c("README.md", "paper.qmd", "manuscript.qmd", "proposal.qmd")
+  update_files <- c("README.qmd", "paper.qmd", "manuscript.qmd", "proposal.qmd")
   
   for (file in update_files) {
     file_path <- file.path(project_path, file)
@@ -133,6 +134,24 @@ customize_project_files <- function(project_path, project_name, template_type) {
       content <- gsub("today", Sys.Date(), content)
       
       writeLines(content, file_path)
+    }
+  }
+  
+  # Generate README.md from README.qmd if it exists and has frontmatter
+  readme_qmd <- file.path(project_path, "README.qmd")
+  if (file.exists(readme_qmd)) {
+    # Check if quarto is available
+    if (Sys.which("quarto") != "") {
+      old_wd <- getwd()
+      setwd(project_path)
+      
+      # Render the README to generate README.md
+      system(paste("quarto render", "README.qmd"), intern = TRUE)
+      
+      setwd(old_wd)
+      cli_alert_success("Generated README.md from README.qmd")
+    } else {
+      cli_alert_warning("Quarto not found - README.md not generated. Run 'quarto render README.qmd' manually.")
     }
   }
   

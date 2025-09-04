@@ -42,63 +42,69 @@ quarto render manuscript.qmd --to docx
 - Collaborative editing
 - Reference document templates
 
-### Journal-Specific Formats
+### Academic-Style Formats
 
-#### APA Format (Psychology)
+The templates provide basic academic-style formats. For full journal compliance, use the specialized extensions linked below.
+
+#### APA Style (Psychology)
 ```bash
-quarto render manuscript.qmd --to apa-pdf
+quarto render manuscript.qmd --to apa-style
 ```
-- APA 7th edition formatting
-- Double-spaced manuscript style
-- Proper heading hierarchy
-- Psychology journal requirements
+- APA-style formatting with proper citation style
+- Double-spaced manuscript layout
+- Standard margins and typography
+- **For full APA 7 compliance**: Use [apaquarto extension](https://github.com/wjschne/apaquarto)
 
 **Configuration**:
 ```yaml
 format:
-  apa-pdf:
-    documentclass: apa7
-    classoption: ["man"]
-    linestretch: 2
+  apa-style:
+    format: pdf
+    documentclass: article
     fontsize: 12pt
+    linestretch: 2
+    geometry: margin=1in
+    csl: https://www.zotero.org/styles/apa
 ```
 
-#### IEEE Format (Engineering/Computer Science)
+#### IEEE Style (Engineering/Computer Science)
 ```bash
-quarto render manuscript.qmd --to ieee-pdf
+quarto render manuscript.qmd --to ieee-style
 ```
-- IEEE conference/journal formatting
-- Two-column layout
-- Technical paper standards
-- Engineering publication style
+- IEEE citation style with two-column layout
+- Compact formatting for technical papers
+- Standard article document class
+- **For full IEEE compliance**: Use [quarto-ieee extension](https://github.com/Mellich/quarto-ieee)
 
 **Configuration**:
 ```yaml
 format:
-  ieee-pdf:
-    documentclass: IEEEtran
-    classoption: ["conference"]
-    fontsize: 10pt
-    geometry: margin=0.75in
-```
-
-#### Nature Format (Life Sciences)
-```bash
-quarto render manuscript.qmd --to nature-pdf
-```
-- Nature journal formatting
-- Compact layout
-- Life sciences standards
-- High-impact journal style
-
-**Configuration**:
-```yaml
-format:
-  nature-pdf:
+  ieee-style:
+    format: pdf
     documentclass: article
     fontsize: 10pt
     geometry: margin=0.75in
-    csl: assets/nature.csl
+    columns: 2
+    csl: https://www.zotero.org/styles/ieee
+```
+
+#### Nature Style (Life Sciences)
+```bash
+quarto render manuscript.qmd --to nature-style
+```
+- Nature journal citation style
+- Compact layout suitable for life sciences
+- Standard formatting with Nature-style references
+
+**Configuration**:
+```yaml
+format:
+  nature-style:
+    format: pdf
+    documentclass: article
+    fontsize: 10pt
+    geometry: margin=0.75in
+    csl: https://www.zotero.org/styles/nature
 ```
 
 ## Citation Styles
@@ -121,7 +127,8 @@ In your `_quarto.yml`:
 
 ```yaml
 bibliography: references.bib
-csl: assets/apa.csl  # Change to your preferred style
+# Use live Zotero Style Repository (with local backup)
+csl: https://www.zotero.org/styles/apa  # Fallback: assets/apa.csl
 ```
 
 Or specify for specific formats:
@@ -129,56 +136,118 @@ Or specify for specific formats:
 ```yaml
 format:
   pdf:
-    csl: assets/ieee.csl
+    csl: https://www.zotero.org/styles/ieee
   html:
-    csl: assets/apa.csl
+    csl: https://www.zotero.org/styles/apa
 ```
 
 ### Adding New Citation Styles
 
-1. **Download CSL file**: From [Citation Style Language](https://citationstyles.org/)
-2. **Place in assets/**: Add to your template's assets directory
-3. **Reference in config**: Update `_quarto.yml` to use the new style
+The authoritative source for citation styles is the [Zotero Style Repository](https://www.zotero.org/styles) with thousands of journal-specific styles.
+
+1. **Browse styles**: Visit https://www.zotero.org/styles
+2. **Download CSL file**: Click on a style and download the `.csl` file
+3. **Place in assets/**: Add to your template's `assets/` directory  
+4. **Reference in config**: Update `_quarto.yml` to use the new style
+
+**Automated download** for common styles:
+```r
+# Download/update common citation styles from Zotero Style Repository
+source("tools/download-citation-styles.R")
+```
+
+**Note**: Templates include local backup copies of common citation styles. The download script updates these with the latest versions from the authoritative Zotero Style Repository.
 
 ## Format Selection by Field
 
 ### Psychology Research
 ```yaml
 format:
-  apa-pdf:
-    documentclass: apa7
-    classoption: ["man"]
-    csl: assets/apa.csl
+  apa-style:
+    format: pdf
+    documentclass: article
+    fontsize: 12pt
+    linestretch: 2
+    geometry: margin=1in
+    csl: https://www.zotero.org/styles/apa
 ```
 
-### Computer Science
+### Computer Science/Engineering
 ```yaml
 format:
-  ieee-pdf:
-    documentclass: IEEEtran
-    classoption: ["conference"]
-    csl: assets/ieee.csl
-```
-
-### Medical Research
-```yaml
-format:
-  jama-pdf:
+  ieee-style:
+    format: pdf
     documentclass: article
     fontsize: 10pt
-    csl: assets/jama.csl
     geometry: margin=0.75in
+    columns: 2
+    csl: https://www.zotero.org/styles/ieee
 ```
 
-### Life Sciences
+### Life Sciences Research
 ```yaml
 format:
-  nature-pdf:
+  nature-style:
+    format: pdf
     documentclass: article
     fontsize: 10pt
-    csl: assets/nature.csl
-    compact-title: true
+    geometry: margin=0.75in
+    csl: https://www.zotero.org/styles/nature
 ```
+
+
+## Using Specialized Quarto Extensions
+
+For full journal compliance, consider these community-maintained extensions:
+
+### APAquarto Extension
+**For psychology and APA-style journals**
+
+Install and use:
+```bash
+quarto add wjschne/apaquarto
+```
+
+Then in your document:
+```yaml
+format:
+  apaquarto-pdf: default
+  apaquarto-html: default
+  apaquarto-docx: default
+```
+
+Features:
+- Full APA 7th edition compliance
+- Automatic title page formatting
+- Proper running heads and page numbers
+- APA-style tables and figures
+
+### Quarto IEEE Extension
+**For engineering and computer science journals**
+
+Install and use:
+```bash
+quarto add Mellich/quarto-ieee
+```
+
+Then in your document:
+```yaml
+format: ieee-pdf
+```
+
+Features:
+- True IEEE formatting
+- Conference and journal variants
+- Proper IEEE citation style
+- Technical paper formatting
+
+### Other Extensions
+- **[quarto-tandf](https://github.com/quarto-journals/tandf)**: Taylor & Francis journals
+- **[quarto-elsevier](https://github.com/quarto-journals/elsevier)**: Elsevier journals  
+- **[quarto-jss](https://github.com/quarto-journals/jss)**: Journal of Statistical Software
+- **[quarto-plos](https://github.com/quarto-journals/plos)**: PLOS journals
+
+Browse more at: https://github.com/quarto-journals
 
 ## Custom Format Creation
 
@@ -256,11 +325,11 @@ Different citation styles for different formats:
 ```yaml
 format:
   pdf:
-    csl: assets/nature.csl
+    csl: https://www.zotero.org/styles/nature
   html:
-    csl: assets/apa.csl
+    csl: https://www.zotero.org/styles/apa
   docx:
-    csl: assets/chicago-author-date.csl
+    csl: https://www.zotero.org/styles/chicago-author-date
 ```
 
 ## Troubleshooting
@@ -278,9 +347,10 @@ format:
 - **Formatting issues**: Validate CSL file integrity
 
 #### Format-Specific Problems
-- **IEEE template**: May require specific LaTeX distribution
-- **APA format**: Needs apa7 LaTeX class
-- **Custom formats**: Check all dependencies are installed
+- **Two-column layouts**: Use `columns: 2` in format configuration
+- **Citation style issues**: Ensure CSL files are in correct `assets/` directory
+- **Geometry problems**: Verify LaTeX geometry package is installed
+- **For journal-specific formatting**: Consider using dedicated Quarto extensions (apaquarto, quarto-ieee, etc.)
 
 ### Getting Help
 

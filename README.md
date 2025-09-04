@@ -3,7 +3,7 @@
 # Academic Research Templates
 
 [![CI
-Status](https://github.com/your-org/project-template/workflows/validate-templates/badge.svg)](https://github.com/your-org/project-template/actions)
+Status](https://github.com/mavrxlab/project-template/workflows/validate-templates/badge.svg)](https://github.com/mavrxlab/project-template/actions)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
